@@ -1,0 +1,24 @@
+.ej1 ol li{
+    list-style-type: lower-roman;
+}
+
+.ej2 ul li{
+    list-style-image: url(../recursos/gatete.png);
+}
+
+.ej3 .anidada li{
+    list-style-type: square;
+}
+
+.ej4 .anidada li{
+    list-style: upper-roman inside;
+}
+
+.ej5 ul li {
+    display: inline-block;
+    background-color: #2a9d8f;
+    color: whitesmoke;
+    width: 55px;
+    padding: 10px;
+    margin-left: 3px;
+}

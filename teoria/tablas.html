@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Tablas</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../estilos/estilos.css" />
+    <link rel="stylesheet" href="../estilos/tablas.css" />
+</head>
+
+<body>
+    <h1>Tablas</h1>
+    <p>
+        Se utilizan para organizar información con un formato de filas y columnas
+    </p>
+
+    <h2>Crear una tabla</h2>
+    <p>Para crear una tabla básica en HTML, se utiliza la etiqueta <code>&lt;table&gt;</code>, que define el contenedor
+        de la tabla. Dentro de esta etiqueta, se utilizan filas definidas por la etiqueta <code>&lt;tr&gt;</code> (table
+        row) y celdas dentro de esas filas, las cuales son creadas por las etiquetas <code>&lt;td&gt;</code> (table
+        data). Cada fila puede contener múltiples celdas.
+    <ul>
+        <li><code>&lt;table&gt;</code>: define la tabla.</li>
+        <li><code>&lt;tr&gt;</code>: define una fila de la tabla.</li>
+        <li><code>&lt;td&gt;</code>: define una celda dentro de una fila.</p>
+</body>
+</ul>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 1 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 1 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 1 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 1 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 2 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 3 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 4 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 4 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 4 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 4 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<div class="ejemplo">
+    <table>
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 1</td>
+            <td>Fila 4 Col 2</td>
+            <td>Fila 4 Col 3</td>
+            <td>Fila 4 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Tablas con bordes</h2>
+<p>Para agregar bordes a una tabla, se pueden utilizar estilos CSS. El borde puede ser definido con la propiedad border,
+    que permite especificar el grosor, estilo y color del borde. Para que se vea en todo el contorno de la tabla y las
+    celdas, se aplica tanto a la tabla como a los elementos <code>&lt;td&gt;</code>.
+<ul>
+    <li>border: define los bordes alrededor de la tabla y las celdas.</li>
+</ul>
+</p>
+<pre><code>table {
+    border: 1px solid black;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej1">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 1</td>
+            <td>Fila 4 Col 2</td>
+            <td>Fila 4 Col 3</td>
+            <td>Fila 4 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Celdas con bordes</h2>
+<p>Para agregar bordes a las celdas de una tabla, se puede aplicar CSS directamente a las celdas usando la etiqueta
+    <code>&lt;td&gt;</code> con una clase específica que contenga estilos de borde. Es importante notar que si no se
+    colapsan los bordes, estos aparecerán como duplicados entre las celdas.</p>
+<pre><code>table, td {
+    border: 1px solid black;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej2">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 1</td>
+            <td>Fila 4 Col 2</td>
+            <td>Fila 4 Col 3</td>
+            <td>Fila 4 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Tabla y celdas con bordes colapsados</h2>
+<p>Al colapsar los bordes de una tabla con CSS utilizando la propiedad border-collapse: collapse;, los bordes de las
+    celdas adyacentes se combinan en uno solo. Esto evita que se dupliquen los bordes entre celdas.
+<ul>
+    <li>border-collapse: define cómo se manejan los bordes adyacentes en una tabla.</li>
+</ul>
+</p>
+<pre><code>table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej3">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 1</td>
+            <td>Fila 4 Col 2</td>
+            <td>Fila 4 Col 3</td>
+            <td>Fila 4 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Combinar celdas</h2>
+<p>Para combinar varias celdas dentro de una tabla, se pueden utilizar los atributos colspan y rowspan. El atributo
+    colspan permite que una celda ocupe varias columnas, mientras que rowspan hace que una celda ocupe varias filas.
+<ul>
+    <li>colspan: define cuántas columnas abarcará una celda.</li>
+    <li>rowspan: define cuántas filas abarcará una celda.</li>
+    </p>
+</ul>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;Fila 1 Col 1 y 2&lt;/td&gt;
+        &lt;td&gt;Fila 1 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 1 Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 2 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot; rowspan=&quot;2&quot;&gt;Fila 3 y 4 Col 1 y 2&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 3&lt;/td&gt;
+        &lt;td rowspan=&quot;2&quot;&gt;Fila 3 y 4 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 4 Col 3&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<div class="ejemplo">
+    <table class="ej3">
+        <tr>
+            <td colspan="2">Fila 1 Col 1 y 2</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2">Fila 3 y 4 Col 1 y 2</td>
+            <td>Fila 3 Col 3</td>
+            <td rowspan="2">Fila 3 y 4 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 3</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Estructura de tabla compleja combinando celdas</h2>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td rowspan=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td colspan=&quot;6&quot;&gt;Resultados&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;Enero&lt;/td&gt;
+        &lt;td colspan=&quot;2&quot;&gt;Febrero&lt;/td&gt;
+        &lt;td colspan=&quot;2&quot;&gt;Marzo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ventas&lt;/td&gt;
+        &lt;td&gt;Gastos&lt;/td&gt;
+        &lt;td&gt;Ventas&lt;/td&gt;
+        &lt;td&gt;Gastos&lt;/td&gt;
+        &lt;td&gt;Ventas&lt;/td&gt;
+        &lt;td&gt;Gastos&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2022&lt;/td&gt;
+        &lt;td&gt;54&lt;/td&gt;
+        &lt;td&gt;7&lt;/td&gt;
+        &lt;td&gt;65&lt;/td&gt;
+        &lt;td&gt;78&lt;/td&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2023&lt;/td&gt;
+        &lt;td&gt;123&lt;/td&gt;
+        &lt;td&gt;66&lt;/td&gt;
+        &lt;td&gt;85&lt;/td&gt;
+        &lt;td&gt;7&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;21&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2024&lt;/td&gt;
+        &lt;td&gt;564&lt;/td&gt;
+        &lt;td&gt;65&lt;/td&gt;
+        &lt;td&gt;4&lt;/td&gt;
+        &lt;td&gt;76&lt;/td&gt;
+        &lt;td&gt;33&lt;/td&gt;
+        &lt;td&gt;66&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<div class="ejemplo">
+    <table class="ej3">
+        <tr>
+            <td rowspan="3"></td>
+            <td colspan="6">Resultados</td>
+        </tr>
+        <tr>
+            <td colspan="2">Enero</td>
+            <td colspan="2">Febrero</td>
+            <td colspan="2">Marzo</td>
+        </tr>
+        <tr>
+            <td>Ventas</td>
+            <td>Gastos</td>
+            <td>Ventas</td>
+            <td>Gastos</td>
+            <td>Ventas</td>
+            <td>Gastos</td>
+        </tr>
+        <tr>
+            <td>2022</td>
+            <td>54</td>
+            <td>7</td>
+            <td>65</td>
+            <td>78</td>
+            <td>5</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>2023</td>
+            <td>123</td>
+            <td>66</td>
+            <td>85</td>
+            <td>7</td>
+            <td>2</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>2024</td>
+            <td>564</td>
+            <td>65</td>
+            <td>4</td>
+            <td>76</td>
+            <td>33</td>
+            <td>66</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Cambiar el tamaño de la tabla</h2>
+<p>
+    El tamaño de las celdas de una tabla se ajusta automáticamente al contenido, pero puede ser modificado manualmente
+    usando CSS. Las propiedades width y height permiten establecer un tamaño fijo o relativo para las celdas. Si el
+    contenido es más grande que el tamaño establecido, se ajustará y creará saltos de línea.
+<ul>
+    <li>width: define el ancho de las celdas o la tabla.</li>
+    <li>height: define la altura de las celdas.</li>
+</ul>
+</p>
+<pre><code>table {
+    width: 500px;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej4">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Cambiar el tamaño de las celdas</h2>
+<p>Explicación: Para ajustar el tamaño de una celda en particular, se pueden usar las propiedades CSS width y height
+    directamente en las etiquetas <code>&lt;td&gt;</code> o aplicando clases CSS a las celdas. Esto afectará el tamaño
+    de toda la columna, ya que las celdas de una columna comparten el mismo ancho.
+<ul>
+    <li>td { width: }: define el ancho de una celda.</li>
+    <li>td { height: }: define la altura de una celda.</li>
+</ul>
+</p>
+<pre><code>td {
+    width: 120px;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej5">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Ajustar el tamaño a la pantalla</h2>
+<p>Explicación: Para hacer que la tabla se ajuste a la pantalla de forma automática, se pueden utilizar unidades
+    relativas como porcentajes en las propiedades width de la tabla y celdas. Esto asegura que la tabla se escale según
+    el tamaño de la ventana del navegador, proporcionando una experiencia más adaptable en pantallas de diferentes
+    tamaños.
+<ul>
+    <li>width: 100%: hace que la tabla ocupe todo el ancho disponible.</li>
+    <li>max-width: configura un tamaño máximo para la tabla</li>
+    <li>min-width: configura un tamaño mínimo para la tabla</li>
+    <li>margin:auto: centra la tabla</li>
+    <li>td {width:25%}: especifica que cada celda debe ocupar el 25% de la tabla</li>
+</ul>
+</p>
+<pre><code>table {
+    width: 90%;
+    max-width: 700px;
+    min-width: 600px;
+    margin: auto;
+}
+
+td {
+    width: 25%;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej6">
+        <tr>
+            <td>Fila 1 Col 1</td>
+            <td>Fila 1 Col 2</td>
+            <td>Fila 1 Col 3</td>
+            <td>Fila 1 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Celdas de cabecera</h2>
+<p>Las celdas de cabecera dentro de una tabla se definen con la etiqueta <code>&lt;th&gt;</code>, que representa la
+    cabecera de una columna o fila. Estas celdas tienen un estilo predeterminado de texto en negrita y están alineadas
+    al centro, aunque pueden ser estilizadas mediante CSS.
+<ul>
+    <li><code>&lt;th&gt;</code>: define una celda de cabecera.</li>
+</ul>
+</p>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Fila 1 Col 1&lt;/th&gt;
+        &lt;th&gt;Fila 1 Col 2&lt;/th&gt;
+        &lt;th&gt;Fila 1 Col 3&lt;/th&gt;
+        &lt;th&gt;Fila 1 Col 4&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 2 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 2 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Fila 3 Col 1&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 2&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 3&lt;/td&gt;
+        &lt;td&gt;Fila 3 Col 4&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<div class="ejemplo">
+    <table class="ej3">
+        <tr>
+            <th>Fila 1 Col 1</th>
+            <th>Fila 1 Col 2</th>
+            <th>Fila 1 Col 3</th>
+            <th>Fila 1 Col 4</th>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Selectores para filas pares e impares</h2>
+<p>Explicación: Con CSS, es posible alternar los estilos de las filas pares e impares de una tabla usando selectores
+    como :nth-child(even) para las filas pares y :nth-child(odd) para las filas impares. Esto mejora la legibilidad de
+    los datos al ofrecer un contraste visual entre las filas.
+<ul>
+    <li>tr:nth-child(even): aplica estilos a las filas pares.</li>
+    <li>tr:nth-child(odd): aplica estilos a las filas impares.</li>
+</ul>
+</p>
+<pre><code>tr:nth-child(even){
+    background-color: #85c1e9;
+}
+
+tr:nth-child(odd){
+    background-color: #deedf8;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej7">
+        <tr>
+            <th>Fila 1 Col 1</th>
+            <th>Fila 1 Col 2</th>
+            <th>Fila 1 Col 3</th>
+            <th>Fila 1 Col 4</th>
+        </tr>
+        <tr>
+            <td>Fila 2 Col 1</td>
+            <td>Fila 2 Col 2</td>
+            <td>Fila 2 Col 3</td>
+            <td>Fila 2 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 3 Col 1</td>
+            <td>Fila 3 Col 2</td>
+            <td>Fila 3 Col 3</td>
+            <td>Fila 3 Col 4</td>
+        </tr>
+        <tr>
+            <td>Fila 4 Col 1</td>
+            <td>Fila 4 Col 2</td>
+            <td>Fila 4 Col 3</td>
+            <td>Fila 4 Col 4</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Estructura de una tabla compleja con cabecera y pie</h2>
+<p>Una tabla puede dividirse en tres secciones principales: cabecera (<code>&lt;thead&gt;</code>), cuerpo
+    (<code>&lt;tbody&gt;</code>) y pie (<code>&lt;tfoot&gt;</code>). La cabecera contiene las etiquetas
+    <code>&lt;th&gt;</code> para definir las columnas, el cuerpo contiene los datos y el pie puede incluir filas de
+    totales o resumen. Esto mejora la semántica y la accesibilidad de la tabla.
+<ul>
+    <li><code>&lt;thead&gt;</code>: define la cabecera de la tabla.</li>
+    <li><code>&lt;tbody&gt;</code>: define el cuerpo de la tabla.</li>
+    <li><code>&lt;tfoot&gt;</code>: define el pie de la tabla.</li>
+</ul>
+</p>
+<pre><code>&lt;table class=&quot;ej8&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td rowspan=&quot;3&quot;&gt;&lt;/td&gt;
+            &lt;td colspan=&quot;8&quot;&gt;Resultados&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot;&gt;Enero&lt;/td&gt;
+            &lt;td colspan=&quot;2&quot;&gt;Febrero&lt;/td&gt;
+            &lt;td colspan=&quot;2&quot;&gt;Marzo&lt;/td&gt;
+            &lt;td colspan=&quot;2&quot;&gt;Abril&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ventas&lt;/td&gt;
+            &lt;td&gt;Gastos&lt;/td&gt;
+            &lt;td&gt;Ventas&lt;/td&gt;
+            &lt;td&gt;Gastos&lt;/td&gt;
+            &lt;td&gt;Ventas&lt;/td&gt;
+            &lt;td&gt;Gastos&lt;/td&gt;
+            &lt;td&gt;Ventas&lt;/td&gt;
+            &lt;td&gt;Gastos&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Totales&lt;/td&gt;
+            &lt;td&gt;405&lt;/td&gt;
+            &lt;td&gt;167&lt;/td&gt;
+            &lt;td&gt;415&lt;/td&gt;
+            &lt;td&gt;183&lt;/td&gt;
+            &lt;td&gt;487&lt;/td&gt;
+            &lt;td&gt;237&lt;/td&gt;
+            &lt;td&gt;492&lt;/td&gt;
+            &lt;td&gt;265&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2020&lt;/td&gt;
+            &lt;td&gt;40&lt;/td&gt;
+            &lt;td&gt;6&lt;/td&gt;
+            &lt;td&gt;52&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;60&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+            &lt;td&gt;65&lt;/td&gt;
+            &lt;td&gt;22&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2021&lt;/td&gt;
+            &lt;td&gt;48&lt;/td&gt;
+            &lt;td&gt;8&lt;/td&gt;
+            &lt;td&gt;58&lt;/td&gt;
+            &lt;td&gt;11&lt;/td&gt;
+            &lt;td&gt;72&lt;/td&gt;
+            &lt;td&gt;22&lt;/td&gt;
+            &lt;td&gt;76&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2022&lt;/td&gt;
+            &lt;td&gt;54&lt;/td&gt;
+            &lt;td&gt;7&lt;/td&gt;
+            &lt;td&gt;65&lt;/td&gt;
+            &lt;td&gt;12&lt;/td&gt;
+            &lt;td&gt;78&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;81&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2023&lt;/td&gt;
+            &lt;td&gt;123&lt;/td&gt;
+            &lt;td&gt;66&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+            &lt;td&gt;102&lt;/td&gt;
+            &lt;td&gt;75&lt;/td&gt;
+            &lt;td&gt;110&lt;/td&gt;
+            &lt;td&gt;78&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2024&lt;/td&gt;
+            &lt;td&gt;140&lt;/td&gt;
+            &lt;td&gt;80&lt;/td&gt;
+            &lt;td&gt;155&lt;/td&gt;
+            &lt;td&gt;100&lt;/td&gt;
+            &lt;td&gt;175&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;160&lt;/td&gt;
+            &lt;td&gt;110&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<pre><code>table {
+    width: 70%;
+    max-width: 800px;
+    min-width: 500px;
+    margin: auto;
+}
+
+thead{
+    background-color: #2980b9;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+tbody tr:nth-child(even){
+    background-color: #85c1e9;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #deedf8;
+}
+
+tfoot{
+    background-color: #f7dc6f;
+}</code></pre>
+<div class="ejemplo">
+    <table class="ej8">
+        <thead>
+            <tr>
+                <td rowspan="3"></td>
+                <td colspan="8">Resultados</td>
+            </tr>
+            <tr>
+                <td colspan="2">Enero</td>
+                <td colspan="2">Febrero</td>
+                <td colspan="2">Marzo</td>
+                <td colspan="2">Abril</td>
+            </tr>
+            <tr>
+                <td>Ventas</td>
+                <td>Gastos</td>
+                <td>Ventas</td>
+                <td>Gastos</td>
+                <td>Ventas</td>
+                <td>Gastos</td>
+                <td>Ventas</td>
+                <td>Gastos</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>Totales</td>
+                <td>405</td>
+                <td>167</td>
+                <td>415</td>
+                <td>183</td>
+                <td>487</td>
+                <td>237</td>
+                <td>492</td>
+                <td>265</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>2020</td>
+                <td>40</td>
+                <td>6</td>
+                <td>52</td>
+                <td>10</td>
+                <td>60</td>
+                <td>20</td>
+                <td>65</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>48</td>
+                <td>8</td>
+                <td>58</td>
+                <td>11</td>
+                <td>72</td>
+                <td>22</td>
+                <td>76</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>54</td>
+                <td>7</td>
+                <td>65</td>
+                <td>12</td>
+                <td>78</td>
+                <td>25</td>
+                <td>81</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>123</td>
+                <td>66</td>
+                <td>85</td>
+                <td>50</td>
+                <td>102</td>
+                <td>75</td>
+                <td>110</td>
+                <td>78</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>140</td>
+                <td>80</td>
+                <td>155</td>
+                <td>100</td>
+                <td>175</td>
+                <td>95</td>
+                <td>160</td>
+                <td>110</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

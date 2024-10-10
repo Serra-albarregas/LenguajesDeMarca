@@ -1,0 +1,79 @@
+.ej1 {
+    border: 1px solid black;
+}
+
+.ej2, .ej2 td {
+    border: 1px solid black;
+}
+
+.ej3, .ej3 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ej4, .ej4 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ej4 {
+    width: 500px;
+}
+
+.ej5, .ej5 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ej5 td {
+    width: 120px;
+}
+
+.ej6, .ej6 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ej6 {
+    width: 90%;
+    max-width: 700px;
+    min-width: 600px;
+    margin: auto;
+}
+
+.ej6 td {
+    width: 25%;
+}
+
+.ej7 tr:nth-child(even){
+    background-color: #85c1e9;
+}
+
+.ej7 tr:nth-child(odd){
+    background-color: #deedf8;
+}
+
+.ej8 {
+    width: 70%;
+    max-width: 800px;
+    min-width: 500px;
+    margin: auto;
+}
+
+.ej8 thead{
+    background-color: #2980b9;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.ej8 tbody tr:nth-child(even){
+    background-color: #85c1e9;
+}
+
+.ej8 tbody tr:nth-child(odd){
+    background-color: #deedf8;
+}
+
+.ej8 tfoot{
+    background-color: #f7dc6f;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imágenes en HTML</title>
+  <link rel="stylesheet" href="../estilos/estilos.css" />
+  <link rel="stylesheet" href="../estilos/imagenes.css">
+</head>
+
+<body>
+  <header>
+    <h1>Imágenes en HTML</h1>
+    <p>
+      En esta página aprenderás a utilizar la etiqueta
+      <code>&lt;img&gt;</code>, imágenes adaptables, formatos de imagen, SVG,
+      marcos, sombras y la etiqueta <code>&lt;picture&gt;</code>.
+    </p>
+  </header>
+
+  <section>
+    <h2>Etiqueta <code>&lt;img&gt;</code></h2>
+    <p>
+      La etiqueta <code>&lt;img&gt;</code> se usa para incrustar imágenes en
+      una página web. A continuación, se muestra un ejemplo básico:
+    </p>
+    <p>
+      El atributo <code>alt</code> es importante por razones de accesibilidad;
+      describe el contenido de la imagen si esta no se carga o para lectores
+      de pantalla.
+    </p>
+    <pre><code>&lt;img src="../recursos/paisaje.jpg" alt="Descripción de la imagen"&gt;</code></pre>
+    <div class="example">
+      <img src="../recursos/paisaje.jpg" alt="Descripción de la imagen" width="300" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Propiedades <code>width</code> y <code>height</code></h2>
+    <p>
+      Usar los atributos <code>width</code> y <code>height</code> permite
+      especificar el tamaño de la imagen en píxeles. Sin embargo, es mejor
+      evitar distorsionar las imágenes (cambiar solo uno de estos atributos
+      sin mantener la proporción). Ejemplo:
+    </p>
+    <pre><code>&lt;img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos"&gt;</code></pre>
+    <div class="example">
+      <img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Propiedades <code>width</code> y <code>height</code> en css</h2>
+    <pre><code>img {
+      height: 300px;
+      width: 200px;
+    }</code></pre>
+    <div class="example">
+      <img class="ej1" src="../recursos/paisaje.jpg" alt="Imagen con ancho y alto definidos" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Imágenes adaptables</h2>
+    <p>
+      Para que las imágenes se adapten al tamaño del contenedor, podemos usar
+      CSS. Esto asegura que la imagen se redimensione correctamente en
+      dispositivos móviles. Para ello se configura el tamaño porcentualmente y, para
+      mantener la proporción, el valor auto:
+    </p>
+    <pre><code>img {
+  width: 60%;
+  height: auto;
+}</code></pre>
+    <div class="example">
+      <img class="ej2" src="../recursos/paisaje.jpg" alt="Imagen adaptable" />
+    </div>
+    <p>
+      En este caso, la imagen se adapta al tamaño de su contenedor manteniendo
+      las proporciones correctas.
+    </p>
+  </section>
+
+  <section>
+    <h2>Imágenes adaptables con tamaño máximo</h2>
+    <p>
+      Se puede definir un tamaño máximo para que la imagen sea responsive y al
+      mismo tiempo no se difumine al hacer zoom.
+    </p>
+    <pre><code>img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+    <div class="example">
+      <img class="ej3" src="../recursos/paisaje.png" alt="Imagen adaptable" />
+    </div>
+    <p>
+      En este caso, la imagen se adapta al tamaño de su contenedor manteniendo
+      las proporciones correctas.
+    </p>
+  </section>
+
+  <section>
+    <h2>Formatos de imagen</h2>
+    <p>
+      Los formatos de imagen más comunes en la web son JPEG, PNG, GIF y WebP.
+      Aquí una descripción de cada uno:
+    </p>
+    <ul>
+      <li>
+        <strong>JPEG:</strong> Adecuado para fotos con muchos colores y
+        detalles. Alta compresión, pero con pérdida de calidad.
+      </li>
+      <li>
+        <strong>PNG:</strong> Ideal para imágenes con áreas transparentes y
+        gráficos. Sin pérdida de calidad.
+      </li>
+      <li>
+        <strong>GIF:</strong> Formato limitado a 256 colores, ideal para
+        animaciones sencillas.
+      </li>
+      <li>
+        <strong>WebP:</strong> Formato moderno que ofrece compresión sin
+        pérdida o con pérdida, y soporta transparencia.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Imágenes SVG</h2>
+    <p>
+      SVG (Gráficos Vectoriales Escalables) es un formato basado en vectores,
+      lo que significa que puede escalarse sin pérdida de calidad. Es ideal
+      para logotipos, íconos y gráficos simples:
+    </p>
+    <pre><code>&lt;img src="recuros/gato.svg" alt="Ejemplo de imagen SVG"&gt;</code></pre>
+    <div class="example">
+      <img class = "ej4" src="/../recursos/gato.svg" alt="Ejemplo de imagen SVG"/>
+      <img class = "ej4" src="/../recursos/gato_chico.png" alt="Ejemplo de imagen PNG"/>
+    </div>
+    <p>
+      Las imágenes SVG son independientes de la resolución, por lo que son
+      perfectas para pantallas de alta densidad de píxeles.
+    </p>
+  </section>
+
+  <section>
+    <h2>Marco y sombra en imágenes</h2>
+    <p>
+      Con CSS, es fácil añadir marcos y sombras a las imágenes para mejorar su
+      presentación. Ejemplo de CSS para añadir un marco y sombra:
+    </p>
+    <pre><code>img {
+      width: 60%;
+      height: auto;
+      border: 5px solid #2980b9;
+      border-radius: 10px;
+      /*radiox, radioy, desenfoque, separacion, color*/
+      box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.5);
+    }</code></pre>
+    <div class="example">
+      <img class="ej5" src="../recursos/paisaje.jpg" alt="Imagen con marco y sombra" />
+    </div>
+  </section>
+
+  <section>
+    <h2>La etiqueta <code>&lt;picture&gt;</code></h2>
+    <p>
+      La etiqueta <code>&lt;picture&gt;</code> permite especificar diferentes
+      fuentes de imagen para adaptarse a diferentes condiciones, como el
+      tamaño de la pantalla o la densidad de píxeles. Ejemplo:
+    </p>
+    <pre><code>&lt;picture&gt;
+  &lt;source media="(min-width: 800px)" srcset="imagen-grande.jpg"&gt;
+  &lt;source media="(max-width: 799px)" srcset="imagen-pequena.jpg"&gt;
+  &lt;img src="imagen-default.jpg" alt="Imagen adaptable a la pantalla"&gt;
+&lt;/picture&gt;</code></pre>
+    <div class="example">
+      <picture>
+        <source srcset="../recursos/gato_grande.png" media="(min-width: 801px)">
+        <source srcset="../recursos/gato_menos_grande.png" media="(min-width: 600px) and (max-width: 800px)">
+        <source srcset="../recursos/gato_chico.png" media="(max-width: 599px)">
+        <img src="imagen-grande.jpg" alt="Descripción de la imagen">
+      </picture>
+    </div>
+    <p>
+      En este ejemplo, se cargarán diferentes versiones de la imagen según el
+      tamaño de la pantalla del usuario.
+    </p>
+  </section>
+
+  <section>
+    <h2>Ejemplo con <code>picture</code> y Orientación "Portrait"</h2>
+    <p>
+      El siguiente ejemplo utiliza la etiqueta <code>picture</code> para
+      cargar diferentes imágenes dependiendo de la orientación de la pantalla
+      (portrait o landscape).
+    </p>
+
+    <pre><code>&lt;picture&gt;
+      &lt;source media=&quot;(orientation: portrait)&quot; srcset=&quot;../recursos/portrait.png&quot; /&gt;
+      &lt;source media=&quot;(orientation: landscape)&quot; srcset=&quot;../recursos/landscape.png&quot; /&gt;
+      &lt;img src=&quot;../recursos/landscape.png&quot; alt=&quot;Ejemplo de Picture con orientaci&oacute;n portrait&quot; /&gt;
+&lt;/picture&gt;</code></pre>
+    <div class="example">
+      <picture>
+        <source media="(orientation: portrait)" srcset="../recursos/portrait.png" />
+        <source media="(orientation: landscape)" srcset="../recursos/landscape.png" />
+        <img src="../recursos/landscape.png" alt="Ejemplo de Picture con orientación portrait" />
+      </picture>
+    </div>
+  </section>
+</body>
+
+</html>

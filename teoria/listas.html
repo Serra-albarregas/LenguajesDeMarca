@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Listas</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../estilos/estilos.css" />
+    <link rel="stylesheet" href="../estilos/listas.css" />
+  </head>
+  <h1>Listas</h1>
+  <p>Las listas sirven para organizar información.</p>
+  <h2>Listas desdordenadas</h2>
+  <p>
+    Las listas desordenadas tienen por defecto un puntito antes de cada
+    elemento.
+  </p>
+  <p>
+    Una lista ordenada comienza con la etiqueta <code>&lt;ul&gt;</code>,
+    posteriormente cada elemento comienza con la etiqueta
+    <code>&lt;li&gt;</code>.
+  </p>
+  <pre><code>
+    &lt;ul&gt;
+        &lt;li&gt;Gato&lt;/li&gt;
+        &lt;li&gt;Perrete&lt;/li&gt;
+        &lt;li&gt;Caballo&lt;/li&gt;
+        &lt;li&gt;Tortuga&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+  <div class="example">
+    <ul>
+      <li>Gato</li>
+      <li>Perrete</li>
+      <li>Caballo</li>
+      <li>Tortuga</li>
+    </ul>
+  </div>
+
+  <h2>Listas ordenada</h2>
+  <p>
+    Las listas desordenadas aparecen numeradas. No se debe confundir con un
+    orden alfabético de los elementos, siendo este dependiente del programador.
+  </p>
+  <p>
+    Una lista ordenada comienza con la etiqueta <code>&lt;ol&gt;</code>,
+    posteriormente cada elemento comienza con la etiqueta
+    <code>&lt;li&gt;</code>.
+  </p>
+  <pre><code>
+    &lt;ol&gt;
+        &lt;li&gt;Tarta&lt;/li&gt;
+        &lt;li&gt;Profiterol&lt;/li&gt;
+        &lt;li&gt;Helado&lt;/li&gt;
+        &lt;li&gt;Galleta&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+  <div class="example">
+    <ol>
+      <li>Tarta</li>
+      <li>Profiterol</li>
+      <li>Helado</li>
+      <li>Galleta</li>
+    </ol>
+  </div>
+
+  <h2>Listas de definición</h2>
+  <p>
+    Las listas de definición permiten organizar y listar conceptos junto con una
+    descripción.
+  </p>
+  <p>
+    Una lista ordenada comienza con la etiqueta <code>&lt;dl&gt;</code>,
+    posteriormente cada elemento comienza con la etiqueta
+    <code>&lt;dt&gt;</code>. Finalmente, la definicón del elemento utiliza la
+    etiqueta <code>&lt;dd&gt;</code>.
+  </p>
+
+  <div class="example">
+    <dl>
+      <dt>Coche</dt>
+      <dd>Vehículo con 4 ruedas</dd>
+      <dt>Moto</dt>
+      <dd>Vehículo con 2 ruedas</dd>
+    </dl>
+  </div>
+  <pre><code>
+    &lt;dl&gt;
+        &lt;dt&gt;Coche&lt;/dt&gt;
+        &lt;dd&gt;Veh&iacute;culo con 4 ruedas&lt;/dd&gt;
+        &lt;dt&gt;Moto&lt;/dt&gt;
+        &lt;dd&gt;Veh&iacute;culo con 2 ruedas&lt;/dd&gt;
+    &lt;/dl&gt;</code></pre>
+
+  <h2>Listas anidadas</h2>
+  <p>Son listas dentro de listas</p>
+  <p>
+    Una lista anidada se crea al utilizar una etiqueta de tipo
+    <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code>
+    tras cualquier elemento de la lista de nivel superior.
+  </p>
+  <pre><code>
+    &lt;ul&gt;
+        &lt;li&gt;Gato&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Siames&lt;/li&gt;
+            &lt;li&gt;Persa&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;li&gt;Perrete&lt;/li&gt;
+        &lt;li&gt;Caballo&lt;/li&gt;
+        &lt;li&gt;Tortuga&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+  <div class="example">
+    <ul>
+      <li>Gato</li>
+      <ul>
+        <li>Siames</li>
+        <li>Persa</li>
+      </ul>
+      <li>Perrete</li>
+      <li>Caballo</li>
+      <li>Tortuga</li>
+    </ul>
+  </div>
+
+  <h2>Estilos en las listas</h2>
+  <h3>Tipo de estilo</h3>
+  <pre>
+    <code>
+    ol li{
+        list-style-type: lower-roman;
+    }</code
+    >
+</pre>
+  <div class="example">
+    <div class="ej1">
+      <ol>
+        <li>Tarta</li>
+        <li>Profiterol</li>
+        <li>Helado</li>
+        <li>Galleta</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Tipo de estilo con imágenes</h3>
+  <pre>
+    <code>
+    ul li{ 
+        list-style-image: url(recursos/gatete.png); 
+    } 
+</code>
+</pre>
+  <div class="example">
+    <div class="ej2">
+      <ul>
+        <li>Gato</li>
+        <li>Perrete</li>
+        <li>Caballo</li>
+        <li>Tortuga</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Estilos en listas anidadas</h3>
+  <pre>
+    <code>
+    .anidada li{ 
+        list-style-type: square; 
+    }
+    
+    &lt;ul&gt;
+      &lt;li&gt;Gato&lt;/li&gt;
+      &lt;ul class=&quot;anidada&quot;&gt;
+        &lt;li&gt;Siames&lt;/li&gt;
+        &lt;li&gt;Persa&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;li&gt;Perrete&lt;/li&gt;
+      &lt;li&gt;Caballo&lt;/li&gt;
+      &lt;li&gt;Tortuga&lt;/li&gt;
+    &lt;/ul&gt;</code
+    >
+</pre>
+  <div class="example">
+    <div class="ej3">
+      <ul>
+        <li>Gato</li>
+        <ul class="anidada">
+          <li>Siames</li>
+          <li>Persa</li>
+        </ul>
+        <li>Perrete</li>
+        <li>Caballo</li>
+        <li>Tortuga</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Estilos con una sola propiedad</h3>
+  <pre>
+    <code>
+    .anidada li{
+        list-style: upper-roman inside;
+    }</code
+    >
+</pre>
+  <div class="example">
+    <div class="ej4">
+      <ol>
+        <li>Crostata</li>
+        <ul class="anidada">
+            <li>La crostata es uno de los dulces tradicionales italianos, se trata de una tarta que tiene como base un tipo especial de masa quebrada, la masa frolla, que se rellena de mermelada, tradicionalmente de melocotón, albaricoque o fresa. </li>
+            <li>Es habitual también elaborar crostatas rellenas de crema pastelera y fruta, lo que los italianos llaman torta di frutta, de queso ricota, crostata di ricotta, o incluso de Nutella.</li>
+          </ul>
+        <li>Profiterol</li>
+        <li>Helado</li>
+        <li>Galleta</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Barra de menú</h3>
+  <pre>
+    <code>
+    ul li {
+        display: inline-block;
+        background-color: #2a9d8f;
+        color: whitesmoke;
+        width: 55px;
+        padding: 10px;
+        margin-left: 3px;
+    }
+</code>
+</pre>
+  <div class="example">
+    <div class="ej5">
+      <ul>
+        <li>Gato</li>
+        <li>Perrete</li>
+        <li>Caballo</li>
+        <li>Tortuga</li>
+      </ul>
+    </div>
+  </div>
+</html>
