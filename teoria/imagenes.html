@@ -172,9 +172,10 @@
       tamaño de la pantalla o la densidad de píxeles. Ejemplo:
     </p>
     <pre><code>&lt;picture&gt;
-  &lt;source media="(min-width: 800px)" srcset="imagen-grande.jpg"&gt;
-  &lt;source media="(max-width: 799px)" srcset="imagen-pequena.jpg"&gt;
-  &lt;img src="imagen-default.jpg" alt="Imagen adaptable a la pantalla"&gt;
+      &lt;source srcset=&quot;../recursos/gato_grande.png&quot; media=&quot;(min-width: 801px)&quot;&gt;
+      &lt;source srcset=&quot;../recursos/gato_menos_grande.png&quot; media=&quot;(min-width: 600px) and (max-width: 800px)&quot;&gt;
+      &lt;source srcset=&quot;../recursos/gato_chico.png&quot; media=&quot;(max-width: 599px)&quot;&gt;
+      &lt;img src=&quot;imagen-grande.jpg&quot; alt=&quot;Descripci&oacute;n de la imagen&quot;&gt;
 &lt;/picture&gt;</code></pre>
     <div class="example">
       <picture>

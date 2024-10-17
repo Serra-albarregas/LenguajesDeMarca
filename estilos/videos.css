@@ -1,0 +1,11 @@
+.ej1 {
+    width: 100%;
+}
+
+.ej2 {
+    width: 50%;
+    display: block;
+    margin: auto;
+    border: 2px solid rgba(13, 112, 204, 0.247);
+    border-radius: 6px;
+}

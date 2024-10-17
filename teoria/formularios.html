@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formularios</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/formularios.css">
+</head>
+
+<body>
+    <h1>Formularios</h1>
+    <p>Los formularios son un recurso esencial para la comunicación entre el usuario y la aplicación. permiten a los
+        usuarios la introducción de datos, que generalmente se envían a un servidor web para su procesamiento y
+        almacenamiento, o se usan en el lado del cliente para provocar de alguna manera una actualización inmediata
+        de la interfaz.
+    </p>
+    <h2>Creación de un formulario básico</h2>
+    <p>Para crear un formulario TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <input type="text" name="nombre">
+            <input type="text" name="apellidos">
+            <input type="password" name="contraseña">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Ordenar los elementos del formulario</h2>
+    <p>Los input del formulario aparecen por defecto en una misma linea TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
+            <p>Contraseña <input type="password" name="contrasena"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Checkbox</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
+            <p>Acepto las condiciones <input type="checkbox" name="condiciones"></p>
+            <p>Me gustaría recibir correo promocional <input type="checkbox" name="promo" checked></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Radio</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
+            <p>Género</p>
+            <p><input type="radio" name="genero" value="h">Hombre</p>
+            <p><input type="radio" name="genero" value="m">Mujer</p>
+            <p><input type="radio" name="genero" value="o">Otro</p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Selector desplegable</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Elige tu navegador favorito <input list="browsers">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Boton de borrado</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
+            <p><input type="reset" value="Borrar"><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Comprobaciones en los campos</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" required></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" minlength="5"
+                    maxlength="25"></p>
+            <p><input type="reset" value="Borrar"><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Selector de color</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Color <input type="color" name="color"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Selector de fecha</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Fecha <input type="date" name="fecha" min="1990-01-01" max="2030-12-31"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Selector de fecha y hora</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Fecha y hora <input type="datetime-local" name="fecha-hora"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Email</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Email <input type="email" name="email"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Telefono</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Teléfono <input type="tel" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>URL</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>URL <input type="url" name="url"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Campo de texto numérico</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Numero <input type="number" name="numero"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Rango numérico</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Rango numérico <input type="range" name="rango" min="5" max="15"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Subir archivos</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Sube tu archivo <input type="file" name="archivo"></p>
+            <p>Sube tu imagen <input type="file" name="imagen" accept="image/png, image/jpg, image/gif"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+
+    <h2>Campo de búsqueda</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>Buscador <input type="search" name="buscador"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </div>
+</body>
+
+</html>
