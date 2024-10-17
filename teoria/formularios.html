@@ -4,207 +4,359 @@
 <head>
     <title>Formularios</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../estilos/estilos.css">
-    <link rel="stylesheet" href="../estilos/formularios.css">
+    <link rel="stylesheet" href="../estilos/estilos.css" />
+    <link rel="stylesheet" href="../estilos/formularios.css" />
 </head>
 
 <body>
     <h1>Formularios</h1>
-    <p>Los formularios son un recurso esencial para la comunicación entre el usuario y la aplicación. permiten a los
-        usuarios la introducción de datos, que generalmente se envían a un servidor web para su procesamiento y
-        almacenamiento, o se usan en el lado del cliente para provocar de alguna manera una actualización inmediata
-        de la interfaz.
+    <p>
+        Los formularios son un recurso esencial para la comunicación entre el
+        usuario y la aplicación. permiten a los usuarios la introducción de datos,
+        que generalmente se envían a un servidor web para su procesamiento y
+        almacenamiento, o se usan en el lado del cliente para provocar de alguna
+        manera una actualización inmediata de la interfaz.
     </p>
     <h2>Creación de un formulario básico</h2>
-    <p>Para crear un formulario TODO</p>
-    <pre><code></code></pre>
+    <p>
+        Para crear un formulario, se utiliza la etiqueta
+        <code>&lt;form&gt;</code>. En esta etiqueta se especifican atributos
+        importantes como <code>action</code> y <code>method</code>, que determinan
+        a dónde se enviará la información y cómo será procesada. Por ejemplo,
+        <code>action</code> indica el archivo o URL al que se enviarán los datos,
+        mientras que <code>method</code> puede ser <code>GET</code> o
+        <code>POST</code>, dependiendo de cómo se quiera enviar la información.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;nombre&quot; /&gt;
+    &lt;input type=&quot;text&quot; name=&quot;apellidos&quot; /&gt;
+    &lt;input type=&quot;password&quot; name=&quot;contrase&ntilde;a&quot; /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <input type="text" name="nombre">
-            <input type="text" name="apellidos">
-            <input type="password" name="contraseña">
-            <input type="submit" value="Enviar">
+            <input type="text" name="nombre" />
+            <input type="text" name="apellidos" />
+            <input type="password" name="contraseña" />
+            <input type="submit" value="Enviar" />
         </form>
     </div>
 
     <h2>Ordenar los elementos del formulario</h2>
-    <p>Los input del formulario aparecen por defecto en una misma linea TODO</p>
-    <pre><code></code></pre>
+    <p>
+        Los elementos de un formulario, como <code>&lt;input&gt;</code>,
+        <code>&lt;textarea&gt;</code>, y otros, se colocan de manera
+        predeterminada en la misma línea. Sin embargo, para mejorar la
+        presentación, puedes usar elementos de bloque como
+        <code>&lt;p&gt;</code> o <code>&lt;div&gt;</code> para poner cada elemento
+        en una línea diferente. Además, podemos utilizar etiquetas de tipo
+        <code>&lt;placeholder&gt;</code> para añadir un mensaje en el campo de
+        texto con algunas instrucciones.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Contrase&ntilde;a &lt;input type=&quot;password&quot; name=&quot;contrasena&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Comentarios &lt;textarea name=&quot;text&quot; cols=&quot;32&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
-            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
-            <p>Contraseña <input type="password" name="contrasena"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" /></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" /></p>
+            <p>Contraseña <input type="password" name="contrasena" /></p>
+            <p>Comentarios <textarea name="text" cols="32" rows="10"></textarea></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Checkbox</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        Los campos de tipo <code>checkbox</code> permiten a los usuarios
+        seleccionar una o más opciones. Para crear un checkbox, se usa el atributo
+        <code>type="checkbox"</code> en la etiqueta <code>&lt;input&gt;</code>. Es
+        útil para confirmaciones como "Aceptar términos y condiciones" o para
+        seleccionar múltiples preferencias. Con el atributo <code>checked</code> 
+        se puede marcar una checkbox de manera predeterminada.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Acepto las condiciones &lt;input type=&quot;checkbox&quot; name=&quot;condiciones&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Me gustar&iacute;a recibir correo promocional&lt;input type=&quot;checkbox&quot; name=&quot;promo&quot; checked /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
-            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
-            <p>Acepto las condiciones <input type="checkbox" name="condiciones"></p>
-            <p>Me gustaría recibir correo promocional <input type="checkbox" name="promo" checked></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" /></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" /></p>
+            <p>Acepto las condiciones <input type="checkbox" name="condiciones" /></p>
+            <p>Me gustaría recibir correo promocional<input type="checkbox" name="promo" checked /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Radio</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        Los botones de opción, o <code>radio buttons</code>, permiten seleccionar
+        solo una opción dentro de un grupo. Para agruparlos, todos los
+        <code>&lt;input&gt;</code> deben tener el mismo valor en el atributo
+        <code>name</code>, mientras que cada uno tiene un valor diferente en
+        <code>value</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;G&eacute;nero&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;h&quot; /&gt;Hombre&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;m&quot; /&gt;Mujer&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;radio&quot; name=&quot;genero&quot; value=&quot;o&quot; /&gt;Otro&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
-            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" /></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" /></p>
             <p>Género</p>
-            <p><input type="radio" name="genero" value="h">Hombre</p>
-            <p><input type="radio" name="genero" value="m">Mujer</p>
-            <p><input type="radio" name="genero" value="o">Otro</p>
-            <p><input type="submit" value="Enviar"></p>
+            <p><input type="radio" name="genero" value="h" />Hombre</p>
+            <p><input type="radio" name="genero" value="m" />Mujer</p>
+            <p><input type="radio" name="genero" value="o" />Otro</p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Selector desplegable</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El selector desplegable se implementa usando la etiqueta
+        <code>&lt;input&gt;</code> con el atributo <code>list</code>, que se
+        enlaza con un <code>&lt;datalist&gt;</code>. Esto permite sugerir opciones
+        al usuario mientras escribe, etiquetadas como <code>&lt;option&gt;</code>. 
+        Es útil para proporcionar una lista predefinida de opciones.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;
+        Elige tu navegador favorito &lt;input list=&quot;browsers&quot; /&gt;
+        &lt;datalist id=&quot;browsers&quot;&gt;
+            &lt;option value=&quot;Edge&quot;&gt;&lt;/option&gt;
+            &lt;option value=&quot;Firefox&quot;&gt;&lt;/option&gt;
+            &lt;option value=&quot;Chrome&quot;&gt;&lt;/option&gt;
+            &lt;option value=&quot;Opera&quot;&gt;&lt;/option&gt;
+            &lt;option value=&quot;Safari&quot;&gt;&lt;/option&gt;
+        &lt;/datalist&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Elige tu navegador favorito <input list="browsers">
-            <datalist id="browsers">
-                <option value="Edge">
-                <option value="Firefox">
-                <option value="Chrome">
-                <option value="Opera">
-                <option value="Safari">
-            </datalist></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>
+                Elige tu navegador favorito <input list="browsers" />
+                <datalist id="browsers">
+                    <option value="Edge"></option>
+                    <option value="Firefox"></option>
+                    <option value="Chrome"></option>
+                    <option value="Opera"></option>
+                    <option value="Safari"></option>
+                </datalist>
+            </p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Boton de borrado</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El botón de borrado se crea con el atributo <code>type="reset"</code> en
+        la etiqueta <code>&lt;input&gt;</code>. Este botón restablece todos los
+        campos del formulario a sus valores por defecto.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;reset&quot; value=&quot;Borrar&quot; /&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre"></p>
-            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos"></p>
-            <p><input type="reset" value="Borrar"><input type="submit" value="Enviar"></p>
-        </form>
-    </div>
-
-    <h2>Comprobaciones en los campos</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
-    <div class="example">
-        <form action="recibir.php" method="get">
-            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" required></p>
-            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" minlength="5"
-                    maxlength="25"></p>
-            <p><input type="reset" value="Borrar"><input type="submit" value="Enviar"></p>
+            <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" /></p>
+            <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" /></p>
+            <p><input type="reset" value="Borrar" /><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Selector de color</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo <code>color</code> permite al usuario seleccionar un color desde
+        un cuadro de diálogo. Se implementa con
+        <code>&lt;input type="color"&gt;</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Color &lt;input type=&quot;color&quot; name=&quot;color&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Color <input type="color" name="color"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Color <input type="color" name="color" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Selector de fecha</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de fecha permite al usuario seleccionar una fecha. Se implementa
+        con <code>&lt;input type="date"&gt;</code>. Además, puedes limitar el
+        rango de fechas permitidas utilizando los atributos <code>min</code> y
+        <code>max</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Fecha &lt;input type=&quot;date&quot; name=&quot;fecha&quot; min=&quot;1990-01-01&quot; max=&quot;2030-12-31&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Fecha <input type="date" name="fecha" min="1990-01-01" max="2030-12-31"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Fecha <input type="date" name="fecha" min="1990-01-01" max="2030-12-31" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Selector de fecha y hora</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo <code>datetime-local</code> permite seleccionar tanto la fecha
+        como la hora en un solo campo de entrada. Se utiliza con
+        <code>&lt;input type="datetime-local"&gt;</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Fecha y hora &lt;input type=&quot;datetime-local&quot; name=&quot;fecha-hora&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Fecha y hora <input type="datetime-local" name="fecha-hora"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Fecha y hora <input type="datetime-local" name="fecha-hora" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Email</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de entrada para correos electrónicos se define con
+        <code>&lt;input type="email"&gt;</code>. Este campo realiza una pequeña
+        validación de un correo electrónica, que normalmente no es suficiente.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Email &lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Email <input type="email" name="email"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Email <input type="email" name="email" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Telefono</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de entrada para números de teléfono se implementa con
+        <code>&lt;input type="tel"&gt;</code>, que espera un número telefónico.
+        Aunque no valida automáticamente el formato del número, es útil para hacer
+        que los campos de teléfono se comporten correctamente en dispositivos
+        móviles.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Tel&eacute;fono &lt;input type=&quot;tel&quot; name=&quot;telefono&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Teléfono <input type="tel" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Teléfono <input type="tel" name="telefono" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>URL</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo <code>url</code> está diseñado para la introducción de
+        direcciones web, añadiendo una validación que suele ser insuficiente. Se
+        implementa con <code>&lt;input type="url"&gt;</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;URL &lt;input type=&quot;url&quot; name=&quot;url&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>URL <input type="url" name="url"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>URL <input type="url" name="url" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Campo de texto numérico</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de texto numérico se define con
+        <code>&lt;input type="number"&gt;</code>. Permite al usuario ingresar solo
+        números y puedes establecer límites utilizando los atributos
+        <code>min</code> y <code>max</code>.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Numero &lt;input type=&quot;number&quot; name=&quot;numero&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Numero <input type="number" name="numero"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Numero <input type="number" name="numero" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Rango numérico</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de rango numérico se define con
+        <code>&lt;input type="range"&gt;</code>. Esto permite seleccionar un valor
+        dentro de un rango establecido con <code>min</code> y <code>max</code>,
+        ideal para seleccionar cantidades o niveles de intensidad.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Rango num&eacute;rico &lt;input type=&quot;range&quot; name=&quot;rango&quot; min=&quot;5&quot; max=&quot;15&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Rango numérico <input type="range" name="rango" min="5" max="15"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Rango numérico <input type="range" name="rango" min="5" max="15" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Subir archivos</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        Para permitir a los usuarios subir archivos, se utiliza
+        <code>&lt;input type="file"&gt;</code>. Puedes restringir el tipo de
+        archivo que se puede subir usando el atributo <code>accept</code>. Por
+        ejemplo, <code>accept="image/png, image/jpg"</code> restringe a imágenes
+        en formato PNG y JPG.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Sube tu archivo &lt;input type=&quot;file&quot; name=&quot;archivo&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;Sube tu imagen &lt;input type=&quot;file&quot; name=&quot;imagen&quot; accept=&quot;image/png, image/jpg, image/gif&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Sube tu archivo <input type="file" name="archivo"></p>
-            <p>Sube tu imagen <input type="file" name="imagen" accept="image/png, image/jpg, image/gif"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Sube tu archivo <input type="file" name="archivo" /></p>
+            <p>Sube tu imagen <input type="file" name="imagen" accept="image/png, image/jpg, image/gif" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 
     <h2>Campo de búsqueda</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>
+        El campo de búsqueda se define con
+        <code>&lt;input type="search"&gt;</code>. Este campo es especialmente útil
+        cuando se implementa una función de búsqueda en el sitio web.
+    </p>
+    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;Buscador &lt;input type=&quot;search&quot; name=&quot;buscador&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form action="recibir.php" method="get">
-            <p>Buscador <input type="search" name="buscador"></p>
-            <p><input type="submit" value="Enviar"></p>
+            <p>Buscador <input type="search" name="buscador" /></p>
+            <p><input type="submit" value="Enviar" /></p>
         </form>
     </div>
 </body>

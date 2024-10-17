@@ -1,42 +1,96 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Videos</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../estilos/estilos.css">
-    <link rel="stylesheet" href="../estilos/videos.css">
-</head>
+    <link rel="stylesheet" href="../estilos/estilos.css" />
+    <link rel="stylesheet" href="../estilos/videos.css" />
+  </head>
 
-<body>
+  <body>
     <h1>Videos</h1>
-    <p>Como manejar uno de los recursos multimedia más importantes de internet</p>
-    <h2>Incluir un video</h2>
-    <p>TODO
-    <ul>
-        <li>muted</li>
-        <li>loop</li>
-        <li>autoplay</li>
-    </ul>
+    <p>
+      Como manejar uno de los recursos multimedia más importantes de internet
     </p>
-    <pre><code></code></pre>
+    <h2>Incluir un video</h2>
+    <p>
+      Para incluir un video en HTML, utilizamos la etiqueta
+      <code>&lt;video&gt;</code>. Esta etiqueta nos permite añadir diferentes
+      atributos para controlar la reproducción del video, como:
+    </p>
+    <ul>
+      <li><code>muted</code>: Silencia el video.</li>
+      <li><code>loop</code>: Hace que el video se repita continuamente.</li>
+      <li>
+        <code>autoplay</code>: Hace que el video comience a reproducirse
+        automáticamente cuando la página se carga. (Nota: Algunos navegadores
+        requieren que el video esté silenciado si se utiliza
+        <code>autoplay</code>).
+      </li>
+    </ul>
+    <pre><code>&lt;video controls loop muted autoplay src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+
     <div class="example">
-        <video class="ej1" controls loop muted src="../recursos/gatovideo.mp4" type="video/mp4"></video>
+      <video
+        class="ej1"
+        controls
+        loop
+        muted
+        src="../recursos/gatovideo.mp4"
+        type="video/mp4"
+      ></video>
     </div>
 
     <h2>Video con imagen de portada</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
-    <div class="example">
-        <video class="ej1" controls loop muted src="../recursos/gatovideo.mp4" poster="../recursos/musica.jpg" type="video/mp4"></video>
-    </div>
-    
-    <h2>Modificar el tamaño del reproductor y añadir bordes</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
-    <div class="example">
-        <video class="ej2" controls loop muted src="../recursos/gatovideo.mp4" type="video/mp4"></video>
-    </div>
-</body>
+    <p>
+      La etiqueta <code>&lt;video&gt;</code> también permite establecer una
+      imagen de portada o "poster", que se muestra antes de que comience la
+      reproducción del video. Para ello, utilizamos el atributo
+      <code>poster</code>.
+    </p>
+    <pre><code>&lt;video controls loop muted src="ruta-del-video.mp4" poster="ruta-de-la-imagen.jpg" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
 
+    <div class="example">
+      <video
+        class="ej1"
+        controls
+        loop
+        muted
+        src="../recursos/gatovideo.mp4"
+        poster="../recursos/musica.jpg"
+        type="video/mp4"
+      ></video>
+    </div>
+
+    <h2>Modificar el tamaño del reproductor y añadir bordes</h2>
+    <p>
+      Podemos ajustar el tamaño del reproductor de video añadiendo los atributos
+      <code>width</code> y <code>height</code> a la etiqueta
+      <code>&lt;video&gt;</code>. También es posible personalizar el diseño del
+      reproductor usando CSS para, por ejemplo, añadir bordes.
+    </p>
+    <pre><code>&lt;video width="600" height="400" controls loop muted src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+    <p>
+      Para añadir bordes y otros estilos al video, podemos utilizar las clases
+      de CSS, como en este ejemplo:
+    </p>
+    <pre><code>video {
+        width: 50%;
+        display: block;
+        margin: auto;
+        border: 2px solid rgba(13, 112, 204, 0.247);
+        border-radius: 6px;
+}</code></pre>
+
+    <div class="example">
+      <video
+        class="ej2"
+        controls
+        loop
+        muted
+        src="../recursos/gatovideo.mp4"
+        type="video/mp4"
+      ></video>
+    </div>
+  </body>
 </html>
