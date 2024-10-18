@@ -1,11 +1,164 @@
-<h2>Comprobaciones en los campos</h2>
-<p>TODO</p>
-<pre><code></code></pre>
-<div class="example">
-    <form action="recibir.php" method="get">
-        <p>Nombre <input type="text" name="nombre" placeholder="Escribe tu nombre" required></p>
-        <p>Apellidos <input type="text" name="apellidos" placeholder="Escribe tus apellidos" minlength="5"
-                maxlength="25"></p>
-        <p><input type="reset" value="Borrar"><input type="submit" value="Enviar"></p>
-    </form>
-</div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Validación de formularios</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/validacion.css">
+</head>
+
+<body>
+    <h1>Validación de formularios en html</h1>
+    <p>
+        Los usuarios pueden equivocarse al rellenar un formulario. También podemos necesitar que
+        algunos de los campos cumplan ciertos requisitos, como un cierto número de caracteres a la
+        hora de introducir una contraseña. Esto hace que la validacion de formularios sea una
+        práctica muy habitual.
+    </p>
+
+    <h2>Atributos de validación básica</h2>
+    <table>
+        <tr>
+            <th>atributo</th>
+            <th>actua sobre</th>
+            <th>descripción</th>
+        </tr>
+        <tr>
+            <td><code>maxlength</code></td>
+            <td>texto</td>
+            <td>Da un tamaño máximo para los campos de texto</td>
+        </tr>
+        <tr>
+            <td><code>minlength</code></td>
+            <td>texto</td>
+            <td>Da un tamaño mínimo para los campos de texto</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><code>min</code></td>
+            <td>numerico</td>
+            <td>Indica el numero mínimo permitido</td>
+        </tr>
+        <tr>
+            <td>fecha</td>
+            <td>Indica la fecha menor permitida</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><code>max</code></td>
+            <td>numerico</td>
+            <td>Indica el número mínimo permitido</td>
+        </tr>
+        <tr>
+            <td>fecha</td>
+            <td>Indica la fecha mayor permitida</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><code>step</code></td>
+            <td>numerico</td>
+            <td>Establece el incremento entre numeros permitido</td>
+        </tr>
+        <tr>
+            <td>fecha</td>
+            <td>Establece el incremento entre dias/segundos</td>
+        </tr>
+        <tr>
+            <td><code>required</code></td>
+            <td>todos</td>
+            <td>El campo debe rellenarse obligatoriamente</td>
+        </tr>
+        <tr>
+            <td><code>disabled</code></td>
+            <td>todos</td>
+            <td>El campo está desactivado y no se puede modificar. No se envía</td>
+        </tr>
+        <tr>
+            <td><code>readonly</code></td>
+            <td>todos</td>
+            <td>El campo es de solo lectura y no se puede modificiar. Se envía</td>
+        </tr>
+        <tr>
+            <td><code>pattern</code></td>
+            <td>texto</td>
+            <td>El campo debe cumplir la condición de una expresión regular</td>
+        </tr>
+    </table>
+
+    <h2>CSS para validación</h2>
+    <p>Existen propiedades css para seleccionar y modificar campos que cumplen o no los criterios de
+        validación establecidos.
+    </p>
+    <pre><code></code></pre>
+
+
+    <h2>Tamaños de texto requeridos</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" placeholder="Nombre" type="text" minlength="4" maxlength="10">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Limites numericos y en fechas</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="number" min="5" max="10">
+            <input class="validacion" type="date" min="1990-01-01" max="2025-12-31">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Incremento numericos y en fechas</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="number" min="5" max="10" step="2">
+            <input class="validacion" type="date" min="1990-01-01" max="2025-12-31" step="2">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Campos obligatorios</h2>
+    <p></p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="text" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Campos deshabilitados</h2>
+    <p></p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="text" disabled value="Nombre">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Campos de solo lectura</h2>
+    <p></p>
+    <pre><code></code></pre>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="text" readonly value="Nombre">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h2>Coincidencias con patrones</h2>
+    <p>TODO</p>
+    <div class="example">
+        <form method="get">
+            <input class="validacion" type="text" pattern="">
+            <input type="submit" value="Enviar">
+        </form>
+</body>
+
+</html>

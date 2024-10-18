@@ -1,0 +1,11 @@
+  .validacion:invalid {
+    border: 2px solid red;
+    background-color: rgb(255, 176, 176);
+  }
+
+
+  /* Estilo de campo válido */
+  .validacion:valid {
+    border: 2px solid green;
+    background-color: rgb(137, 247, 137);
+  }
