@@ -18,81 +18,98 @@
     </p>
 
     <h2>Atributos de validación básica</h2>
-    <table>
-        <tr>
-            <th>atributo</th>
-            <th>actua sobre</th>
-            <th>descripción</th>
-        </tr>
-        <tr>
-            <td><code>maxlength</code></td>
-            <td>texto</td>
-            <td>Da un tamaño máximo para los campos de texto</td>
-        </tr>
-        <tr>
-            <td><code>minlength</code></td>
-            <td>texto</td>
-            <td>Da un tamaño mínimo para los campos de texto</td>
-        </tr>
-        <tr>
-            <td rowspan="2"><code>min</code></td>
-            <td>numerico</td>
-            <td>Indica el numero mínimo permitido</td>
-        </tr>
-        <tr>
-            <td>fecha</td>
-            <td>Indica la fecha menor permitida</td>
-        </tr>
-        <tr>
-            <td rowspan="2"><code>max</code></td>
-            <td>numerico</td>
-            <td>Indica el número mínimo permitido</td>
-        </tr>
-        <tr>
-            <td>fecha</td>
-            <td>Indica la fecha mayor permitida</td>
-        </tr>
-        <tr>
-            <td rowspan="2"><code>step</code></td>
-            <td>numerico</td>
-            <td>Establece el incremento entre numeros permitido</td>
-        </tr>
-        <tr>
-            <td>fecha</td>
-            <td>Establece el incremento entre dias/segundos</td>
-        </tr>
-        <tr>
-            <td><code>required</code></td>
-            <td>todos</td>
-            <td>El campo debe rellenarse obligatoriamente</td>
-        </tr>
-        <tr>
-            <td><code>disabled</code></td>
-            <td>todos</td>
-            <td>El campo está desactivado y no se puede modificar. No se envía</td>
-        </tr>
-        <tr>
-            <td><code>readonly</code></td>
-            <td>todos</td>
-            <td>El campo es de solo lectura y no se puede modificiar. Se envía</td>
-        </tr>
-        <tr>
-            <td><code>pattern</code></td>
-            <td>texto</td>
-            <td>El campo debe cumplir la condición de una expresión regular</td>
-        </tr>
-    </table>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>atributo</th>
+                <th>actua sobre</th>
+                <th>descripción</th>
+            </tr>
+            <tr>
+                <td><code>maxlength</code></td>
+                <td>texto</td>
+                <td>Da un tamaño máximo para los campos de texto</td>
+            </tr>
+            <tr>
+                <td><code>minlength</code></td>
+                <td>texto</td>
+                <td>Da un tamaño mínimo para los campos de texto</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><code>min</code></td>
+                <td>numerico</td>
+                <td>Indica el numero mínimo permitido</td>
+            </tr>
+            <tr>
+                <td>fecha</td>
+                <td>Indica la fecha menor permitida</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><code>max</code></td>
+                <td>numerico</td>
+                <td>Indica el número mínimo permitido</td>
+            </tr>
+            <tr>
+                <td>fecha</td>
+                <td>Indica la fecha mayor permitida</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><code>step</code></td>
+                <td>numerico</td>
+                <td>Establece el incremento entre numeros permitido</td>
+            </tr>
+            <tr>
+                <td>fecha</td>
+                <td>Establece el incremento entre dias/segundos</td>
+            </tr>
+            <tr>
+                <td><code>required</code></td>
+                <td>todos</td>
+                <td>El campo debe rellenarse obligatoriamente</td>
+            </tr>
+            <tr>
+                <td><code>disabled</code></td>
+                <td>todos</td>
+                <td>El campo está desactivado y no se puede modificar. No se envía</td>
+            </tr>
+            <tr>
+                <td><code>readonly</code></td>
+                <td>todos</td>
+                <td>El campo es de solo lectura y no se puede modificiar. Se envía</td>
+            </tr>
+            <tr>
+                <td><code>pattern</code></td>
+                <td>texto</td>
+                <td>El campo debe cumplir la condición de una expresión regular</td>
+            </tr>
+        </table>
+    </div>
 
     <h2>CSS para validación</h2>
     <p>Existen propiedades css para seleccionar y modificar campos que cumplen o no los criterios de
-        validación establecidos.
+        validación establecidos. Usaremos estos estilos para visualizar mejor los ejemplos.
     </p>
-    <pre><code></code></pre>
+    <pre><code>input:invalid {
+    border: 2px solid red;
+    background-color: rgb(255, 176, 176);
+}
+
+input:valid {
+    border: 2px solid green;
+    background-color: rgb(137, 247, 137);
+}</code></pre>
 
 
     <h2>Tamaños de texto requeridos</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>El uso de los atributos <code>&lt;minlength&gt;</code> y <code>&lt;maxlength&gt;</code> es fundamental cuando
+        queremos limitar el número de caracteres que un usuario puede introducir en un campo de texto. Con
+        <code>&lt;maxlength&gt;</code>, podemos establecer un número máximo de caracteres, mientras que con
+        <code>&lt;minlength&gt;</code> aseguramos que se introduzca un número mínimo de caracteres.
+    </p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input placeholder=&quot;Nombre&quot; type=&quot;text&quot; minlength=&quot;4&quot; maxlength=&quot;10&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" placeholder="Nombre" type="text" minlength="4" maxlength="10">
@@ -101,8 +118,14 @@
     </div>
 
     <h2>Limites numericos y en fechas</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>Los atributos <code>&lt;min&gt;</code> y <code>&lt;max&gt;</code> se usan para establecer valores mínimos y
+        máximos en campos numéricos o de fecha. Esto garantiza que los usuarios solo puedan seleccionar o introducir
+        valores dentro de los límites establecidos. </p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;number&quot; min=&quot;5&quot; max=&quot;10&quot;&gt;
+    &lt;input type=&quot;date&quot; min=&quot;1990-01-01&quot; max=&quot;2025-12-31&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" type="number" min="5" max="10">
@@ -112,8 +135,14 @@
     </div>
 
     <h2>Incremento numericos y en fechas</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>El atributo <code>&lt;step&gt;</code> define el intervalo entre los valores permitidos. Para campos numéricos,
+        establece el incremento entre los números que se pueden seleccionar o introducir. Para fechas, define el
+        incremento entre días o unidades de tiempo.</p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;number&quot; min=&quot;5&quot; max=&quot;10&quot; step=&quot;2&quot;&gt;
+    &lt;input type=&quot;date&quot; min=&quot;1990-01-01&quot; max=&quot;2025-12-31&quot; step=&quot;2&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" type="number" min="5" max="10" step="2">
@@ -123,8 +152,12 @@
     </div>
 
     <h2>Campos obligatorios</h2>
-    <p></p>
-    <pre><code></code></pre>
+    <p>El atributo <code>&lt;required&gt;</code> se utiliza para indicar que un campo es obligatorio. Si el usuario
+        intenta enviar el formulario sin rellenar un campo requerido, el navegador mostrará un mensaje de error.</p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; required&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" type="text" required>
@@ -133,8 +166,12 @@
     </div>
 
     <h2>Campos deshabilitados</h2>
-    <p></p>
-    <pre><code></code></pre>
+    <p>El atributo <code>&lt;disabled&gt;</code> deshabilita un campo, lo que significa que no puede ser modificado por
+        el usuario ni será enviado como parte del formulario. Es útil para bloquear temporalmente ciertos campos.</p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; disabled value=&quot;Nombre&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" type="text" disabled value="Nombre">
@@ -143,8 +180,12 @@
     </div>
 
     <h2>Campos de solo lectura</h2>
-    <p></p>
-    <pre><code></code></pre>
+    <p>Con el atributo <code>&lt;readonly&gt;</code>, el usuario puede ver el contenido del campo, pero no modificarlo.
+        A diferencia de los campos deshabilitados, los campos de solo lectura sí se envían con el formulario.</p>
+    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; readonly value=&quot;Nombre&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
     <div class="example">
         <form method="get">
             <input class="validacion" type="text" readonly value="Nombre">
@@ -153,12 +194,270 @@
     </div>
 
     <h2>Coincidencias con patrones</h2>
-    <p>TODO</p>
-    <div class="example">
-        <form method="get">
-            <input class="validacion" type="text" pattern="">
-            <input type="submit" value="Enviar">
-        </form>
+    <p> El atributo <code>&lt;pattern&gt;</code> permite que el contenido de un campo de texto sea validado en
+        función de una expresión regular. Las expresiones regulares (regex) son secuencias de caracteres que
+        definen
+        un patrón de búsqueda o coincidencia. En los formularios HTML, las regex se utilizan para verificar que
+        los
+        datos introducidos por el usuario cumplan con un formato específico. </p>
+    <p>A continuación, se muestran las expresiones para formar patrones de entrada más comunes:
+    </p>
+    <ul>
+        <li><strong>Comodín <code>.</code></strong>: Coincide con cualquier carácter.</li>
+        <li><strong>O lógico <code>A|B</code></strong>: Define una elección entre dos opciones. Ejemplo:
+            <code>A|B</code> significa que se aceptará "A" o "B".
+        </li>
+        <li><strong>Agrupación <code>(A|B)</code></strong>: Agrupa varias opciones dentro de una secuencia.
+            Ejemplo:
+            <code>(AB|CD)</code> coincide con "AB" o "CD".
+        </li>
+        <li><strong>Rangos de caracteres <code>[A-Z]</code></strong>: Define un rango de caracteres aceptables.
+            Ejemplo: <code>[A-Z]</code> coincide con cualquier letra mayúscula de la A a la Z.</li>
+        <li><strong>Exclusión <code>[^0-9]</code></strong>: Coincide con cualquier carácter que no esté dentro
+            del
+            rango especificado. Ejemplo: <code>[^0-9]</code> excluye cualquier número.</li>
+        <li><strong>Cuantificadores <code>*</code>, <code>+</code>, <code>?</code></strong>: Controlan cuántas
+            veces
+            debe repetirse un carácter o secuencia. Ejemplo: <code>[a-z]*</code> significa 0 o más letras
+            minúsculas, <code>[a-z]+</code> significa 1 o más letras minúsculas, y <code>[a-z]?</code> significa
+            0 o
+            1 letras.</li>
+        <li><strong>Cuantificadores exactos <code>{5}</code> o con rango <code>{2,9}</code></strong>: Definen
+            cuántas veces debe repetirse un carácter o secuencia. Ejemplo: <code>[a-z]{2,9}</code> acepta entre
+            2 y
+            9 letras minúsculas.</li>
+        <li><strong>Escape <code>\.</code></strong>: Escapa un carácter especial para que sea tratado como
+            literal.
+            Ejemplo: <code>\.</code> representa un punto "." literal.</li>
+    </ul>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Expresión</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><strong>.</strong></td>
+                <td>Comodín</td>
+                <td>Cualquier carácter</td>
+            </tr>
+            <tr>
+                <td>A<strong>|</strong>B</td>
+                <td>O lógico</td>
+                <td>Operación O (o A o B)</td>
+            </tr>
+            <tr>
+                <td>A<strong>(</strong>B|C<strong>)</strong></td>
+                <td>Agrupación</td>
+                <td>Agrupación alternativa (o AB o AC)</td>
+            </tr>
+            <tr>
+                <td><strong>[</strong>A-Z<strong>]</strong></td>
+                <td>Rango de caracteres</td>
+                <td>Letras de la A mayúscula a la Z mayúscula</td>
+            </tr>
+            <tr>
+                <td>[<strong>^</strong>0-9]</td>
+                <td>Exclusión</td>
+                <td>Todo menos los números del 0 al 9</td>
+            </tr>
+            <tr>
+                <td>[a-b]<strong>*</strong></td>
+                <td>Cuantificador</td>
+                <td>0 o más letras minúsculas</td>
+            </tr>
+            <tr>
+                <td>[a-b]<strong>+</strong></td>
+                <td>Cuantificador</td>
+                <td>1 o más letras minúsculas</td>
+            </tr>
+            <tr>
+                <td>[a-b]<strong>?</strong></td>
+                <td>Cuantificador</td>
+                <td>0 o 1 letras minúsculas</td>
+            </tr>
+            <tr>
+                <td>[a-b]<strong>{</strong>5<strong>}</strong></td>
+                <td>Cuantificador exacto</td>
+                <td>Exactamente 5 letras minúsculas</td>
+            </tr>
+            <tr>
+                <td>[a-b]<strong>{</strong>2,9<strong>}</strong></td>
+                <td>Cuantificador con rango</td>
+                <td>Entre 2 y 9 letras minúsculas</td>
+            </tr>
+            <tr>
+                <td><strong>\</strong>.</td>
+                <td>Escape</td>
+                <td>El caracter .</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Ejemplo con nombre de usuario</h3>
+    <p>En este ejemplo, el campo de nombre de usuario tiene una longitud mínima y máxima de caracteres, y también puede
+        ser validado con una expresión regular que permite letras y números. Esto garantiza que el nombre de usuario
+        cumpla ciertos requisitos.</p>
+    <div class="explanation-container">
+        <button onclick="toggleExplanation(1, this)">Mostrar detalles</button>
+        <div id="detailed-explanation-1" class="explanation hidden">
+            <p> En este ejemplo, validamos el campo de nombre de usuario utilizando dos técnicas: </p>
+            <ul>
+                <li><strong>Atributos <code>minlength</code> y <code>maxlength</code></strong>: Establecemos que el
+                    nombre de usuario debe tener entre 3 y 30 caracteres.</li>
+                <li><strong>Atributo <code>pattern</code></strong>: Utilizamos una expresión regular para asegurarnos de
+                    que solo se introduzcan letras (mayúsculas o minúsculas) y números. La expresión regular
+                    <code>[A-Za-z0-9]+</code> significa: <ul>
+                        <li><code>[A-Za-z]</code>: Acepta cualquier letra mayúscula (<code>A-Z</code>) o minúscula
+                            (<code>a-z</code>).</li>
+                        <li><code>[0-9]</code>: Acepta cualquier número del 0 al 9.</li>
+                        <li><code>+</code>: Indica que debe haber al menos un carácter válido, pero puede haber más.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <pre><code>&lt;input type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9]+"&gt;</code></pre>
+            <p>También podemos definir una versión más estricta de la expresión regular que limite la longitud
+                directamente con la regex:</p>
+            <ul>
+                <li>La expresión <code>[A-Za-z0-9]{3,30}</code> significa que el nombre de usuario debe tener entre 3 y
+                    30 caracteres, todos ellos letras o números.</li>
+            </ul>
+            <pre><code>&lt;input type="text" pattern="[A-Za-z0-9]{3,30}"&gt;</code></pre>
+        </div>
+        <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; minlength=&quot;3&quot; maxlength=&quot;30&quot; pattern=&quot;[A-Za-z0-9]+&quot;&gt; Minlength y maxlenght&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; pattern=&quot;[A-Za-z0-9]{3,30}&quot;&gt; Regexp&lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+        <div class="example">
+            <form method="get">
+                <p><input class="validacion" type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9]+"> Minlength y maxlenght</p>
+                <p><input class="validacion" type="text" pattern="[A-Za-z0-9]{3,30}"> Regexp</p>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <h3>Ejemplo con correo electrónico</h3>
+        <p>En este caso, el campo de correo electrónico puede ser validado de dos maneras: mediante un input de tipo
+            <code>&lt;email&gt;</code>, que valida automáticamente que el valor introducido tenga el formato de un
+            correo, o
+            mediante una expresión regular para validar correos de servidores específicos.
+        </p>
+        <div class="explanation-container">
+            <button onclick="toggleExplanation(2, this)">Mostrar detalles</button>
+            <div id="detailed-explanation-2" class="explanation hidden">
+                <p> En este caso, validamos direcciones de correo electrónico de dos maneras: </p>
+                <ul>
+                    <li><strong>Con un input de tipo <code>&lt;email&gt;</code></strong>: HTML proporciona validación
+                        automática para asegurarse de que el campo contiene una dirección de correo con el formato
+                        correcto, es decir, algo como "usuario@dominio.com". </li>
+                    <li><strong>Con una expresión regular personalizada:</strong> En el segundo ejemplo, usamos el
+                        atributo <code>&lt;pattern&gt;</code> para especificar que el formato del correo debe ser un
+                        conjunto de letras y números seguido de un símbolo "@" y un dominio válido (.es o .com). <ul>
+                            <li>La expresión <code>[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)</code> funciona de la siguiente
+                                manera:</li>
+                            <ul>
+                                <li><code>[A-Za-z0-9]+</code>: Acepta una secuencia de letras o números antes del "@"
+                                </li>
+                                <li><code>@</code>: Requiere la presencia del símbolo "@"</li>
+                                <li><code>[A-Za-z0-9]+</code>: Acepta otra secuencia de letras o números para el nombre
+                                    del dominio</li>
+                                <li><code>\.(es|com)</code>: Después de un punto literal (<code>\.</code>), acepta
+                                    ".es" o ".com" como dominio válido</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+                <pre><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)"&gt;</code></pre>
+                <p>En el último ejemplo, hacemos que solo se acepten direcciones de correo de servidores específicos,
+                    como Gmail u Outlook. La expresión <code>[A-Za-z0-9]+@(gmail|outlook)\.(es|com)</code> funciona
+                    igual que la anterior, pero limita el nombre del dominio a "gmail" o "outlook".</p>
+                <pre><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"&gt;</code></pre>
+            </div>
+            <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;email&quot;&gt; Con un input de tipo email&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)&quot;&gt; Regexp con correo de cualquier servidor&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@(gmail|outlook)\.(es|com)&quot;&gt; Regexp con correo de servidor de google o microsoft&lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+            <div class="example">
+                <form method="get">
+                    <p><input class="validacion" type="email"> Con un input de tipo email</p>
+                    <p><input class="validacion" type="text" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)"> Regexp con correo de cualquier servidor</p>
+                    <p><input class="validacion" type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"> Regexp con correo de servidor de google o microsoft</p>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+
+            <h3>Ejemplo con número de teléfono</h3>
+            <p>El número de teléfono se puede validar con un input de tipo <code>&lt;tel&gt;</code>, pero para una
+                validación más estricta, se pueden usar expresiones regulares. En este caso, se usan patrones para aceptar números
+                sin formato o con formato específico, como el código de España.</p>
+            <div class="explanation-container">
+                <button onclick="toggleExplanation(3, this)">Mostrar detalles</button>
+                <div id="detailed-explanation-3" class="explanation hidden">
+                    <p> Para la validación de números de teléfono, podemos usar el input de tipo
+                        <code>&lt;tel&gt;</code> o una expresión regular personalizada. Aquí tienes tres ejemplos:
+                    </p>
+                    <ul>
+                        <li><strong>Sin formato:</strong> El patrón <code>[0-9]{9}</code> indica que se deben introducir
+                            exactamente 9 dígitos numéricos.</li>
+                        <li><strong>Formato con espacios:</strong> La expresión
+                            <code>\+34 [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}</code> acepta un número de teléfono español
+                            con el prefijo "+34" y separa los grupos de dígitos con espacios.
+                        </li>
+                        <li><strong>Varios países:</strong> En este último caso, permitimos números de teléfono con el
+                            prefijo de España (+34), Portugal (+351) o Andorra (+376), y el resto del número debe estar
+                            en el mismo formato de grupos de 3, 2, 2 y 2 dígitos.</li>
+                    </ul>
+                </div>
+                <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;tel&quot;&gt; Con un input de tipo tel&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[0-9]{9}&quot;&gt; Regexp con n&uacute;mero de tel&eacute;fono sin formato&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required
+            pattern=&quot;\+34 [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}&quot;&gt; Regexp con n&uacute;mero de espa&ntilde;a separados con espacios&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required
+            pattern=&quot;\+(34|351|376) [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}&quot;&gt; Regexp con n&uacute;mero de la pen&iacute;nsula separados con espacios&lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+                <div class="example">
+                    <form method="get">
+                        <p><input class="validacion" type="tel"> Con un input de tipo tel</p>
+                        <p><input class="validacion" type="text" required pattern="[0-9]{9}"> Regexp con número de teléfono sin formato</p>
+                        <p><input class="validacion" type="text" required
+                                pattern="\+34 [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}"> Regexp con número de españa separados con espacios</p>
+                        <p><input class="validacion" type="text" required
+                                pattern="\+(34|351|376) [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}"> Regexp con número de la península separados con espacios</p>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+
+                <h3>Avisar del formato requerido</h3>
+                <p>
+                <p> Para que los usuarios comprendan mejor qué formato deben seguir al introducir datos, puedes
+                    usar el atributo <code>&lt;title&gt;</code>. Este atributo muestra un mensaje de ayuda
+                    cuando el campo no cumple con el formato. Por ejemplo, en un número de teléfono
+                    internacional, puedes dar indicaciones sobre el prefijo y el formato correcto: </p>
+                </p>
+
+                <pre><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required
+            pattern=&quot;\+(34|351|376) [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}&quot;
+            title=&quot;Prefijo +34, +351 o +376 Formato +xx xxx xx xx xx&quot;&gt; Regexp con n&uacute;mero de la pen&iacute;nsula separados con espacios&lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+                <div class="example">
+                    <form method="get">
+                        <p><input class="validacion" type="text" required
+                                pattern="\+(34|351|376) [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}"
+                                title="Prefijo +34, +351 o +376 Formato +xx xxx xx xx xx"> Regexp con número de la península separados con espacios</p>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+
+                <script src="../js/hide.js"></script>
 </body>
 
 </html>

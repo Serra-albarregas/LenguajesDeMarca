@@ -1,142 +1,209 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-  }
-  
-  /* Encabezados */
-  h1, h2, h3 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* Encabezados */
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  color: #2980b9;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Sección de párrafos */
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contenedores */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo para los bloques de código */
+pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  overflow-x: auto;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+code {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilo para ocultar el texto */
+.hidden {
+  display: none;
+}
+
+/* Estilo para las explicaciones detalladas */
+.explanation {
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  color: #555; /* Texto ligeramente más suave */
+  line-height: 1.5;
+}
+
+/* Bloques de ejemplos */
+.example {
+  background-color: #ecf0f1;
+  border-left: 5px solid #2980b9;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para tablas */
+.resume table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume table tr th,
+.resume table tr td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.resume table tr th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+}
+
+.resume table tr:nth-child(even) {
+  background-color: #f4f4f9;
+}
+
+.resume table tr:hover {
+  background-color: #ecf0f1;
+}
+
+.resume table tr:hover td strong{
+  color: #2980b9;
+}
+
+.resume table tr tfoot {
+  background-color: #ecf0f1;
+  font-weight: bold;
+}
+
+.resume table tr caption {
+  caption-side: top;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* Botones */
+button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1abc9c;
+}
+
+/* Enlaces */
+a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1abc9c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #2c3e50;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
-    margin-top: 0;
-    color: #2980b9;
-  }
-  
-  h2 {
     font-size: 2rem;
-    border-bottom: 2px solid #2980b9;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
   }
-  
-  h3 {
+
+  h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
   }
-  
-  /* Sección de párrafos */
-  p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Contenedores */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Estilo para los bloques de código */
-  pre {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    overflow-x: auto;
-    max-width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  code {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  /* Bloques de ejemplos */
+
+  pre,
   .example {
-    background-color: #ecf0f1;
-    border-left: 5px solid #2980b9;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
   }
-  
-  /* Botones */
+
   button {
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
-  
-  button:hover {
-    background-color: #1abc9c;
-  }
-  
-  /* Enlaces */
-  a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
-  }
-  
-  a:hover {
-    color: #1abc9c;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #2c3e50;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Responsivo para pantallas pequeñas */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-    }
-  
-    pre, .example {
-      font-size: 0.9rem;
-    }
-  
-    button {
-      font-size: 0.9rem;
-      padding: 8px 15px;
-    }
-  }
-  
+}
