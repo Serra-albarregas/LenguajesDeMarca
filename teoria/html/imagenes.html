@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imágenes en HTML</title>
-  <link rel="stylesheet" href="../estilos/estilos.css" />
-  <link rel="stylesheet" href="../estilos/imagenes.css">
+  <link rel="stylesheet" href="../../estilos/estilos.css" />
+  <link rel="stylesheet" href="../../estilos/imagenes.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     </p>
     <pre><code>&lt;img src="../recursos/paisaje.jpg" alt="Descripción de la imagen"&gt;</code></pre>
     <div class="example">
-      <img src="../recursos/paisaje.jpg" alt="Descripción de la imagen" width="300" />
+      <img src="../../recursos/paisaje.jpg" alt="Descripción de la imagen" width="300" />
     </div>
   </section>
 
@@ -46,7 +46,7 @@
     </p>
     <pre><code>&lt;img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos"&gt;</code></pre>
     <div class="example">
-      <img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos" />
+      <img src="../../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos" />
     </div>
   </section>
 
@@ -57,7 +57,7 @@
       width: 200px;
     }</code></pre>
     <div class="example">
-      <img class="ej1" src="../recursos/paisaje.jpg" alt="Imagen con ancho y alto definidos" />
+      <img class="ej1" src="../../recursos/paisaje.jpg" alt="Imagen con ancho y alto definidos" />
     </div>
   </section>
 
@@ -74,7 +74,7 @@
   height: auto;
 }</code></pre>
     <div class="example">
-      <img class="ej2" src="../recursos/paisaje.jpg" alt="Imagen adaptable" />
+      <img class="ej2" src="../../recursos/paisaje.jpg" alt="Imagen adaptable" />
     </div>
     <p>
       En este caso, la imagen se adapta al tamaño de su contenedor manteniendo
@@ -93,7 +93,7 @@
   height: auto;
 }</code></pre>
     <div class="example">
-      <img class="ej3" src="../recursos/paisaje.png" alt="Imagen adaptable" />
+      <img class="ej3" src="../../recursos/paisaje.png" alt="Imagen adaptable" />
     </div>
     <p>
       En este caso, la imagen se adapta al tamaño de su contenedor manteniendo
@@ -136,8 +136,8 @@
     </p>
     <pre><code>&lt;img src="recuros/gato.svg" alt="Ejemplo de imagen SVG"&gt;</code></pre>
     <div class="example">
-      <img class = "ej4" src="/../recursos/gato.svg" alt="Ejemplo de imagen SVG"/>
-      <img class = "ej4" src="/../recursos/gato_chico.png" alt="Ejemplo de imagen PNG"/>
+      <img class = "ej4" src="/../../recursos/gato.svg" alt="Ejemplo de imagen SVG"/>
+      <img class = "ej4" src="/../../recursos/gato_chico.png" alt="Ejemplo de imagen PNG"/>
     </div>
     <p>
       Las imágenes SVG son independientes de la resolución, por lo que son
@@ -160,7 +160,7 @@
       box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.5);
     }</code></pre>
     <div class="example">
-      <img class="ej5" src="../recursos/paisaje.jpg" alt="Imagen con marco y sombra" />
+      <img class="ej5" src="../../recursos/paisaje.jpg" alt="Imagen con marco y sombra" />
     </div>
   </section>
 
@@ -179,10 +179,10 @@
 &lt;/picture&gt;</code></pre>
     <div class="example">
       <picture>
-        <source srcset="../recursos/gato_grande.png" media="(min-width: 801px)">
-        <source srcset="../recursos/gato_menos_grande.png" media="(min-width: 600px) and (max-width: 800px)">
-        <source srcset="../recursos/gato_chico.png" media="(max-width: 599px)">
-        <img src="imagen-grande.jpg" alt="Descripción de la imagen">
+        <source srcset="../../recursos/gato_grande.png" media="(min-width: 801px)">
+        <source srcset="../../recursos/gato_menos_grande.png" media="(min-width: 600px) and (max-width: 800px)">
+        <source srcset="../../recursos/gato_chico.png" media="(max-width: 599px)">
+        <img src="../../recursos/gato_chico.png" alt="Descripción de la imagen">
       </picture>
     </div>
     <p>
@@ -206,9 +206,9 @@
 &lt;/picture&gt;</code></pre>
     <div class="example">
       <picture>
-        <source media="(orientation: portrait)" srcset="../recursos/portrait.png" />
-        <source media="(orientation: landscape)" srcset="../recursos/landscape.png" />
-        <img src="../recursos/landscape.png" alt="Ejemplo de Picture con orientación portrait" />
+        <source media="(orientation: portrait)" srcset="../../recursos/portrait.png" />
+        <source media="(orientation: landscape)" srcset="../../recursos/landscape.png" />
+        <img src="../../recursos/landscape.png" alt="Ejemplo de Picture con orientación portrait" />
       </picture>
     </div>
   </section>
