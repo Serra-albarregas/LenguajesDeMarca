@@ -1,0 +1,37 @@
+.ej1, .ej2, .ej3 {
+    display: inline-flex;
+    margin: 20px;
+}
+
+.ej1 p{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(242, 242, 242);
+    color: #2c3e50;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    border-radius: 2px;
+    overflow: visible;
+}
+
+.ej2 p{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(242, 242, 242);
+    color: #2c3e50;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.ej3 p{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(242, 242, 242);
+    color: #2c3e50;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    border-radius: 2px;
+    overflow: scroll;
+}

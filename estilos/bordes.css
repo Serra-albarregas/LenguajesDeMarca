@@ -1,0 +1,75 @@
+.ej1, .ej2, .ej3, .ej4, .ej5, .ej6, .ej7, .ej8, .ej9, .ej10, .ej11 {
+    display: inline-flex;
+    margin: 20px;
+    padding: 10px;
+    width: 50;
+    height: 50;
+    background-color: rgb(242, 242, 242);
+    color: #2c3e50;
+    border-width: 3px;
+    border-color: #8ca6bf;
+    
+}
+
+.ej1 {
+    border-style: hidden;
+}
+
+.ej2 {
+    border-style: dotted;
+}
+
+.ej3 {
+    border-style: dashed;
+}
+
+.ej4 {
+    border-style: solid;
+}
+
+.ej5 {
+    border-style: double;
+}
+
+.ej6 {
+    border-style: groove;
+}
+
+.ej7 {
+    border-style: ridge;
+}
+
+.ej8 {
+    border-style: inset;
+}
+
+.ej9 {
+    border-style: outset;
+}
+
+.ej10 {
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.ej11 {
+    border-style: solid;
+    border-radius: 30%;
+}
+
+.ej12 {
+    display: inline-flex;
+    margin: 20px;
+    padding: 10px;
+    border-image-source: linear-gradient(#2c3e50, #00897b, #1de9b6);
+    border-image-slice: 1 1 1 1;
+    border-image-width: 0.25rem;
+}
+
+.ej13 {
+    margin: 20px;
+    padding: 10px;
+    border-style: solid dotted dashed;
+    border-color: #2c3e50 #8ca6bf;
+    border-width: 1px 2px 3px 4px;
+}

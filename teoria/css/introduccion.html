@@ -5,134 +5,225 @@
     <title>Introducción a CSS</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/introduccioncss.css">
 </head>
 
 <body>
     <h1>Introducción a CSS</h1>
     <h2>Enlazar un documento css</h1>
-        <p>TODO</p>
+        <p>Para enlazar una hoja de estilo externa a tu documento HTML, utilizamos la etiqueta
+            <code>&lt;link&gt;</code>. Esta etiqueta debe colocarse dentro del elemento <code>&lt;head&gt;</code> del
+            documento HTML. La hoja de estilo define cómo se verá el contenido HTML, aplicando estilos como colores,
+            fuentes, márgenes y más. </p>
+        <p> El atributo <code>rel=&quot;stylesheet&quot;</code> indica que el archivo enlazado es una hoja de estilos, y
+            <code>href</code> contiene la ruta al archivo CSS.</p>
         <pre><code>&lt;head&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
 &lt;/head&gt;</code></pre>
 
-    <h2>Sintaxis en CSS</h2>
-    <p>TODO</p>
-    <pre><code>SELECTOR {
+        <h2>Sintaxis en CSS</h2>
+        <p>La sintaxis de CSS está basada en reglas. Cada regla CSS tiene tres partes principales: </p>
+        <ul>
+            <li><code>Selector</code>: Especifica el elemento HTML al que se aplicarán los estilos.</li>
+            <li><code>Propiedad</code>: Define qué aspecto del elemento se quiere modificar, como el color o el margen.
+            </li>
+            <li><code>Valor</code>: Indica el valor que se aplicará a la propiedad.</li>
+        </ul>
+        <p>Las propiedades y valores van dentro de llaves <code>{}</code>, y cada propiedad se separa de su valor con
+            dos puntos <code>:</code>. Cada par propiedad-valor termina con un punto y coma <code>;</code>. </p>
+        
+        </p>
+        <pre><code>SELECTOR {
     PROPIEDAD: VALOR;
     PROPIEDAD: VALOR;
     PROPIEDAD: VALOR;
 }</code></pre>
+        <pre><code>p { 
+    color: blue; 
+    font-size: 14px; 
+    margin: 10px; 
+}</code></pre>
 
-    <h2>Unidades CSS</h2>
-    <p>TODO</p>
-    <div class="resume">
-    <table>
-        <tr>
-            <th>Unidad</th>
-            <th>Descripción</th>
-        </tr>
-        <tr>
-            <td colspan="3">Absolutas</td>
-        </tr>
-        <tr>
-            <td>px</td>
-            <td>Píxeles en la pantalla</td>
-        </tr>
-        <tr>
-            <td>pt</td>
-            <td>Puntos (Equivale a 0.35mm aprox)</td>
-        </tr>
-        <tr>
-            <td colspan="3">Relativas</td>
-        </tr>
-        <tr>
-            <td>%</td>
-            <td>Porcentaje del padre</td>
-        </tr>
-        <tr>
-            <td>rem</td>
-            <td>Relativo al font-size del navegador (16px generalmente)</td>
-        </tr>
-        <tr>
-            <td>em</td>
-            <td>Relativo al font-size del elemento actual</td>
-        </tr>
-        <tr>
-            <td>vw</td>
-            <td>Relativos a la anchura del viewport</td>
-        </tr>
-        <tr>
-            <td>vh</td>
-            <td>Relativos a la altura del viewport</td>
-        </tr>
-    </table>
-    </div>
+        <h2>Unidades CSS</h2>
+        <p>
+        <p> En CSS, las unidades de medida pueden ser <strong>absolutas</strong> o <strong>relativas</strong>. Las
+            unidades absolutas se utilizan cuando se necesita un tamaño fijo (como píxeles o puntos), mientras que las
+            unidades relativas se adaptan al entorno en el que se visualiza el contenido, como el tamaño del viewport o
+            el tamaño de fuente. </p>
+        <ul>
+            <li><strong>Unidades absolutas:</strong> Son valores fijos que no cambian según el entorno o el dispositivo.
+                Ejemplo: <code>px</code>, <code>pt</code>.</li>
+            <li><strong>Unidades relativas:</strong> Se basan en el contexto o el entorno. Ejemplo: <code>%</code>,
+                <code>rem</code>, <code>em</code>, <code>vw</code>, <code>vh</code>.</li>
+        </ul>
+        </p>
+        <div class="resume">
+            <table>
+                <tr>
+                    <th>Unidad</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td colspan="3">Absolutas</td>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>Píxeles en la pantalla</td>
+                </tr>
+                <tr>
+                    <td>pt</td>
+                    <td>Puntos (Equivale a 0.35mm aprox)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Relativas</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Porcentaje del padre</td>
+                </tr>
+                <tr>
+                    <td>rem</td>
+                    <td>Relativo al font-size del navegador (16px generalmente)</td>
+                </tr>
+                <tr>
+                    <td>em</td>
+                    <td>Relativo al font-size del elemento actual</td>
+                </tr>
+                <tr>
+                    <td>vw</td>
+                    <td>Relativos a la anchura del viewport</td>
+                </tr>
+                <tr>
+                    <td>vh</td>
+                    <td>Relativos a la altura del viewport</td>
+                </tr>
+            </table>
+        </div>
 
 
-    <h2>Modelo de cajas</h2>
-    <p>TODO</p>
-    <img src="" alt=""> TODO AÑADIR IMAGEN RESUMEN DE LA CAJA
-    <div class="resume">
-        <table>
-            <tr>
-                <th>Propiedad</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td>Border</td>
-                <td>Límite de la caja</td>
-            </tr>
-            <tr>
-                <td>Margin</td>
-                <td>Espacio entre el borde y su exterior</td>
-            </tr>
-            <tr>
-                <td>Padding</td>
-                <td>Espacio entre el contenido y el borde</td>
-            </tr>
-            <tr>
-                <td>Content</td>
-                <td>Contenido de la caja</td>
-            </tr>
-        </table> 
-    </div>
+        <h2>Modelo de cajas</h2>
+        <p> El modelo de cajas es fundamental para comprender cómo se estructura y diseña una página web. Cada elemento
+            HTML se representa como una "caja", que consta de las siguientes partes: </p>
+        <ul>
+            <li><code>Content</code>: El contenido real del elemento, como el texto o imágenes.</li>
+            <li><code>Padding</code>: Espacio entre el contenido y el borde.</li>
+            <li><code>Border</code>: El borde alrededor del contenido y el padding.</li>
+            <li><code>Margin</code>: Espacio fuera del borde, separando el elemento de otros elementos.</li>
+        </ul>
+        <p> En CSS, la propiedad <code>box-sizing</code> determina si el <code>padding</code> y el <code>border</code>
+            se incluyen dentro del ancho y alto especificados del elemento (<code>border-box</code>), o si se agregan al
+            tamaño total del elemento (<code>content-box</code>).</p>
+        <img src="" alt=""> TODO AÑADIR IMAGEN RESUMEN DE LA CAJA Y COMPARACION CON BOXSIZING
+        <div class="resume">
+            <table>
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Border</td>
+                    <td>Límite de la caja</td>
+                </tr>
+                <tr>
+                    <td>Margin</td>
+                    <td>Espacio entre el borde y su exterior</td>
+                </tr>
+                <tr>
+                    <td>Padding</td>
+                    <td>Espacio entre el contenido y el borde</td>
+                </tr>
+                <tr>
+                    <td>Content</td>
+                    <td>Contenido de la caja</td>
+                </tr>
+            </table>
+        </div>
 
-    <h3>Referencia a una zona de un elemento</h3>
-    <p>
-        TODO
-    </p>
-    <div class="resume">
-        <table>
-            <tr>
-                <th>Propiedad</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td>Left</td>
-                <td>El elemento a la izquierda</td>
-            </tr>
-            <tr>
-                <td>Right</td>
-                <td>El elemento a la derecha</td>
-            </tr>
-            <tr>
-                <td>Top</td>
-                <td>El elemento de arriba</td>
-            </tr>
-            <tr>
-                <td>Bottom</td>
-                <td>El elemento de abajo</td>
-            </tr>
-            <tr>
-                <td>Center</td>
-                <td>En algunos casos, se refiere a la posición central entre los extremos horizontales o verticales.</td>
-            </tr>
-        </table>
-    </div>
+        <h3>Referencia a una zona de un elemento</h3>
+        <p>
+            Al posicionar elementos en CSS, podemos hacer referencia a diferentes partes del espacio disponible
+            utilizando propiedades como <code>top</code>, <code>right</code>, <code>bottom</code> y <code>left</code>.</p>
+        <p> Estas propiedades definen la distancia del elemento respecto a sus bordes contenedores, y son clave en el
+            posicionamiento absoluto, relativo y fijo.
+        </p>
+        <div class="resume">
+            <table>
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Left</td>
+                    <td>El elemento a la izquierda</td>
+                </tr>
+                <tr>
+                    <td>Right</td>
+                    <td>El elemento a la derecha</td>
+                </tr>
+                <tr>
+                    <td>Top</td>
+                    <td>El elemento de arriba</td>
+                </tr>
+                <tr>
+                    <td>Bottom</td>
+                    <td>El elemento de abajo</td>
+                </tr>
+            </table>
+        </div>
 
-    <h3>Dimensiones</h3>
+        <h3>Dimensiones</h3>
+        <p>Las dimensiones en CSS se establecen con las propiedades <code>width</code> (ancho) y <code>height</code>
+            (alto). Estas pueden definirse en unidades absolutas (como <code>px</code>) o relativas (como
+            <code>%</code>, <code>vw</code>, <code>vh</code>). Si no se especifica un tamaño, el navegador ajustará
+            automáticamente las dimensiones según el contenido o el contenedor.</p>
 
-    <h3>Desbordamiento</h3>
+        <h3>Desbordamiento</h3>
+        <p>La propiedad <code>overflow</code> controla lo que ocurre cuando el contenido de un elemento se desborda de
+            su caja. Sus valores más comunes son: </p>
+        <ul>
+            <li><code>visible</code>: El contenido desbordado será visible fuera de su contenedor (comportamiento por
+                defecto).</li>
+            <li><code>hidden</code>: El contenido que no cabe en el contenedor será ocultado.</li>
+            <li><code>scroll</code>: Se agregarán barras de desplazamiento para que el usuario pueda ver el contenido
+                completo.</li>
+            <li><code>auto</code>: Las barras de desplazamiento aparecerán solo si el contenido desborda el contenedor.
+            </li>
+        </ul>
+        </p>
+        <pre><code>.visible {
+    width: 100px;
+    height: 100px;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    overflow: visible;
+}
+
+.oculto {
+    width: 100px;
+    height: 100px;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    overflow: hidden;
+}
+
+.scroll {
+    width: 100px;
+    height: 100px;
+    font-size: 1.2em;
+    border: 3px solid #2c3e50;
+    overflow: scroll;
+}</code></pre>
+        <div class="example">
+            <div class="ej1">
+                <p>Me encanta la programación web</p>
+            </div>
+            <div class="ej2">
+                <p>Me encanta la programación web</p>
+            </div>
+            <div class="ej3">
+                <p>Me encanta la programación web</p>
+            </div>
+        </div>
 </body>
 
 </html>

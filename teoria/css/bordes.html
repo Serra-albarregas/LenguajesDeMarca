@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Bordes con css</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/bordes.css">
+</head>
+
+<body>
+    <h1>Bordes con css</h1>
+    <p>CSS permite agregar bordes a los elementos HTML. Puedes controlar el color, grosor, estilo y radio del borde para
+        modificar su apariencia.</p>
+
+    <h2>Propiedades de los bordes</h2>
+    <p>Las propiedades de los bordes en CSS permiten modificar el aspecto visual de los bordes de un elemento. Se pueden
+        ajustar propiedades individuales como el color, grosor, y estilo, o utilizar la propiedad <code>border</code>
+        para aplicar todas de una sola vez.</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Propiedad</th>
+                <th>Valor</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><code>border-color</code></td>
+                <td>Color</td>
+                <td>Configura el color del borde</td>
+            </tr>
+            <tr>
+                <td><code>border-width</code></td>
+                <td>Tamaño</td>
+                <td>Configura el grosor del borde</td>
+            </tr>
+            <tr>
+                <td><code>border-style</code></td>
+                <td>Estilo</td>
+                <td>Selecciona un posible estilo para el borde</td>
+            </tr>
+            <tr>
+                <td><code>border</code></td>
+                <td>Tamaño Estilo Color</td>
+                <td>Atajo para incluir todas las propiedades como una</td>
+            </tr>
+            <tr>
+                <td><code>border-radius</code></td>
+                <td>Radio</td>
+                <td>Configura el redondeo de los bordes</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Multiples parámetros</h2>
+    <p>En CSS, es posible configurar los bordes de un elemento usando múltiples valores en propiedades como
+        <code>border-width</code>, <code>border-style</code> y <code>border-color</code>. Estos valores permiten un control preciso sobre cada lado del borde
+        (superior, derecho, inferior, e izquierdo).</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Propiedad</th>
+                <th>Parámetros</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td rowspan="4"><code>border-width</code></td>
+                <td>tamaño</td>
+                <td>Aplica el mismo grosor a todos los bordes</td>
+            </tr>
+            <tr>
+                <td>tamaño tamaño</td>
+                <td>Aplica un grosor a top/bottom y otro a left/right</td>
+            </tr>
+            <tr>
+                <td>tamaño tamaño tamaño</td>
+                <td>Aplica un grosor a top, otro a left/right y otro al bottom</td>
+            </tr>
+            <tr>
+                <td>tamaño tamaño tamaño tamaño</td>
+                <td>Aplica un grosor a top, right, bottom y left en ese orden</td>
+            </tr>
+        </table>
+    </div>
+
+    <pre><code>.elemento {
+    margin: 20px;
+    padding: 10px;
+    border-style: solid dotted dashed;
+    border-color: #2c3e50 #8ca6bf;
+    border-width: 1px 2px 3px 4px;
+}</code></pre>
+    <div class="example">
+        <p class="ej13">Bordes distintos</p>
+    </div>
+
+    <h2>Estilos de bordes</h2>
+    <p>Los estilos de los bordes determinan cómo se dibuja la línea que rodea al elemento. Aquí hay varios estilos
+        disponibles que puedes aplicar mediante la propiedad <code>border-style</code>. Algunos de los más comunes son:
+    </p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Estilo</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><code>hidden</code></td>
+                <td>Oculto</td>
+            </tr>
+            <tr>
+                <td><code>dotted</code></td>
+                <td>Línea de puntos</td>
+            </tr>
+            <tr>
+                <td><code>dashed</code></td>
+                <td>Línea de rayas</td>
+            </tr>
+            <tr>
+                <td><code>solid</code></td>
+                <td>Línea contínua</td>
+            </tr>
+            <tr>
+                <td><code>double</code></td>
+                <td>Doble línea contínua</td>
+            </tr>
+            <tr>
+                <td><code>groove</code></td>
+                <td>Biselado con luz desde arriba</td>
+            </tr>
+            <tr>
+                <td><code>ridge</code></td>
+                <td>Biselado con luz desde abajo</td>
+            </tr>
+            <tr>
+                <td><code>inset</code></td>
+                <td>Profundidad hacia adentro</td>
+            </tr>
+            <tr>
+                <td><code>outset</code></td>
+                <td>Profundidad hacia afuera</td>
+            </tr>
+        </table>
+    </div>
+    <div class="example">
+        <p class="ej1">Hidden</p>
+        <p class="ej2">Dotted</p>
+        <p class="ej3">Dashed</p>
+        <p class="ej4">Solid</p>
+        <p class="ej5">Double</p>
+        <p class="ej6">Groove</p>
+        <p class="ej7">Ridge</p>
+        <p class="ej8">Inset</p>
+        <p class="ej9">Outset</p>
+    </div>
+
+    <h2>Bordes redondeados</h2>
+    <p>Con la propiedad <code>border-radius</code>, es posible redondear los bordes de un elemento. Puedes aplicar un
+        valor absoluto (en píxeles) o un valor relativo (porcentaje) para personalizar el nivel de redondeo de los
+        bordes.</p>
+    <pre><code>.redondeo_absoluto {
+    border-width: 3px;
+    border-color: #8ca6bf;
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.redondeo_relativo {
+    border-width: 3px;
+    border-color: #8ca6bf;
+    border-style: solid;
+    border-radius: 30%;
+}</code></pre>
+    <div class="example">
+        <p class="ej10">Redondeo absoluto</p>
+        <p class="ej11">Redondeo relativo</p>
+    </div>
+
+    <h2>Bordes con gradiente de color</h2>
+    <p>Los bordes en CSS pueden no solo tener colores sólidos, sino también aplicar gradientes para lograr efectos
+        visuales más complejos. El uso de gradientes en los bordes se consigue mediante la propiedad border-image, que
+        te permite definir un borde con una imagen o un gradiente.</p>
+    <ul>
+        <li><code>border-image-source</code>: Especifica el origen de la imagen del borde. En este caso, es un gradiente
+            lineal que varía entre tres colores</li>
+        <li><code>border-image-slice</code>: Indica cómo se divide la imagen del borde en partes. Al usar valores de 1 1
+            1 1, se asegura que el gradiente se extienda uniformemente por todo el borde.</li>
+        <li><code>border-image-width</code>: Define el grosor del borde basado en la imagen.</li>
+    </ul>
+    <pre><code> .elemento {
+    margin: 20px;
+    padding: 10px;
+    border-image-source: linear-gradient(#2c3e50, #00897b, #1de9b6);
+    border-image-slice: 1 1 1 1;
+    border-image-width: 0.25rem;
+}</code></pre>
+    <div class="example">
+        <p class="ej12">Borde con gradiente</p>
+    </div>
+</body>
+
+</html>
