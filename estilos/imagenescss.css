@@ -1,0 +1,143 @@
+.ej1, .ej2, .ej3, .ej4, .ej5, .ej6, .ej7, .ej8, .ej9, .ej10, .ej11, .ej12, .ej13 {
+    color: azure;
+    & p{
+        text-align: center;
+        font-size: 40px;
+        -webkit-text-stroke: 1px black;
+    }
+}
+
+.ej1 {
+    height: 400px;
+    background-image: url(../recursos/paisaje.png);
+}
+
+.ej2 {
+    height: 400px;
+    background-image: linear-gradient(#023047, #ffb703);
+}
+
+.ej3 {
+    height: 400px;
+    border: 2px solid #023047;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-repeat: repeat-x;
+}
+
+.ej4 {
+    height: 400px;
+    border: 2px solid #023047;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-repeat: repeat-y;
+}
+
+.ej5 {
+    height: 400px;
+    border: 2px solid #023047;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-repeat: space;
+}
+
+.ej6 {
+    height: 400px;
+    border: 2px solid #023047;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-repeat: round;
+}
+
+.ej7 {
+    height: 400px;
+    border: 2px solid #023047;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-repeat: no-repeat;
+}
+
+.ej8 {
+    height: 400px;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-attachment: scroll;
+}
+
+.ej9 {
+    height: 400px;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-attachment: fixed;
+}
+
+.ej10 {
+    height: 400px;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-position: 50% 0%;
+}
+
+.ej11{
+    height: 200px;
+    width: 200px;
+    display: inline-flex;
+    margin: 5px;
+    padding: 30px;
+    border: 10px solid #02304771;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-clip: border-box;
+}
+
+.ej12{
+    height: 200px;
+    width: 200px;
+    display: inline-flex;
+    margin: 5px;
+    padding: 30px;
+    border: 10px solid #02304771;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-clip: padding-box;
+}
+
+.ej13{
+    height: 200px;
+    width: 200px;
+    display: inline-flex;
+    margin: 5px;
+    padding: 30px;
+    border: 10px solid #02304771;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-clip: content-box;
+}
+
+.ej14{
+    width: 800px;
+    height: 200px;
+    background-image: url(../recursos/paisaje_chico.png);
+
+    background-size: 800px 200px;
+}
+
+.ej15 {
+    height: 200px;
+    width: 400px;
+    background-image:
+        url(../recursos/gatete.png),
+        url(../recursos/paisaje_chico.png);
+}
+
+.ej16 {
+    height: 200px;
+    width: 400px;
+    background-image:
+        url(../recursos/gatete.png),
+        url(../recursos/paisaje_chico.png);
+    background-repeat: no-repeat;
+    background-position: 50% 60%, 0% 0%;
+    background-size: auto, 400px 200px;
+}
+
+.ej17 {
+    height: 200px;
+    width: 400px;
+    background-image:
+        radial-gradient(transparent, rgb(42, 33, 11)),
+        url(../recursos/css.png),
+        url(../recursos/papel.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%, 50% 50%, 0% 0%;
+    background-size: 100%, 50%, 100%;
+}

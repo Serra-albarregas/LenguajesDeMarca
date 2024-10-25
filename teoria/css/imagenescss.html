@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Fondos</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/imagenescss.css">
+</head>
+<body>
+    <h1>Fondos</h1>
+    <p>Cuando nos referimos a objetos, nos referimos también a contenedores, secciones, o cualquier elemento HTML que puede llevar un fondo o una imagen de fondo. Usar CSS para aplicar fondos a estos elementos ayuda a crear un diseño visual más atractivo y permite el control preciso sobre cómo se muestran y repiten los fondos.</p>
+
+    <h2>Imágenes de fondo</h2>
+    <p>CSS permite aplicar imágenes de fondo a los elementos HTML usando la propiedad <code>background-image</code>. Una imagen de fondo puede cubrir un área específica o repetirse para llenar un contenedor. A continuación, se explican las propiedades de CSS que ayudan a configurar cómo se despliegan estas imágenes.</p>
+    <h3>Propiedad background-image</h3>
+    <p>La propiedad <code>background-image</code> permite asignar una imagen de fondo a un elemento. Esta imagen se coloca detrás de cualquier contenido que el elemento contenga y puede personalizarse en combinación con otras propiedades de fondo.</p>
+    <pre><code>elemento {
+    background-image: url(../recursos/paisaje.png);
+}
+elemento {
+    background-image: linear-gradient(#023047, #ffb703);
+}</code></pre>
+    <div class="example">
+        <div class="ej1"></div>
+        <br>
+        <div class="ej2"></div>
+    </div>
+
+    <h3>Propiedad background-repeat</h3>
+    <p>Define cómo se repite la imagen de fondo.</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Valor</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><code>repeat</code></td>
+                <td>Repite la imagen de fondo en ambas direcciones (horizontal y vertical) para cubrir el área completa.</td>
+            </tr>
+            <tr>
+                <td><code>repeat-x</code></td>
+                <td>Repite la imagen solo en el eje horizontal (de izquierda a derecha).</td>
+            </tr>
+            <tr>
+                <td><code>repeat-y</code></td>
+                <td>Repite la imagen solo en el eje vertical (de arriba hacia abajo).</td>
+            </tr>
+            <tr>
+                <td><code>space</code></td>
+                <td>Repite la imagen y ajusta los espacios entre las repeticiones para cubrir el área de manera uniforme.</td>
+            </tr>
+            <tr>
+                <td><code>round</code></td>
+                <td>Ajusta la imagen para cubrir el contenedor sin cortar ninguna repetición. La imagen se escala ligeramente si es necesario.</td>
+            </tr>
+            <tr>
+                <td><code>no-repeat</code></td>
+                <td>No repite la imagen de fondo. La imagen se muestra solo una vez.</td>
+            </tr>
+        </table>
+    </div>
+    <div class="example">
+        <div class="ej3"><p>repeat-x</p></div>
+        <br>
+        <div class="ej4"><p>repeat-y</p></div>
+        <br>
+        <div class="ej5"><p>space</p></div>
+        <br>
+        <div class="ej6"><p>round</p></div>
+        <br>
+        <div class="ej7"><p>no-repeat</p></div>
+    </div>
+
+    <h3>Propiedad background-attachment</h3>
+    <p>Controla si la imagen de fondo se desplaza o permanece fija cuando el usuario hace scroll en la página.</p>
+    <pre><code>elemento {
+    background-image: url(../recursos/paisaje_chico.png);
+    background-attachment: scroll;
+}
+
+elemento {
+    background-image: url(../recursos/paisaje_chico.png);
+    background-attachment: fixed;
+}</code></pre>
+    <div class="example">
+        <div class="ej8"><p>sroll</p></div>
+        <br>
+        <div class="ej9"><p>fixed</p></div>
+    </div>
+
+    <h3>Propiedad background-position</h3>
+    <p>Establece la posición inicial de la imagen de fondo dentro del contenedor.</p>
+    <pre><code>elemento {
+    height: 400px;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-position: 50% 0%;
+}</code></pre>
+    <div class="example">
+        <div class="ej10"><p>Con desplazamiento</p></div>
+    </div>
+
+    <h3>Propiedad background-clip</h3>
+    <p>Determina hasta dónde se extiende el fondo dentro del contenedor del elemento.
+        <ul>
+            <li><code>border-box</code>: La imagen de fondo se extiende hasta el borde del contenedor.</li>
+            <li><code>padding-box</code>: La imagen de fondo se extiende solo hasta el borde del padding.</li>
+            <li><code>content-box</code>: La imagen de fondo se muestra solo en el área del contenido.</li>
+        </ul>
+        </p>
+    <pre><code>elemento {
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    padding: 30px;
+    border: 10px solid #02304771;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-clip: content-box;
+}</code></pre>
+    <div class="example">
+    <div class="ej11"><p>Border box</p></div>
+    <div class="ej12"><p>Padding box</p></div>
+    <div class="ej13"><p>Content box</p></div>
+    </div>
+
+    <h3>Propiedad background-size</h3>
+    <p>Define el tamaño de la imagen de fondo. Puede ser un tamaño absoluto (en píxeles), relativo (en porcentajes), o los valores cover y contain.
+        <ul>
+            <li><code>cover</code>: La imagen cubre todo el contenedor, recortándose si es necesario.</li>
+            <li><code>contain</code>: La imagen se ajusta para estar completamente contenida en el contenedor, sin recortes.</li>
+        </ul>
+    </p>
+    <pre><code>elemento {
+    width: 800px;
+    height: 200px;
+    background-image: url(../recursos/paisaje_chico.png);
+    background-size: 800px 200px;
+}</code></pre>
+    <div class="example">
+        <div class="ej14"></div>
+    </div>
+
+    <h2>Multiples fondos</h2>
+    <p>CSS permite aplicar varias imágenes de fondo en un mismo elemento. Esto es útil cuando se desea superponer imágenes o combinar fondos con diferentes configuraciones. Cada fondo se separa con una coma. La primera imagen que se establece es la última en dibujarse. Es importante que las imágenes seleccionadas contengan transparencia para que las de capas inferiores puedan visualizarse también.</p>
+    <pre><div>elemento {
+    height: 200px;
+    width: 400px;
+    background-image:
+        url(../recursos/gatete.png),
+        url(../recursos/paisaje_chico.png);
+}</div></pre>
+    <div class="example">
+        <div class="ej15"></div>
+    </div>
+
+    <h3>Aplicar propiedades a los distintos fondos</h3>
+    <p>Cada fondo en CSS puede configurarse de forma independiente. Es posible aplicar diferentes posiciones, tamaños, y repeticiones a cada capa de fondo. Para ello, se debe indicar los distintos valores para cada fondo separados por comas en el mismo orden en que estos aparecen en la propiedad <code>background-image</code>.</p>
+    <pre><div>elemento {
+    height: 200px;
+    width: 400px;
+    background-image:
+        url(../recursos/gatete.png),
+        url(../recursos/paisaje_chico.png);
+    background-repeat: no-repeat;
+    background-position: 50% 60%, 0% 0%;
+    background-size: auto, 400px 200px;
+}</div></pre>
+    <div class="example">
+        <div class="ej16"></div>
+    </div>
+    
+    <h3>Efecto de viñeta con gradientes</h3>
+    <p>Un gradiente radial puede usarse para crear un efecto de viñeta alrededor de una imagen de fondo, dando una apariencia enmarcada o sombreada.</p>
+    <pre><div>elemento {
+    height: 200px;
+    width: 400px;
+    background-image:
+        radial-gradient(transparent, rgb(42, 33, 11)),
+        url(../recursos/css.png),
+        url(../recursos/papel.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%, 50% 50%, 0% 0%;
+    background-size: 100%, 50%, 100%;
+}</div></pre>
+    <div class="example">
+        <div class="ej17"></div>
+    </div>
+</body>
+</html>
