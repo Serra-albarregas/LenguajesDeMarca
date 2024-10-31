@@ -12,13 +12,23 @@
 <body onload="PR.prettyPrint()">
     <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Selectores</h1>
-    <p>TODO</p>
+    <p>CSS proporciona varias formas de seleccionar elementos HTML, permitiendo aplicar estilos específicos a cada uno de ellos. Los selectores son patrones que indican a CSS qué elementos deben ser afectados, y pueden combinarse o agruparse para crear reglas más complejas y personalizadas. Los selectores permiten un diseño detallado, desde seleccionar elementos específicos hasta aplicar estilos a grupos de elementos.</p>
     <h2>Estructura general</h2>
-    <p>TODO</p>
+    <p>La estructura básica de un selector CSS incluye el selector propiamente dicho, seguido de un bloque de declaraciones. Cada declaración está formada por una propiedad CSS y un valor correspondiente. Por ejemplo, para definir el color de fondo de todos los párrafos, se usa el selector "p" seguido de una declaración de propiedad "background-color" con el valor deseado. Este patrón se repite para cada regla de estilo que se quiera aplicar.</p>
 
     <h2>Selector mediante etiqueta</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>Un selector de etiqueta en CSS selecciona todos los elementos de un tipo específico, por ejemplo, todos los elementos <code>&lt;p&gt;</code> para darles el mismo estilo. Este tipo de selector es útil cuando se desea aplicar un estilo uniforme a todos los elementos de un tipo en el documento HTML.</p>
+    <pre class="prettyprint"><code>&lt;p id=&quot;parrafo-principal&quot;&gt;Este es el p&aacute;rrafo principal con un ID espec&iacute;fico.&lt;/p&gt;
+&lt;div&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo dentro de un div, con estilo descendente.&lt;/p&gt;
+    &lt;p class=&quot;importante&quot;&gt;Este es otro p&aacute;rrafo dentro del div, con clase &quot;importante&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a href=&quot;https://ejemplo.com&quot;&gt;Enlace externo&lt;/a&gt;
+&lt;p class=&quot;importante&quot;&gt;Este es un p&aacute;rrafo fuera del div, con clase &quot;importante&quot;.&lt;/p&gt;</code></pre>
+
+    <pre class="prettyprint"><code>p {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
 
     <div class="example">
         <div class="ej1">
@@ -33,8 +43,17 @@
     </div>
 
     <h2>Selector mediante identificador</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>El selector de identificador selecciona un elemento en función de su atributo único de ID. Dado que un ID debe ser único en la página, este selector permite aplicar estilos muy específicos a un solo elemento, como resaltar un elemento clave en la página.</p>
+    <pre class="prettyprint"><code>&lt;p id=&quot;parrafo-principal&quot;&gt;Este es el p&aacute;rrafo principal con un ID espec&iacute;fico.&lt;/p&gt;
+&lt;div&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo dentro de un div, con estilo descendente.&lt;/p&gt;
+    &lt;p class=&quot;importante&quot;&gt;Este es otro p&aacute;rrafo dentro del div, con clase &quot;importante&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a href=&quot;https://ejemplo.com&quot;&gt;Enlace externo&lt;/a&gt;
+&lt;p class=&quot;importante&quot;&gt;Este es un p&aacute;rrafo fuera del div, con clase &quot;importante&quot;.&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>#parrafo-principal {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
 
     <div class="example">
         <div class="ej2">
@@ -49,8 +68,17 @@
     </div>
 
     <h2>Selector mediante clases</h2>
-    <p>TODO</p>
-    <pre><code></code></pre>
+    <p>El selector de clase selecciona uno o más elementos que comparten un atributo de clase. Esto permite aplicar estilos comunes a múltiples elementos en una página, independientemente de su tipo, usando el mismo nombre de clase. Este selector es útil para definir un conjunto de estilos reutilizables.</p>
+    <pre class="prettyprint"><code>&lt;p id=&quot;parrafo-principal&quot;&gt;Este es el p&aacute;rrafo principal con un ID espec&iacute;fico.&lt;/p&gt;
+&lt;div&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo dentro de un div, con estilo descendente.&lt;/p&gt;
+    &lt;p class=&quot;importante&quot;&gt;Este es otro p&aacute;rrafo dentro del div, con clase &quot;importante&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a href=&quot;https://ejemplo.com&quot;&gt;Enlace externo&lt;/a&gt;
+&lt;p class=&quot;importante&quot;&gt;Este es un p&aacute;rrafo fuera del div, con clase &quot;importante&quot;.&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>.importante {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
 
     <div class="example">
         <div class="ej3">
@@ -65,7 +93,7 @@
     </div>
 
     <h2>Selector con atributos</h2>
-    <p>TODO</p>
+    <p>El selector de atributo selecciona elementos basados en la presencia o valor de un atributo específico. Este tipo de selector permite un control detallado, permitiendo, por ejemplo, seleccionar todos los enlaces que apunten a una URL específica o todos los elementos de un idioma particular. Los selectores de atributo son especialmente útiles en sitios multilingües o al trabajar con valores de atributos personalizados.</p>
     <div class="resume">
         <table>
             <tr>
@@ -92,7 +120,11 @@
         </table>
     </div>
 
-    <pre><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div lang=&quot;es-MX es-ES&quot;&gt;Espa&ntilde;ol&lt;/div&gt;
+&lt;div lang=&quot;en-US&quot;&gt;Ingl&eacute;s&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>div[lang~="es-ES"] {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example">
         <div class="ej4">
             <div lang="es-MX es-ES">Español</div>
@@ -100,7 +132,10 @@
         </div>
     </div>
 
-    <pre><code></code></pre>
+    <pre class="prettyprint"><code>&lt;a href=&quot;#inicio&quot;&gt;Enlace al inicio&lt;/a&gt;</code></pre>
+    <pre class="prettyprint"><code>.ej5 a[href*="ini"] {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example">
         <div class="ej5">
             <a href="#inicio">Enlace al inicio</a>
@@ -108,7 +143,7 @@
     </div>
 
     <h2>Combinadores CSS</h2>
-    <p>TODO</p>
+    <p>Los combinadores CSS permiten seleccionar elementos en función de su relación con otros elementos en el DOM. Los combinadores ayudan a aplicar estilos a elementos dentro de otros, elementos contiguos, o elementos hermanos, proporcionando un control detallado sobre la disposición de los estilos en el árbol de documentos HTML. A continuación se describen algunos de los principales combinadores CSS:</p>
     <div class="resume">
         <table>
             <tr>
@@ -142,7 +177,57 @@
                 <td>Selecciona todos los elementos en cualquier nivel</td>
             </tr>
         </table>
-        <pre><code></code></pre>
+        <pre class="prettyprint"><code>&lt;h4&gt;Ejemplo de Combinadores CSS&lt;/h4&gt;
+&lt;div class=&quot;contenedor&quot;&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo dentro de un div (estilo descendente y de hijo directo).&lt;/p&gt;
+
+    &lt;div class=&quot;subcontenedor&quot;&gt;
+        &lt;p&gt;Este es un p&aacute;rrafo dentro de un div anidado (estilo descendente).&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span&gt;
+        &lt;p&gt;Parrafo hijo no directo de un div (Estilo desdendente).&lt;/p&gt;
+    &lt;/span&gt;
+    &lt;a href=&quot;#Inicio&quot;&gt;Este es un enlace, tambi&eacute;n se ve afectado por el combinador universal&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h5&gt;Subt&iacute;tulo con p&aacute;rrafo adyacente&lt;/h5&gt;
+&lt;p&gt;Este es un p&aacute;rrafo adyacente a un &lt;code&gt;&lt;h5&gt;&lt;/code&gt; (estilo adyacente).&lt;/p&gt;
+&lt;p&gt;Este es otro p&aacute;rrafo, no es adyacente al &lt;code&gt;&lt;h5&gt;&lt;/code&gt;, por lo que no se le aplica el
+    estilo
+    adyacente.&lt;/p&gt;
+
+&lt;h6&gt;Subt&iacute;tulo con hermanos generales&lt;/h6&gt;
+&lt;p&gt;Primer p&aacute;rrafo hermano de un &lt;code&gt;&lt;h6&gt;&lt;/code&gt; (estilo de hermanos generales).&lt;/p&gt;
+&lt;p&gt;Segundo p&aacute;rrafo hermano de un &lt;code&gt;&lt;h6&gt;&lt;/code&gt; (estilo de hermanos generales).&lt;/p&gt;
+&lt;div&gt;
+    &lt;p&gt;Este es otro p&aacute;rrafo dentro de un &lt;code&gt;&lt;div&gt;&lt;/code&gt; anidado, sin el estilo de hermanos
+        generales.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        
+        <pre class="prettyprint"><code>/* Selector descendente: aplica a todos los &lt;p&gt; dentro de un &lt;div&gt; en cualquier nivel */
+div p {
+    background-color: rgb(148, 148, 248);
+}
+
+/* Selector de hijo directo: aplica solo a los &lt;p&gt; que son hijos directos de un &lt;div&gt; */
+div &gt; p {
+    font-style: italic;
+}
+
+/* Selector adyacente: aplica al &lt;p&gt; que sigue inmediatamente despu&eacute;s de un &lt;h5&gt; */
+h5 + p {
+    background-color: rgb(122, 212, 122);
+}
+
+/* Selector de hermanos generales: aplica a todos los &lt;p&gt; que son hermanos de un &lt;h6&gt; */
+h6 ~ p {
+    background-color: rgb(212, 122, 122);
+}
+
+/* Selector universal: aplica a todas las etiquetas contenidas dentro del &lt;div&gt; */
+div * {
+    text-decoration: underline dotted;
+}</code></pre>
         <div class="example">
             <ul>
                 <li>Azul - Combinador desdendente</li>
@@ -186,7 +271,7 @@
     </div>
 
     <h2>Agrupación de selectores</h2>
-    <p>TODO</p>
+    <p>La agrupación de selectores permite aplicar el mismo conjunto de reglas de estilo a múltiples selectores, sin tener que duplicar las declaraciones de estilo. Esto optimiza el CSS y facilita el mantenimiento del código, ya que los cambios de estilo solo necesitan realizarse en un lugar. Se puede agrupar selectores simplemente separándolos por comas.</p>
     <pre class="prettyprint"><code>.clase1{
     color: white;
 }
@@ -194,11 +279,11 @@
     color: white;
 }</code></pre>
     <pre class="prettyprint"><code>.clase1, .clase2 {
-    color: whiteM;
+    color: white;
 }</code></pre>
 
     <h2>Combinadores lógicos</h2>
-    <p>TODO</p>
+    <p>Los combinadores lógicos en CSS permiten seleccionar elementos basándose en características específicas, lo que resulta útil para crear reglas avanzadas. Algunos de los combinadores lógicos más usados incluyen:</p>
     <div class="resume">
         <table>
             <tr>
@@ -220,30 +305,35 @@
         </table>
     </div>
     <h3><code>:is()</code></h3>
-    <p>TODO</p>
+    <p>El pseudo-clase <code>:is()</code> permite agrupar selectores de forma eficiente dentro de un mismo bloque, similar a como se agruparían usando comas, pero optimizado para minimizar el código repetido. Con <code>:is()</code>, se pueden seleccionar varios tipos de elementos que comparten un estilo en común, simplificando las reglas CSS.</p>
     <pre class="prettyprint"><code>.clase1, .clase2 {
     color: white;
 }</code></pre>
-    <p>TODO</p>
+    <p>En este caso se selecciona tanto la clase "clase1" como la "clase2"</p>
     <pre class="prettyprint"><code>:is(.clase1, .clase2){
     color: white;
 }</code></pre>
-    <p>TODO</p>
+    <p>Si hay que seleccionar un par de clases dentro de un <code>&lt;div&gt;</code>, puede hacerse de la siguiente manera, usando un combinador descendente en dos elementos separados por comas.</p>
 <pre class="prettyprint"><code>div .clase1, div .clase2{
     color: white;
 }</code></pre>
-    <p>TODO</p>
+    <p>El código siguiente no serviría para sustituir el anterior.</p>
     <pre class="prettyprint"><code>div .clase1, .clase2{
     color: white;
 }</code></pre>
-    <p>TODO</p>
+    <p>Con <code>:is()</code> si que podríamos sustituirlo.</p>
 <pre class="prettyprint"><code>div :is(.clase1, .clase2){
     color: white;
 }</code></pre>
 
     <h3><code>:has()</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La pseudo-clase <code>:has()</code> selecciona elementos que contienen un hijo con una característica específica. Esto es especialmente útil para seleccionar elementos padres cuando se quiere aplicar un estilo en función de un elemento secundario específico.</p>
+    <pre class="prettyprint"><code>&lt;div&gt;&lt;p&gt;Un div con un p&aacute;rrafo&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;#inicio&quot;&gt;Un div con un enlace&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;#inicio&quot;&gt;Otro div con un enlace&lt;/a&gt;&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>div:has(a) {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example">
         <div class="ej8">
             <div><p>Un div con un párrafo</p></div>
@@ -252,7 +342,20 @@
         </div>
     </div>
     <h4><code>:has()</code> con estados</h4>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La pseudo-clase <code>:has()</code> se puede combinar con pseudo-clases de estado, como <code>:hover</code> o <code>:focus</code>, para aplicar estilos cuando el elemento hijo se encuentra en un estado determinado. Esto permite aplicar efectos a elementos padres al interactuar con sus hijos.</p>
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;email&quot;&gt; Con un input de tipo email&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)&quot;&gt; Regexp con correo de cualquier servidor&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@(gmail|outlook)\.(es|com)&quot;&gt; Regexp con correo de servidor de google o microsoft&lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+    <pre class="prettyprint"><code>form {
+    border: 2px solid rgb(122, 212, 122);
+}
+
+form:has(input:invalid) {
+    border: 2px solid rgb(212, 122, 122);
+}</code></pre>
     <div class="example ej9">
         <form method="get">
             <p><input type="email"> Con un input de tipo email</p>
@@ -260,6 +363,54 @@
             <p><input type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"> Regexp con correo de servidor de google o microsoft</p>
             <input type="submit" value="Enviar">
         </form>
+    </div>
+
+    <h3><code>:not()</code></h3>
+    <p>El pseudo-clase <code>:not()</code> permite seleccionar elementos que no cumplen con ciertas características. Esto resulta útil para aplicar estilos a todos los elementos que no tienen una clase o atributo específico, facilitando el diseño de elementos en general o excepciones en un grupo.</p>
+    <pre class="prettyprint"><code>&lt;p class=&quot;parrafo1&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo1&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo2&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo2&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo3&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo3&quot;&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>p:not(.parrafo1) {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
+    <div class="example">
+        <div class="ej10">
+            <p class="parrafo1">Un párrafo con la clase "parrafo1"</p>
+            <p class="parrafo2">Un párrafo con la clase "parrafo2"</p>
+            <p class="parrafo3">Un párrafo con la clase "parrafo3"</p>
+        </div>
+    </div>
+
+    <h4>Encadenando :not()</h4>
+    <p>Es posible encadenar el pseudo-clase <code>:not()</code> para excluir varios tipos de elementos al mismo tiempo. Esto permite aplicar un estilo a un grupo amplio de elementos, dejando fuera varios tipos específicos, lo cual resulta útil en diseños complejos donde ciertos elementos necesitan ser estilizados de forma diferente.</p>
+    <pre class="prettyprint"><code>&lt;p class=&quot;parrafo1&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo1&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo2&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo2&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo3&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo3&quot;&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>p:not(.parrafo1):not(.parrafo3) {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
+    <div class="example">
+        <div class="ej11">
+            <p class="parrafo1">Un párrafo con la clase "parrafo1"</p>
+            <p class="parrafo2">Un párrafo con la clase "parrafo2"</p>
+            <p class="parrafo3">Un párrafo con la clase "parrafo3"</p>
+        </div>
+    </div>
+
+    <h4>Combinando combinadores</h4>
+    <p>CSS permite combinar múltiples combinadores y pseudo-clases para lograr estilos detallados. Estos combinadores permiten seleccionar elementos específicos, basándose tanto en relaciones en el DOM como en la exclusión o inclusión de atributos y clases. Esta combinación avanzada de combinadores es esencial para proyectos de diseño con estructuras de contenido complejas.</p>
+    <pre class="prettyprint"><code>&lt;p class=&quot;parrafo1&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo1&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo2&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo2&quot;&lt;/p&gt;
+&lt;p class=&quot;parrafo3&quot;&gt;Un p&aacute;rrafo con la clase &quot;parrafo3&quot;&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>p:not(:is(.parrafo1,.parrafo3)){
+    background-color: rgb(122, 212, 122);
+}</code></pre>
+    <div class="example">
+        <div class="ej12">
+            <p class="parrafo1">Un párrafo con la clase "parrafo1"</p>
+            <p class="parrafo2">Un párrafo con la clase "parrafo2"</p>
+            <p class="parrafo3">Un párrafo con la clase "parrafo3"</p>
+        </div>
     </div>
 </body>
 

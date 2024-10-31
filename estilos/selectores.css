@@ -53,3 +53,15 @@
 .ej9 form:has(input:invalid) {
     border: 2px solid rgb(212, 122, 122);
 }
+
+.ej10 p:not(.parrafo1) {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej11 p:not(.parrafo1):not(.parrafo3) {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej12 p:not(:is(.parrafo1,.parrafo3)){
+    background-color: rgb(122, 212, 122);
+}
