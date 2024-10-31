@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Selectores</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/selectores.css">
+</head>
+
+<body>
+    <h1>Selectores</h1>
+    <p>TODO</p>
+    <h2>Estructura general</h2>
+    <p>TODO</p>
+
+    <h2>Selector mediante etiqueta</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+
+    <div class="example">
+        <div class="ej1">
+            <p id="parrafo-principal">Este es el párrafo principal con un ID específico.</p>
+            <div>
+                <p>Este es un párrafo dentro de un div, con estilo descendente.</p>
+                <p class="importante">Este es otro párrafo dentro del div, con clase "importante".</p>
+            </div>
+            <a href="https://ejemplo.com">Enlace externo</a>
+            <p class="importante">Este es un párrafo fuera del div, con clase "importante".</p>
+        </div>
+    </div>
+
+    <h2>Selector mediante identificador</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+
+    <div class="example">
+        <div class="ej2">
+            <p id="parrafo-principal">Este es el párrafo principal con un ID específico.</p>
+            <div>
+                <p>Este es un párrafo dentro de un div, con estilo descendente.</p>
+                <p class="importante">Este es otro párrafo dentro del div, con clase "importante".</p>
+            </div>
+            <a href="https://ejemplo.com">Enlace externo</a>
+            <p class="importante">Este es un párrafo fuera del div, con clase "importante".</p>
+        </div>
+    </div>
+
+    <h2>Selector mediante clases</h2>
+    <p>TODO</p>
+    <pre><code></code></pre>
+
+    <div class="example">
+        <div class="ej3">
+            <p id="parrafo-principal">Este es el párrafo principal con un ID específico.</p>
+            <div>
+                <p>Este es un párrafo dentro de un div, con estilo descendente.</p>
+                <p class="importante">Este es otro párrafo dentro del div, con clase "importante".</p>
+            </div>
+            <a href="https://ejemplo.com">Enlace externo</a>
+            <p class="importante">Este es un párrafo fuera del div, con clase "importante".</p>
+        </div>
+    </div>
+
+    <h2>Selector con atributos</h2>
+    <p>TODO</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>[href]</td>
+                <td>El elemento tiene un atributo de tipo href</td>
+            </tr>
+            <tr>
+                <td>[href="#inicio"]</td>
+                <td>El elemento tiene un atributo de tipo href con el valor #inicio</td>
+            </tr>
+            <tr>
+                <td>[lang~="es"]</td>
+                <td>El elemento tiene un atributo de tipo lang que contiene una lista de valores, de los cuales uno es
+                    "es"</td>
+            </tr>
+            <tr>
+                <td>[href*="ini"]</td>
+                <td>El elemento tiene un atributo de tipo href y su valor contiene la cadena "ini"</td>
+            </tr>
+        </table>
+    </div>
+
+    <pre><code></code></pre>
+    <div class="example">
+        <div class="ej4">
+            <div lang="es-MX es-ES">Español</div>
+            <div lang="en-US">Inglés</div>
+        </div>
+    </div>
+
+    <pre><code></code></pre>
+    <div class="example">
+        <div class="ej5">
+            <a href="#inicio">Enlace al inicio</a>
+        </div>
+    </div>
+
+    <h2>Combinadores CSS</h2>
+    <p>TODO</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Combinador</th>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>Combinador descendiente</td>
+                <td>Espacio</td>
+                <td>Selecciona elementos dentro de otros en cualquier nivel</td>
+            </tr>
+            <tr>
+                <td>Combinador hijo</td>
+                <td>></td>
+                <td>Selecciona elementos hijo directos</td>
+            </tr>
+            <tr>
+                <td>Combinador hermano adyacente</td>
+                <td>+</td>
+                <td>Selecciona elementos contiguos a otros en el mismo nivel</td>
+            </tr>
+            <tr>
+                <td>Combinador hermano general</td>
+                <td>~</td>
+                <td>Selecciona elementos que siguen a otros en el mismo nivel</td>
+            </tr>
+            <tr>
+                <td>Combinador universal</td>
+                <td>*</td>
+                <td>Selecciona todos los elementos en cualquier nivel</td>
+            </tr>
+        </table>
+        <pre><code></code></pre>
+        <div class="example">
+            <p>Azul - Combinador desdendente</p>
+            <p>Subrayado - Combinador universal</p>
+            <p>Cursiva - Hijo directo</p>
+            <p>Verde - Hermano adyacente</p>
+            <p>Rosa - Hermano general</p>
+            
+            <div class="ej6">
+                <h4>Ejemplo de Combinadores CSS</h4>
+
+                <div class="contenedor">
+                    <p>Este es un párrafo dentro de un div (estilo descendente y de hijo directo).</p>
+
+                    <div class="subcontenedor">
+                        <p>Este es un párrafo dentro de un div anidado (estilo descendente).</p>
+                    </div>
+                    <span>
+                        <p>Parrafo hijo no directo de un div (Estilo desdendente).</p>
+                    </span>
+                    <a href="#Inicio">Este es un enlace, también se ve afectado por el combinador universal</a>
+                </div>
+
+                <h5>Subtítulo con párrafo adyacente</h5>
+                <p>Este es un párrafo adyacente a un <code>&lt;h5&gt;</code> (estilo adyacente).</p>
+                <p>Este es otro párrafo, no es adyacente al <code>&lt;h5&gt;</code>, por lo que no se le aplica el
+                    estilo
+                    adyacente.</p>
+
+                <h6>Subtítulo con hermanos generales</h6>
+                <p>Primer párrafo hermano de un <code>&lt;h6&gt;</code> (estilo de hermanos generales).</p>
+                <p>Segundo párrafo hermano de un <code>&lt;h6&gt;</code> (estilo de hermanos generales).</p>
+                <div>
+                    <p>Este es otro párrafo dentro de un <code>&lt;div&gt;</code> anidado, sin el estilo de hermanos
+                        generales.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

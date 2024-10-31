@@ -1,0 +1,43 @@
+.ej1 p {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej2 #parrafo-principal {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej3 .importante {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej4 div[lang~="es-ES"] {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej5 a[href*="ini"] {
+    background-color: rgb(122, 212, 122);
+}
+
+/* Selector descendente: aplica a todos los <p> dentro de un <div> en cualquier nivel */
+.ej6 div p {
+    background-color: rgb(148, 148, 248);
+}
+
+/* Selector de hijo directo: aplica solo a los <p> que son hijos directos de un <div> */
+.ej6 div > p {
+    font-style: italic;
+}
+
+/* Selector adyacente: aplica al <p> que sigue inmediatamente después de un <h5> */
+.ej6 h5 + p {
+    background-color: rgb(122, 212, 122);
+}
+
+/* Selector de hermanos generales: aplica a todos los <p> que son hermanos de un <h6> */
+.ej6 h6 ~ p {
+    background-color: rgb(212, 122, 122);
+}
+
+.ej6 div * {
+    text-decoration: underline dotted;
+}
