@@ -7,9 +7,11 @@
   <title>Imágenes en HTML</title>
   <link rel="stylesheet" href="../../estilos/estilos.css" />
   <link rel="stylesheet" href="../../estilos/imagenes.css">
+  <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+  <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
   <header>
     <h1>Imágenes en HTML</h1>
     <p>
@@ -30,7 +32,7 @@
       describe el contenido de la imagen si esta no se carga o para lectores
       de pantalla.
     </p>
-    <pre><code>&lt;img src="../recursos/paisaje.jpg" alt="Descripción de la imagen"&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;img src="../recursos/paisaje.jpg" alt="Descripción de la imagen"&gt;</code></pre>
     <div class="example">
       <img src="../../recursos/paisaje.jpg" alt="Descripción de la imagen" width="300" />
     </div>
@@ -44,7 +46,7 @@
       evitar distorsionar las imágenes (cambiar solo uno de estos atributos
       sin mantener la proporción). Ejemplo:
     </p>
-    <pre><code>&lt;img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos"&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;img src="../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos"&gt;</code></pre>
     <div class="example">
       <img src="../../recursos/paisaje.jpg" width="400" height="300" alt="Imagen con ancho y alto definidos" />
     </div>
@@ -52,10 +54,10 @@
 
   <section>
     <h2>Propiedades <code>width</code> y <code>height</code> en css</h2>
-    <pre><code>img {
-      height: 300px;
-      width: 200px;
-    }</code></pre>
+    <pre class="prettyprint"><code>img {
+  height: 300px;
+  width: 200px;
+}</code></pre>
     <div class="example">
       <img class="ej1" src="../../recursos/paisaje.jpg" alt="Imagen con ancho y alto definidos" />
     </div>
@@ -69,7 +71,7 @@
       dispositivos móviles. Para ello se configura el tamaño porcentualmente y, para
       mantener la proporción, el valor auto:
     </p>
-    <pre><code>img {
+    <pre class="prettyprint"><code>img {
   width: 60%;
   height: auto;
 }</code></pre>
@@ -88,7 +90,7 @@
       Se puede definir un tamaño máximo para que la imagen sea responsive y al
       mismo tiempo no se difumine al hacer zoom.
     </p>
-    <pre><code>img {
+    <pre class="prettyprint"><code>img {
   max-width: 100%;
   height: auto;
 }</code></pre>
@@ -134,7 +136,7 @@
       lo que significa que puede escalarse sin pérdida de calidad. Es ideal
       para logotipos, íconos y gráficos simples:
     </p>
-    <pre><code>&lt;img src="recuros/gato.svg" alt="Ejemplo de imagen SVG"&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;img src="recuros/gato.svg" alt="Ejemplo de imagen SVG"&gt;</code></pre>
     <div class="example">
       <img class = "ej4" src="/../../recursos/gato.svg" alt="Ejemplo de imagen SVG"/>
       <img class = "ej4" src="/../../recursos/gato_chico.png" alt="Ejemplo de imagen PNG"/>
@@ -151,14 +153,14 @@
       Con CSS, es fácil añadir marcos y sombras a las imágenes para mejorar su
       presentación. Ejemplo de CSS para añadir un marco y sombra:
     </p>
-    <pre><code>img {
-      width: 60%;
-      height: auto;
-      border: 5px solid #2980b9;
-      border-radius: 10px;
-      /*radiox, radioy, desenfoque, separacion, color*/
-      box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.5);
-    }</code></pre>
+    <pre class="prettyprint"><code>img {
+  width: 60%;
+  height: auto;
+  border: 5px solid #2980b9;
+  border-radius: 10px;
+  /*radiox, radioy, desenfoque, separacion, color*/
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.5);
+}</code></pre>
     <div class="example">
       <img class="ej5" src="../../recursos/paisaje.jpg" alt="Imagen con marco y sombra" />
     </div>
@@ -171,7 +173,7 @@
       fuentes de imagen para adaptarse a diferentes condiciones, como el
       tamaño de la pantalla o la densidad de píxeles. Ejemplo:
     </p>
-    <pre><code>&lt;picture&gt;
+    <pre class="prettyprint"><code>&lt;picture&gt;
       &lt;source srcset=&quot;../recursos/gato_grande.png&quot; media=&quot;(min-width: 801px)&quot;&gt;
       &lt;source srcset=&quot;../recursos/gato_menos_grande.png&quot; media=&quot;(min-width: 600px) and (max-width: 800px)&quot;&gt;
       &lt;source srcset=&quot;../recursos/gato_chico.png&quot; media=&quot;(max-width: 599px)&quot;&gt;
@@ -199,7 +201,7 @@
       (portrait o landscape).
     </p>
 
-    <pre><code>&lt;picture&gt;
+    <pre class="prettyprint"><code>&lt;picture&gt;
       &lt;source media=&quot;(orientation: portrait)&quot; srcset=&quot;../recursos/portrait.png&quot; /&gt;
       &lt;source media=&quot;(orientation: landscape)&quot; srcset=&quot;../recursos/landscape.png&quot; /&gt;
       &lt;img src=&quot;../recursos/landscape.png&quot; alt=&quot;Ejemplo de Picture con orientaci&oacute;n portrait&quot; /&gt;

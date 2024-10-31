@@ -41,3 +41,15 @@
 .ej6 div * {
     text-decoration: underline dotted;
 }
+
+.ej8 div:has(a) {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej9 form {
+    border: 2px solid rgb(122, 212, 122);
+}
+
+.ej9 form:has(input:invalid) {
+    border: 2px solid rgb(212, 122, 122);
+}

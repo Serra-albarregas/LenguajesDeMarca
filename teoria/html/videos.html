@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css" />
     <link rel="stylesheet" href="../../estilos/videos.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
   </head>
 
-  <body>
+  <body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Videos</h1>
     <p>
       Como manejar uno de los recursos multimedia más importantes de internet
@@ -28,7 +30,7 @@
         <code>autoplay</code>).
       </li>
     </ul>
-    <pre><code>&lt;video controls loop muted autoplay src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;video controls loop muted autoplay src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
 
     <div class="example">
       <video
@@ -48,7 +50,7 @@
       reproducción del video. Para ello, utilizamos el atributo
       <code>poster</code>.
     </p>
-    <pre><code>&lt;video controls loop muted src="ruta-del-video.mp4" poster="ruta-de-la-imagen.jpg" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;video controls loop muted src="ruta-del-video.mp4" poster="ruta-de-la-imagen.jpg" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
 
     <div class="example">
       <video
@@ -69,12 +71,12 @@
       <code>&lt;video&gt;</code>. También es posible personalizar el diseño del
       reproductor usando CSS para, por ejemplo, añadir bordes.
     </p>
-    <pre><code>&lt;video width="600" height="400" controls loop muted src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+    <pre class="prettyprint"><code>&lt;video width="600" height="400" controls loop muted src="ruta-del-video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
     <p>
       Para añadir bordes y otros estilos al video, podemos utilizar las clases
       de CSS, como en este ejemplo:
     </p>
-    <pre><code>video {
+    <pre class="prettyprint"><code>video {
         width: 50%;
         display: block;
         margin: auto;

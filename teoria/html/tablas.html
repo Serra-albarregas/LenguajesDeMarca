@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+etiqueta<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -6,9 +6,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css" />
     <link rel="stylesheet" href="../../estilos/tablas.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Tablas</h1>
     <p>
         Se utilizan para organizar información con un formato de filas y columnas
@@ -25,7 +27,7 @@
         <li><code>&lt;td&gt;</code>: define una celda dentro de una fila.</p>
 </body>
 </ul>
-<pre><code>&lt;table&gt;
+<pre class="prettyprint"><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;td&gt;Fila 1 Col 1&lt;/td&gt;
         &lt;td&gt;Fila 1 Col 2&lt;/td&gt;
@@ -88,7 +90,7 @@
     <li>border: define los bordes alrededor de la tabla y las celdas.</li>
 </ul>
 </p>
-<pre><code>table {
+<pre class="prettyprint"><code>table {
     border: 1px solid black;
 }</code></pre>
 <div class="example">
@@ -124,7 +126,7 @@
 <p>Para agregar bordes a las celdas de una tabla, se puede aplicar CSS directamente a las celdas usando la etiqueta
     <code>&lt;td&gt;</code> con una clase específica que contenga estilos de borde. Es importante notar que si no se
     colapsan los bordes, estos aparecerán como duplicados entre las celdas.</p>
-<pre><code>table, td {
+<pre class="prettyprint"><code>table, td {
     border: 1px solid black;
 }</code></pre>
 <div class="example">
@@ -163,7 +165,7 @@
     <li>border-collapse: define cómo se manejan los bordes adyacentes en una tabla.</li>
 </ul>
 </p>
-<pre><code>table, td {
+<pre class="prettyprint"><code>table, td {
     border: 1px solid black;
     border-collapse: collapse;
 }</code></pre>
@@ -204,7 +206,7 @@
     <li>rowspan: define cuántas filas abarcará una celda.</li>
     </p>
 </ul>
-<pre><code>&lt;table&gt;
+<pre class="prettyprint"><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;td colspan=&quot;2&quot;&gt;Fila 1 Col 1 y 2&lt;/td&gt;
         &lt;td&gt;Fila 1 Col 2&lt;/td&gt;
@@ -250,7 +252,7 @@
 </div>
 
 <h2>Estructura de tabla compleja combinando celdas</h2>
-<pre><code>&lt;table&gt;
+<pre class="prettyprint"><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;td rowspan=&quot;3&quot;&gt;&lt;/td&gt;
         &lt;td colspan=&quot;6&quot;&gt;Resultados&lt;/td&gt;
@@ -355,7 +357,7 @@
     <li>height: define la altura de las celdas.</li>
 </ul>
 </p>
-<pre><code>table {
+<pre class="prettyprint"><code>table {
     width: 500px;
 }</code></pre>
 <div class="example">
@@ -390,7 +392,7 @@
     <li>td { height: }: define la altura de una celda.</li>
 </ul>
 </p>
-<pre><code>td {
+<pre class="prettyprint"><code>td {
     width: 120px;
 }</code></pre>
 <div class="example">
@@ -429,7 +431,7 @@
     <li>td {width:25%}: especifica que cada celda debe ocupar el 25% de la tabla</li>
 </ul>
 </p>
-<pre><code>table {
+<pre class="prettyprint"><code>table {
     width: 90%;
     max-width: 700px;
     min-width: 600px;
@@ -470,7 +472,7 @@ td {
     <li><code>&lt;th&gt;</code>: define una celda de cabecera.</li>
 </ul>
 </p>
-<pre><code>&lt;table&gt;
+<pre class="prettyprint"><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;th&gt;Fila 1 Col 1&lt;/th&gt;
         &lt;th&gt;Fila 1 Col 2&lt;/th&gt;
@@ -522,7 +524,7 @@ td {
     <li>tr:nth-child(odd): aplica estilos a las filas impares.</li>
 </ul>
 </p>
-<pre><code>tr:nth-child(even){
+<pre class="prettyprint"><code>tr:nth-child(even){
     background-color: #85c1e9;
 }
 
@@ -569,7 +571,7 @@ tr:nth-child(odd){
     <li><code>&lt;tfoot&gt;</code>: define el pie de la tabla.</li>
 </ul>
 </p>
-<pre><code>&lt;table class=&quot;ej8&quot;&gt;
+<pre class="prettyprint"><code>&lt;table class=&quot;ej8&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;td rowspan=&quot;3&quot;&gt;&lt;/td&gt;
@@ -663,7 +665,7 @@ tr:nth-child(odd){
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-<pre><code>table {
+<pre class="prettyprint"><code>table {
     width: 70%;
     max-width: 800px;
     min-width: 500px;

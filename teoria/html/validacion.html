@@ -6,9 +6,12 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css">
     <link rel="stylesheet" href="../../estilos/validacion.css">
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
+    <script src="../../js/hide.js"></script>
     <h1>Validación de formularios en html</h1>
     <p>
         Los usuarios pueden equivocarse al rellenar un formulario. También podemos necesitar que
@@ -89,7 +92,7 @@
     <p>Existen propiedades css para seleccionar y modificar campos que cumplen o no los criterios de
         validación establecidos. Usaremos estos estilos para visualizar mejor los ejemplos.
     </p>
-    <pre><code>input:invalid {
+    <pre class="prettyprint"><code>input:invalid {
     border: 2px solid red;
     background-color: rgb(255, 176, 176);
 }
@@ -106,7 +109,7 @@ input:valid {
         <code>&lt;maxlength&gt;</code>, podemos establecer un número máximo de caracteres, mientras que con
         <code>&lt;minlength&gt;</code> aseguramos que se introduzca un número mínimo de caracteres.
     </p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input placeholder=&quot;Nombre&quot; type=&quot;text&quot; minlength=&quot;4&quot; maxlength=&quot;10&quot;&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
 &lt;/form&gt;</code></pre>
@@ -121,7 +124,7 @@ input:valid {
     <p>Los atributos <code>&lt;min&gt;</code> y <code>&lt;max&gt;</code> se usan para establecer valores mínimos y
         máximos en campos numéricos o de fecha. Esto garantiza que los usuarios solo puedan seleccionar o introducir
         valores dentro de los límites establecidos. </p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input type=&quot;number&quot; min=&quot;5&quot; max=&quot;10&quot;&gt;
     &lt;input type=&quot;date&quot; min=&quot;1990-01-01&quot; max=&quot;2025-12-31&quot;&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
@@ -138,7 +141,7 @@ input:valid {
     <p>El atributo <code>&lt;step&gt;</code> define el intervalo entre los valores permitidos. Para campos numéricos,
         establece el incremento entre los números que se pueden seleccionar o introducir. Para fechas, define el
         incremento entre días o unidades de tiempo.</p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input type=&quot;number&quot; min=&quot;5&quot; max=&quot;10&quot; step=&quot;2&quot;&gt;
     &lt;input type=&quot;date&quot; min=&quot;1990-01-01&quot; max=&quot;2025-12-31&quot; step=&quot;2&quot;&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
@@ -154,7 +157,7 @@ input:valid {
     <h2>Campos obligatorios</h2>
     <p>El atributo <code>&lt;required&gt;</code> se utiliza para indicar que un campo es obligatorio. Si el usuario
         intenta enviar el formulario sin rellenar un campo requerido, el navegador mostrará un mensaje de error.</p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input type=&quot;text&quot; required&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
 &lt;/form&gt;</code></pre>
@@ -168,7 +171,7 @@ input:valid {
     <h2>Campos deshabilitados</h2>
     <p>El atributo <code>&lt;disabled&gt;</code> deshabilita un campo, lo que significa que no puede ser modificado por
         el usuario ni será enviado como parte del formulario. Es útil para bloquear temporalmente ciertos campos.</p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input type=&quot;text&quot; disabled value=&quot;Nombre&quot;&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
 &lt;/form&gt;</code></pre>
@@ -182,7 +185,7 @@ input:valid {
     <h2>Campos de solo lectura</h2>
     <p>Con el atributo <code>&lt;readonly&gt;</code>, el usuario puede ver el contenido del campo, pero no modificarlo.
         A diferencia de los campos deshabilitados, los campos de solo lectura sí se envían con el formulario.</p>
-    <pre><code>&lt;form method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;input type=&quot;text&quot; readonly value=&quot;Nombre&quot;&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
 &lt;/form&gt;</code></pre>
@@ -317,16 +320,16 @@ input:valid {
                     </ul>
                 </li>
             </ul>
-            <pre><code>&lt;input type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9]+"&gt;</code></pre>
+            <pre class="prettyprint"><code>&lt;input type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9]+"&gt;</code></pre>
             <p>También podemos definir una versión más estricta de la expresión regular que limite la longitud
                 directamente con la regex:</p>
             <ul>
                 <li>La expresión <code>[A-Za-z0-9]{3,30}</code> significa que el nombre de usuario debe tener entre 3 y
                     30 caracteres, todos ellos letras o números.</li>
             </ul>
-            <pre><code>&lt;input type="text" pattern="[A-Za-z0-9]{3,30}"&gt;</code></pre>
+            <pre class="prettyprint"><code>&lt;input type="text" pattern="[A-Za-z0-9]{3,30}"&gt;</code></pre>
         </div>
-        <pre><code>&lt;form method=&quot;get&quot;&gt;
+        <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; minlength=&quot;3&quot; maxlength=&quot;30&quot; pattern=&quot;[A-Za-z0-9]+&quot;&gt; Minlength y maxlenght&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; pattern=&quot;[A-Za-z0-9]{3,30}&quot;&gt; Regexp&lt;/p&gt;
     &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
@@ -370,13 +373,13 @@ input:valid {
                         </ul>
                     </li>
                 </ul>
-                <pre><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)"&gt;</code></pre>
+                <pre class="prettyprint"><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)"&gt;</code></pre>
                 <p>En el último ejemplo, hacemos que solo se acepten direcciones de correo de servidores específicos,
                     como Gmail u Outlook. La expresión <code>[A-Za-z0-9]+@(gmail|outlook)\.(es|com)</code> funciona
                     igual que la anterior, pero limita el nombre del dominio a "gmail" o "outlook".</p>
-                <pre><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"&gt;</code></pre>
+                <pre class="prettyprint"><code>&lt;input type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"&gt;</code></pre>
             </div>
-            <pre><code>&lt;form method=&quot;get&quot;&gt;
+            <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;p&gt;&lt;input type=&quot;email&quot;&gt; Con un input de tipo email&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)&quot;&gt; Regexp con correo de cualquier servidor&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[A-Za-z0-9]+@(gmail|outlook)\.(es|com)&quot;&gt; Regexp con correo de servidor de google o microsoft&lt;/p&gt;
@@ -413,7 +416,7 @@ input:valid {
                             en el mismo formato de grupos de 3, 2, 2 y 2 dígitos.</li>
                     </ul>
                 </div>
-                <pre><code>&lt;form method=&quot;get&quot;&gt;
+                <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;p&gt;&lt;input type=&quot;tel&quot;&gt; Con un input de tipo tel&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; required pattern=&quot;[0-9]{9}&quot;&gt; Regexp con n&uacute;mero de tel&eacute;fono sin formato&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; required
@@ -442,7 +445,7 @@ input:valid {
                     internacional, puedes dar indicaciones sobre el prefijo y el formato correcto: </p>
                 </p>
 
-                <pre><code>&lt;form method=&quot;get&quot;&gt;
+                <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; required
             pattern=&quot;\+(34|351|376) [0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}&quot;
             title=&quot;Prefijo +34, +351 o +376 Formato +xx xxx xx xx xx&quot;&gt; Regexp con n&uacute;mero de la pen&iacute;nsula separados con espacios&lt;/p&gt;
@@ -456,8 +459,6 @@ input:valid {
                         <input type="submit" value="Enviar">
                     </form>
                 </div>
-
-                <script src="../js/hide.js"></script>
 </body>
 
 </html>

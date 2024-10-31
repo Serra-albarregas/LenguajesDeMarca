@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>Listas</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../estilos/estilos.css" />
-    <link rel="stylesheet" href="../../estilos/listas.css" />
-  </head>
+
+<head>
+  <title>Listas</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../estilos/estilos.css" />
+  <link rel="stylesheet" href="../../estilos/listas.css" />
+  <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
+</head>
+
+<body onload="PR.prettyPrint()">
+  <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
   <h1>Listas</h1>
   <p>Las listas sirven para organizar información.</p>
   <h2>Listas desdordenadas</h2>
@@ -18,13 +23,12 @@
     posteriormente cada elemento comienza con la etiqueta
     <code>&lt;li&gt;</code>.
   </p>
-  <pre><code>
-    &lt;ul&gt;
-        &lt;li&gt;Gato&lt;/li&gt;
-        &lt;li&gt;Perrete&lt;/li&gt;
-        &lt;li&gt;Caballo&lt;/li&gt;
-        &lt;li&gt;Tortuga&lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
+  <pre class="prettyprint"><code>&lt;ul&gt;
+    &lt;li&gt;Gato&lt;/li&gt;
+    &lt;li&gt;Perrete&lt;/li&gt;
+    &lt;li&gt;Caballo&lt;/li&gt;
+    &lt;li&gt;Tortuga&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
   <div class="example">
     <ul>
       <li>Gato</li>
@@ -44,13 +48,12 @@
     posteriormente cada elemento comienza con la etiqueta
     <code>&lt;li&gt;</code>.
   </p>
-  <pre><code>
-    &lt;ol&gt;
-        &lt;li&gt;Tarta&lt;/li&gt;
-        &lt;li&gt;Profiterol&lt;/li&gt;
-        &lt;li&gt;Helado&lt;/li&gt;
-        &lt;li&gt;Galleta&lt;/li&gt;
-    &lt;/ol&gt;</code></pre>
+  <pre class="prettyprint"><code>&lt;ol&gt;
+    &lt;li&gt;Tarta&lt;/li&gt;
+    &lt;li&gt;Profiterol&lt;/li&gt;
+    &lt;li&gt;Helado&lt;/li&gt;
+    &lt;li&gt;Galleta&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
   <div class="example">
     <ol>
       <li>Tarta</li>
@@ -80,13 +83,12 @@
       <dd>Vehículo con 2 ruedas</dd>
     </dl>
   </div>
-  <pre><code>
-    &lt;dl&gt;
-        &lt;dt&gt;Coche&lt;/dt&gt;
-        &lt;dd&gt;Veh&iacute;culo con 4 ruedas&lt;/dd&gt;
-        &lt;dt&gt;Moto&lt;/dt&gt;
-        &lt;dd&gt;Veh&iacute;culo con 2 ruedas&lt;/dd&gt;
-    &lt;/dl&gt;</code></pre>
+  <pre class="prettyprint"><code>&lt;dl&gt;
+    &lt;dt&gt;Coche&lt;/dt&gt;
+    &lt;dd&gt;Veh&iacute;culo con 4 ruedas&lt;/dd&gt;
+    &lt;dt&gt;Moto&lt;/dt&gt;
+    &lt;dd&gt;Veh&iacute;culo con 2 ruedas&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 
   <h2>Listas anidadas</h2>
   <p>Son listas dentro de listas</p>
@@ -95,17 +97,16 @@
     <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code>
     tras cualquier elemento de la lista de nivel superior.
   </p>
-  <pre><code>
+  <pre class="prettyprint"><code>&lt;ul&gt;
+    &lt;li&gt;Gato&lt;/li&gt;
     &lt;ul&gt;
-        &lt;li&gt;Gato&lt;/li&gt;
-        &lt;ul&gt;
-            &lt;li&gt;Siames&lt;/li&gt;
-            &lt;li&gt;Persa&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;li&gt;Perrete&lt;/li&gt;
-        &lt;li&gt;Caballo&lt;/li&gt;
-        &lt;li&gt;Tortuga&lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
+        &lt;li&gt;Siames&lt;/li&gt;
+        &lt;li&gt;Persa&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;li&gt;Perrete&lt;/li&gt;
+    &lt;li&gt;Caballo&lt;/li&gt;
+    &lt;li&gt;Tortuga&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
   <div class="example">
     <ul>
       <li>Gato</li>
@@ -121,13 +122,9 @@
 
   <h2>Estilos en las listas</h2>
   <h3>Tipo de estilo</h3>
-  <pre>
-    <code>
-    ol li{
-        list-style-type: lower-roman;
-    }</code
-    >
-</pre>
+  <pre class="prettyprint"><code>ol li{
+    list-style-type: lower-roman;
+}</code></pre>
   <div class="example">
     <div class="ej1">
       <ol>
@@ -140,13 +137,9 @@
   </div>
 
   <h3>Tipo de estilo con imágenes</h3>
-  <pre>
-    <code>
-    ul li{ 
-        list-style-image: url(recursos/gatete.png); 
-    } 
-</code>
-</pre>
+  <pre class="prettyprint"><code>ul li{ 
+    list-style-image: url(recursos/gatete.png); 
+} </code></pre>
   <div class="example">
     <div class="ej2">
       <ul>
@@ -159,24 +152,20 @@
   </div>
 
   <h3>Estilos en listas anidadas</h3>
-  <pre>
-    <code>
-    .anidada li{ 
-        list-style-type: square; 
-    }
+  <pre class="prettyprint"><code>.anidada li{ 
+    list-style-type: square; 
+}</code></pre>
     
-    &lt;ul&gt;
-      &lt;li&gt;Gato&lt;/li&gt;
-      &lt;ul class=&quot;anidada&quot;&gt;
-        &lt;li&gt;Siames&lt;/li&gt;
-        &lt;li&gt;Persa&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;li&gt;Perrete&lt;/li&gt;
-      &lt;li&gt;Caballo&lt;/li&gt;
-      &lt;li&gt;Tortuga&lt;/li&gt;
-    &lt;/ul&gt;</code
-    >
-</pre>
+    <pre class="prettyprint"><code>&lt;ul&gt;
+  &lt;li&gt;Gato&lt;/li&gt;
+  &lt;ul class=&quot;anidada&quot;&gt;
+    &lt;li&gt;Siames&lt;/li&gt;
+    &lt;li&gt;Persa&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li&gt;Perrete&lt;/li&gt;
+  &lt;li&gt;Caballo&lt;/li&gt;
+  &lt;li&gt;Tortuga&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
   <div class="example">
     <div class="ej3">
       <ul>
@@ -193,21 +182,20 @@
   </div>
 
   <h3>Estilos con una sola propiedad</h3>
-  <pre>
-    <code>
-    .anidada li{
-        list-style: upper-roman inside;
-    }</code
-    >
-</pre>
+  <pre class="prettyprint"><code>.anidada li{
+    list-style: upper-roman inside;
+}</code></pre>
   <div class="example">
     <div class="ej4">
       <ol>
         <li>Crostata</li>
         <ul class="anidada">
-            <li>La crostata es uno de los dulces tradicionales italianos, se trata de una tarta que tiene como base un tipo especial de masa quebrada, la masa frolla, que se rellena de mermelada, tradicionalmente de melocotón, albaricoque o fresa. </li>
-            <li>Es habitual también elaborar crostatas rellenas de crema pastelera y fruta, lo que los italianos llaman torta di frutta, de queso ricota, crostata di ricotta, o incluso de Nutella.</li>
-          </ul>
+          <li>La crostata es uno de los dulces tradicionales italianos, se trata de una tarta que tiene como base un
+            tipo especial de masa quebrada, la masa frolla, que se rellena de mermelada, tradicionalmente de melocotón,
+            albaricoque o fresa. </li>
+          <li>Es habitual también elaborar crostatas rellenas de crema pastelera y fruta, lo que los italianos llaman
+            torta di frutta, de queso ricota, crostata di ricotta, o incluso de Nutella.</li>
+        </ul>
         <li>Profiterol</li>
         <li>Helado</li>
         <li>Galleta</li>
@@ -216,18 +204,14 @@
   </div>
 
   <h3>Barra de menú</h3>
-  <pre>
-    <code>
-    ul li {
-        display: inline-block;
-        background-color: #2a9d8f;
-        color: whitesmoke;
-        width: 55px;
-        padding: 10px;
-        margin-left: 3px;
-    }
-</code>
-</pre>
+  <pre class="prettyprint"><code>ul li {
+    display: inline-block;
+    background-color: #2a9d8f;
+    color: whitesmoke;
+    width: 55px;
+    padding: 10px;
+    margin-left: 3px;
+}</code></pre>
   <div class="example">
     <div class="ej5">
       <ul>
@@ -238,4 +222,5 @@
       </ul>
     </div>
   </div>
+</body>
 </html>

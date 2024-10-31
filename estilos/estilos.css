@@ -55,8 +55,6 @@ p {
 
 /* Estilo para los bloques de código */
 pre {
-  background-color: #2d2d2d;
-  color: #f8f8f2;
   padding: 20px;
   border-radius: 8px;
   font-size: 1rem;
@@ -66,8 +64,6 @@ pre {
 }
 
 code {
-  background-color: #2d2d2d;
-  color: #f8f8f2;
   padding: 2px 5px;
   border-radius: 4px;
   font-family: 'Courier New', Courier, monospace;

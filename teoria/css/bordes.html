@@ -6,9 +6,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css">
     <link rel="stylesheet" href="../../estilos/bordes.css">
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Bordes con css</h1>
     <p>CSS permite agregar bordes a los elementos HTML. Puedes controlar el color, grosor, estilo y radio del borde para
         modificar su apariencia.</p>
@@ -83,7 +85,7 @@
         </table>
     </div>
 
-    <pre><code>.elemento {
+    <pre class="prettyprint"><code>.elemento {
     margin: 20px;
     padding: 10px;
     border-style: solid dotted dashed;
@@ -158,7 +160,7 @@
     <p>Con la propiedad <code>border-radius</code>, es posible redondear los bordes de un elemento. Puedes aplicar un
         valor absoluto (en píxeles) o un valor relativo (porcentaje) para personalizar el nivel de redondeo de los
         bordes.</p>
-    <pre><code>.redondeo_absoluto {
+    <pre class="prettyprint"><code>.redondeo_absoluto {
     border-width: 3px;
     border-color: #8ca6bf;
     border-style: solid;
@@ -187,7 +189,7 @@
             1 1, se asegura que el gradiente se extienda uniformemente por todo el borde.</li>
         <li><code>border-image-width</code>: Define el grosor del borde basado en la imagen.</li>
     </ul>
-    <pre><code> .elemento {
+    <pre class="prettyprint"><code> .elemento {
     margin: 20px;
     padding: 10px;
     border-image-source: linear-gradient(#2c3e50, #00897b, #1de9b6);

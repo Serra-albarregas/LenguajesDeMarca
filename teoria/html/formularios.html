@@ -6,9 +6,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css" />
     <link rel="stylesheet" href="../../estilos/formularios.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Formularios</h1>
     <p>
         Los formularios son un recurso esencial para la comunicación entre el
@@ -27,7 +29,7 @@
         mientras que <code>method</code> puede ser <code>GET</code> o
         <code>POST</code>, dependiendo de cómo se quiera enviar la información.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;input type=&quot;text&quot; name=&quot;nombre&quot; /&gt;
     &lt;input type=&quot;text&quot; name=&quot;apellidos&quot; /&gt;
     &lt;input type=&quot;password&quot; name=&quot;contrase&ntilde;a&quot; /&gt;
@@ -53,7 +55,7 @@
         <code>&lt;placeholder&gt;</code> para añadir un mensaje en el campo de
         texto con algunas instrucciones.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Contrase&ntilde;a &lt;input type=&quot;password&quot; name=&quot;contrasena&quot; /&gt;&lt;/p&gt;
@@ -79,7 +81,7 @@
         seleccionar múltiples preferencias. Con el atributo <code>checked</code> 
         se puede marcar una checkbox de manera predeterminada.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Acepto las condiciones &lt;input type=&quot;checkbox&quot; name=&quot;condiciones&quot; /&gt;&lt;/p&gt;
@@ -104,7 +106,7 @@
         <code>name</code>, mientras que cada uno tiene un valor diferente en
         <code>value</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;G&eacute;nero&lt;/p&gt;
@@ -133,7 +135,7 @@
         al usuario mientras escribe, etiquetadas como <code>&lt;option&gt;</code>. 
         Es útil para proporcionar una lista predefinida de opciones.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;
         Elige tu navegador favorito &lt;input list=&quot;browsers&quot; /&gt;
         &lt;datalist id=&quot;browsers&quot;&gt;
@@ -168,7 +170,7 @@
         la etiqueta <code>&lt;input&gt;</code>. Este botón restablece todos los
         campos del formulario a sus valores por defecto.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Nombre&lt;input type=&quot;text&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Apellidos&lt;input type=&quot;text&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;reset&quot; value=&quot;Borrar&quot; /&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
@@ -187,7 +189,7 @@
         un cuadro de diálogo. Se implementa con
         <code>&lt;input type="color"&gt;</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Color &lt;input type=&quot;color&quot; name=&quot;color&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -205,7 +207,7 @@
         rango de fechas permitidas utilizando los atributos <code>min</code> y
         <code>max</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Fecha &lt;input type=&quot;date&quot; name=&quot;fecha&quot; min=&quot;1990-01-01&quot; max=&quot;2030-12-31&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -222,7 +224,7 @@
         como la hora en un solo campo de entrada. Se utiliza con
         <code>&lt;input type="datetime-local"&gt;</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Fecha y hora &lt;input type=&quot;datetime-local&quot; name=&quot;fecha-hora&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -239,7 +241,7 @@
         <code>&lt;input type="email"&gt;</code>. Este campo realiza una pequeña
         validación de un correo electrónica, que normalmente no es suficiente.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Email &lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -258,7 +260,7 @@
         que los campos de teléfono se comporten correctamente en dispositivos
         móviles.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Tel&eacute;fono &lt;input type=&quot;tel&quot; name=&quot;telefono&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -275,7 +277,7 @@
         direcciones web, añadiendo una validación que suele ser insuficiente. Se
         implementa con <code>&lt;input type="url"&gt;</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;URL &lt;input type=&quot;url&quot; name=&quot;url&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -293,7 +295,7 @@
         números y puedes establecer límites utilizando los atributos
         <code>min</code> y <code>max</code>.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Numero &lt;input type=&quot;number&quot; name=&quot;numero&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -311,7 +313,7 @@
         dentro de un rango establecido con <code>min</code> y <code>max</code>,
         ideal para seleccionar cantidades o niveles de intensidad.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Rango num&eacute;rico &lt;input type=&quot;range&quot; name=&quot;rango&quot; min=&quot;5&quot; max=&quot;15&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -330,7 +332,7 @@
         ejemplo, <code>accept="image/png, image/jpg"</code> restringe a imágenes
         en formato PNG y JPG.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Sube tu archivo &lt;input type=&quot;file&quot; name=&quot;archivo&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;Sube tu imagen &lt;input type=&quot;file&quot; name=&quot;imagen&quot; accept=&quot;image/png, image/jpg, image/gif&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
@@ -349,7 +351,7 @@
         <code>&lt;input type="search"&gt;</code>. Este campo es especialmente útil
         cuando se implementa una función de búsqueda en el sitio web.
     </p>
-    <pre><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
     &lt;p&gt;Buscador &lt;input type=&quot;search&quot; name=&quot;buscador&quot; /&gt;&lt;/p&gt;
     &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>

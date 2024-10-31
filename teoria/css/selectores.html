@@ -6,9 +6,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../estilos/estilos.css">
     <link rel="stylesheet" href="../../estilos/selectores.css">
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
 </head>
 
-<body>
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Selectores</h1>
     <p>TODO</p>
     <h2>Estructura general</h2>
@@ -142,11 +144,14 @@
         </table>
         <pre><code></code></pre>
         <div class="example">
-            <p>Azul - Combinador desdendente</p>
-            <p>Subrayado - Combinador universal</p>
-            <p>Cursiva - Hijo directo</p>
-            <p>Verde - Hermano adyacente</p>
-            <p>Rosa - Hermano general</p>
+            <ul>
+                <li>Azul - Combinador desdendente</li>
+                <li>Subrayado - Combinador universal</li>
+                <li>Cursiva - Hijo directo</li>
+                <li>Verde - Hermano adyacente</li>
+                <li>Rosa - Hermano general</li>
+            </ul>
+            
             
             <div class="ej6">
                 <h4>Ejemplo de Combinadores CSS</h4>
@@ -178,6 +183,83 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <h2>Agrupación de selectores</h2>
+    <p>TODO</p>
+    <pre class="prettyprint"><code>.clase1{
+    color: white;
+}
+.clase2{
+    color: white;
+}</code></pre>
+    <pre class="prettyprint"><code>.clase1, .clase2 {
+    color: whiteM;
+}</code></pre>
+
+    <h2>Combinadores lógicos</h2>
+    <p>TODO</p>
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Combinador</th>
+                <th>Descripcción</th>
+            </tr>
+            <tr>
+                <td><code>:is()</code></td>
+                <td>Agrupador, igual que separando por comas</td>
+            </tr>
+            <tr>
+                <td><code>:has()</code></td>
+                <td>Selecciona elementos que tengan hijos con ciertas características</td>
+            </tr>
+            <tr>
+                <td><code>:not()</code></td>
+                <td>Selecciona elementos que no cumplan ciertas características</td>
+            </tr>
+        </table>
+    </div>
+    <h3><code>:is()</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code>.clase1, .clase2 {
+    color: white;
+}</code></pre>
+    <p>TODO</p>
+    <pre class="prettyprint"><code>:is(.clase1, .clase2){
+    color: white;
+}</code></pre>
+    <p>TODO</p>
+<pre class="prettyprint"><code>div .clase1, div .clase2{
+    color: white;
+}</code></pre>
+    <p>TODO</p>
+    <pre class="prettyprint"><code>div .clase1, .clase2{
+    color: white;
+}</code></pre>
+    <p>TODO</p>
+<pre class="prettyprint"><code>div :is(.clase1, .clase2){
+    color: white;
+}</code></pre>
+
+    <h3><code>:has()</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example">
+        <div class="ej8">
+            <div><p>Un div con un párrafo</p></div>
+            <div><a href="#inicio">Un div con un enlace</a></div>
+            <div><a href="#inicio">Otro div con un enlace</a></div>
+        </div>
+    </div>
+    <h4><code>:has()</code> con estados</h4>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej9">
+        <form method="get">
+            <p><input type="email"> Con un input de tipo email</p>
+            <p><input type="text" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.(es|com)"> Regexp con correo de cualquier servidor</p>
+            <p><input type="text" required pattern="[A-Za-z0-9]+@(gmail|outlook)\.(es|com)"> Regexp con correo de servidor de google o microsoft</p>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
 </body>
 
