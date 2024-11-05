@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Pseudoclases</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/pseudoclases.css">
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
+</head>
+
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
+    <h1>Pseudoclases</h1>
+
+    <h2>Estructura general</h2>
+    <p>TODO</p>
+
+    <h2>Tipos de pseudoclases</h2>
+    <p>TODO</p>
+
+    <div class="resume">
+        <table>
+            <tr>
+                <th>Pseudoclase</th>
+                <th>Descripción</th>
+                <th>Ejemplos</th>
+            </tr>
+            <tr>
+                <td>Interacción</td>
+                <td>Relacionada con acciones de usuario</td>
+                <td><code>:hover</code>, <code>:active</code>, <code>:focus</code></td>
+            </tr>
+            <tr>
+                <td>Ubicación</td>
+                <td>Relacionada con los enlaces</td>
+                <td><code>:any-link</code>, <code>:link</code>, <code>:visited</code>, <code>:target</code></td>
+            </tr>
+            <tr>
+                <td>Estructura</td>
+                <td>Relacionada con la estructura del documento html</td>
+                <td><code>:root</code>, <code>:host</code>, <code>:defined</code>, <code>:empty</code>, <code>:first-child</code>, <code>:last-child</code>, <code>:only-child</code>, <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:only-of-type</code>, <code>:nth-child()</code>, <code>:nth-last-child()</code>, <code>:nth-of-type()</code>, <code>:nth-last-of-type()</code></td>
+            </tr>
+            <tr>
+                <td>Formulario</td>
+                <td>Relacionada con los formularios html</td>
+                <td><code>:checked</code>, <code>:indeterminate</code>, <code>:enabled</code>, <code>:disabled</code>, <code>:read-only</code>, <code>:read-write</code>, <code>:placeholder-shown</code>, <code>:default</code>, <code>:required</code>, <code>:optional</code>, <code>:valid</code>, <code>:invalid</code>, <code>:user-valid</code>, <code>:user-invalid</code>, <code>:in-range</code>, <code>:out-of-range</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Pseudoclases de interacción</h2>
+    <p>TODO</p>
+    <h3><code>:hover</code></h3>
+    <p>TODO</p>
+
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej1">
+        <a href="#inicio">Enlace con hover</a>
+    </div>
+
+    <h3><code>:active</code></h3>
+    <p>TODO</p>
+
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej2">
+        <a href="#inicio">Enlace con active</a>
+    </div>
+
+    <h3><code>:focus</code></h3>
+    <p>TODO</p>
+
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej3">
+        <form method="get">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+        </form>
+    </div>
+
+    <h2>Pseudoclases de ubicación</h2>
+    <p>TODO</p>
+
+    <h3><code>:any-link</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej4">
+        <a href="#inicio">Enlace</a>
+    </div>
+
+    <h3><code>:link</code> y <code>:visited</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej5">
+        <a href="http://www.google.com">Enlace</a>
+    </div>
+
+    <h3><code>:target</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej6">
+        <a href="#seccion1"><p>Enlace a la sección 1</p></a>
+        <a href="#seccion2"><p>Enlace a la sección 2</p></a>
+        <h4 id="seccion1">Sección 1</h4>
+        <p>Esta es la sección 1</p>
+        <h4 id="seccion2">Sección 2</h4>
+        <p>Esta es la sección 2</p>
+    </div>
+
+    <h2>Pseudoclases de estructura</h2>
+    <p>TODO</p>
+
+    <h3><code>:root</code></h3>
+    <p>TODO</p>
+
+    <h3><code>:first-child</code> y <code>:last-child</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code></code></pre>
+    <div class="example ej7">
+        <div class="contenedor">
+            <div class="lista">
+                <div class="elemento">Primera lista, primer elemento</div>
+                <div class="elemento">Primera lista, segundo elemento</div>
+            </div>
+            <div class="lista">
+                <div class="elemento">Segunda lista, primer elemento</div>
+                <div class="elemento">Segunda lista, segundo elemento</div>
+            </div>
+        </div>
+    </div>
+
+    <h3><code>:nth-child()</code>, <code>:nth-last-child()</code> y <code>:nth-child(A of B)</code></h3>
+    <p>TODO</p>
+    <pre class="prettyprint"><code>.grid-item<span id="nth-childMode"></span>(<span id="nth-childExample"></span>) {
+    background-color: #4CAF50;
+    color: white;
+}</code></pre>
+    <div class="example ej8">
+        <p>Introduce un valor para <code><select name="nth" id="nthOption">
+            <option value=":nth-child">:nth-child</option>
+            <option value=":nth-last-child">:nth-last-child</option>
+        </select></code></p>
+        <p><input type="text" id="nthInput" placeholder="2n, 3n+1, odd, 3n of .itemB" /></p>
+        <div class="grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item itemB">5<div class="small">itemB</div></div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item itemB">12<div class="small">itemB</div></div>
+            <div class="grid-item">13</div>
+            <div class="grid-item">14</div>
+            <div class="grid-item">15</div>
+            <div class="grid-item itemB">16<div class="small">itemB</div></div>
+            <div class="grid-item">17</div>
+            <div class="grid-item">18</div>
+            <div class="grid-item">19</div>
+            <div class="grid-item">20</div>
+            <div class="grid-item">21</div>
+            <div class="grid-item">22</div>
+            <div class="grid-item">23</div>
+            <div class="grid-item">24</div>
+            <div class="grid-item">25</div>
+            <div class="grid-item">26</div>
+            <div class="grid-item itemB">27<div class="small">itemB</div></div>
+            <div class="grid-item itemB">28<div class="small">itemB</div></div>
+            <div class="grid-item">29</div>
+            <div class="grid-item">30</div>
+            <div class="grid-item">31</div>
+            <div class="grid-item">32</div>
+            <div class="grid-item">33</div>
+            <div class="grid-item">34</div>
+            <div class="grid-item itemB">35<div class="small">itemB</div></div>
+            <div class="grid-item">36</div>
+            <div class="grid-item">37</div>
+            <div class="grid-item">38</div>
+            <div class="grid-item">39</div>
+            <div class="grid-item">40</div>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript" src="../../js/nth-childGrid.js"></script>
+</body>
+</html>

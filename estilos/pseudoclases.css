@@ -1,0 +1,121 @@
+:root {
+    --nth-child: 2n;
+    --colorResalte: rgb(122, 212, 122);
+}
+
+.ej1 a {
+    color: rgb(27, 43, 73);
+}
+
+.ej1 a:hover {
+    color: rgb(122, 134, 185);
+}
+
+.ej2 a {
+    color: rgb(27, 43, 73);
+}
+
+.ej2 a:active {
+    color: rgb(122, 134, 185);
+}
+
+.ej3 input {
+    border: 2px solid rgb(122, 134, 185);
+}
+
+.ej3 input:focus {
+    border: 2px solid rgb(125, 204, 136);
+    outline: none;
+}
+
+.ej4 :any-link {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej5 a:link {
+    background-color: rgb(212, 122, 144);
+}
+
+.ej5 a:visited {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej6 h4:target {
+    background-color: var(--colorResalte);
+    color: #333;
+    padding: 5px;
+}
+
+.ej7 .contenedor :first-child {
+    background-color: rgb(122, 212, 122);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 10px;
+}
+
+.grid-item {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.highlighted {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#nth-childExample {
+    color: rgb(96, 193, 231);
+    font-weight: bold;
+}
+
+#nth-childMode {
+    color: rgb(235, 129, 129);
+    font-weight: bold;
+}
+
+.small {
+    font-size: 0.7em;
+}
+
+.ej8 select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.ej8 select:focus {
+    border-color: #2980b9;
+    background-color: #fff;
+}
+
+/* Estilo para el input */
+.ej8 input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.ej8 input[type="text"]:focus {
+    border-color: #2980b9;
+    background-color: #fff;
+}
