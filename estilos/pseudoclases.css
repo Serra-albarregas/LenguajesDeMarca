@@ -119,3 +119,15 @@
     border-color: #2980b9;
     background-color: #fff;
 }
+
+.ej9 .contenedor>div:first-of-type {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej9 .lista p:last-of-type {
+    border: 3px solid rgb(17, 180, 17);
+}
+
+.ej9 .lista div:nth-of-type(2) {
+    font-style: italic;
+}
