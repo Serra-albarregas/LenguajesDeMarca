@@ -14,10 +14,17 @@
     <h1>Pseudoclases</h1>
 
     <h2>Estructura general</h2>
-    <p>TODO</p>
+    <p>Las pseudoclases son una forma de seleccionar elementos en CSS basada en condiciones específicas del estado o la posición de los elementos. A diferencia de los selectores comunes, las pseudoclases no seleccionan un elemento en función de sus características estáticas, sino que consideran el contexto o las interacciones del usuario. Para definir una pseudoclase, se utiliza el símbolo de dos puntos (:) seguido del nombre de la pseudoclase.</p>
 
     <h2>Tipos de pseudoclases</h2>
-    <p>TODO</p>
+    <p>Las pseudoclases se dividen en varios tipos según su función en el estilo de los elementos. Cada tipo abarca distintas condiciones o estados de los elementos en una página HTML, y permite aplicar estilos de manera dinámica y contextual. Los principales tipos son:</p>
+    <ul>
+        <li><strong>Interacción:</strong> se aplican en función de acciones realizadas por el usuario, como pasar el cursor sobre un elemento o seleccionarlo.</li>
+        <li><strong>Ubicación:</strong> seleccionan elementos según su relación de estado con el documento o su vinculación a enlaces.</li>
+        <li><strong>Estructura:</strong> seleccionan elementos en función de su posición dentro de la estructura HTML.</li>
+        <li><strong>Formulario:</strong> se utilizan con elementos de formulario, dependiendo de su estado como habilitado, deshabilitado, válido o requerido.</li>
+    </ul>
+
 
     <div class="resume">
         <table>
@@ -39,38 +46,64 @@
             <tr>
                 <td>Estructura</td>
                 <td>Relacionada con la estructura del documento html</td>
-                <td><code>:root</code>, <code>:host</code>, <code>:defined</code>, <code>:empty</code>, <code>:first-child</code>, <code>:last-child</code>, <code>:only-child</code>, <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:only-of-type</code>, <code>:nth-child()</code>, <code>:nth-last-child()</code>, <code>:nth-of-type()</code>, <code>:nth-last-of-type()</code></td>
+                <td><code>:root</code>, <code>:empty</code>, <code>:first-child</code>, <code>:last-child</code>, <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:nth-child()</code>, <code>:nth-last-child()</code>, <code>:nth-of-type()</code>, <code>:nth-last-of-type()</code></td>
             </tr>
             <tr>
                 <td>Formulario</td>
                 <td>Relacionada con los formularios html</td>
-                <td><code>:checked</code>, <code>:indeterminate</code>, <code>:enabled</code>, <code>:disabled</code>, <code>:read-only</code>, <code>:read-write</code>, <code>:placeholder-shown</code>, <code>:default</code>, <code>:required</code>, <code>:optional</code>, <code>:valid</code>, <code>:invalid</code>, <code>:user-valid</code>, <code>:user-invalid</code>, <code>:in-range</code>, <code>:out-of-range</code></td>
+                <td><code>:enabled</code>, <code>:disabled</code>, <code>:required</code>, <code>:valid</code>, <code>:invalid</code>, <code>:user-valid</code>, <code>:user-invalid</code></td>
             </tr>
         </table>
     </div>
 
     <h2>Pseudoclases de interacción</h2>
-    <p>TODO</p>
+    <p>Las pseudoclases de interacción permiten aplicar estilos en función de cómo el usuario interactúa con un elemento en la página. Estas pseudoclases se activan temporalmente mientras el usuario realiza acciones como pasar el cursor o hacer clic.</p>
     <h3><code>:hover</code></h3>
-    <p>TODO</p>
+    <p>La pseudoclase <code>:hover</code> se activa cuando el usuario pasa el cursor sobre un elemento. Es comúnmente utilizada para resaltar enlaces o botones al pasar el cursor por encima, mejorando la experiencia visual y de navegación.</p>
 
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;a href=&quot;#inicio&quot;&gt;Enlace con hover&lt;/a&gt;</code></pre>
+    <pre class="prettyprint"><code>a {
+    color: rgb(27, 43, 73);
+}
+
+a:hover {
+    color: rgb(122, 134, 185);
+}</code></pre>
     <div class="example ej1">
         <a href="#inicio">Enlace con hover</a>
     </div>
 
     <h3><code>:active</code></h3>
-    <p>TODO</p>
+    <p>La pseudoclase <code>:active</code> se activa mientras el usuario está presionando el elemento, como cuando hace clic en un enlace o un botón. El estado de "active" solo dura mientras el usuario mantiene el clic presionado, permitiendo efectos visuales inmediatos.</p>
 
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;a href=&quot;#inicio&quot;&gt;Enlace con active&lt;/a&gt;</code></pre>
+    <pre class="prettyprint"><code>a {
+    color: rgb(27, 43, 73);
+}
+
+a:active {
+    color: rgb(122, 134, 185);
+}</code></pre>
     <div class="example ej2">
         <a href="#inicio">Enlace con active</a>
     </div>
 
     <h3><code>:focus</code></h3>
-    <p>TODO</p>
+    <p>La pseudoclase <code>:focus</code> se activa cuando un elemento, como un campo de formulario, recibe el foco de entrada, ya sea por clic o navegación mediante el teclado. Esta pseudoclase es útil para destacar campos de entrada activos, mejorando la accesibilidad y la facilidad de uso.</p>
 
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+&lt;/form&gt;</code></pre>
+    <pre class="prettyprint"><code>input {
+    border: 2px solid rgb(122, 134, 185);
+}
+
+input:focus {
+    border: 2px solid rgb(125, 204, 136);
+    outline: none;
+}</code></pre>
     <div class="example ej3">
         <form method="get">
             <input type="text">
@@ -80,25 +113,45 @@
     </div>
 
     <h2>Pseudoclases de ubicación</h2>
-    <p>TODO</p>
+    <p>Las pseudoclases de ubicación están relacionadas con el estado de los enlaces en una página o con su relación con el URL actual. Se usan comúnmente para controlar el estilo de los enlaces en sus distintos estados, como cuando se ha visitado o está activo.</p>
 
     <h3><code>:any-link</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La pseudoclase <code>:any-link</code> selecciona cualquier elemento que sea un enlace, independientemente de si ha sido visitado o no. Facilita la aplicación de estilos globales a todos los enlaces de la página.</p>
+    <pre class="prettyprint"><code>&lt;a href=&quot;#inicio&quot;&gt;Enlace&lt;/a&gt;</code></pre>
+    <pre class="prettyprint"><code>:any-link {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example ej4">
         <a href="#inicio">Enlace</a>
     </div>
 
     <h3><code>:link</code> y <code>:visited</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>Las pseudoclases <code>:link</code> y <code>:visited</code> permiten estilizar enlaces según si el usuario los ha visitado previamente o no. La pseudoclase <code>:link</code> selecciona enlaces que aún no han sido visitados, mientras que <code>:visited</code> selecciona aquellos que el usuario ya ha visitado.</p>
+    <pre class="prettyprint"><code>&lt;a href=&quot;http://www.google.com&quot;&gt;Enlace&lt;/a&gt;</code></pre>
+    <pre class="prettyprint"><code>a:link {
+    background-color: rgb(212, 122, 144);
+}
+
+a:visited {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example ej5">
         <a href="http://www.google.com">Enlace</a>
     </div>
 
     <h3><code>:target</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La pseudoclase <code>:target</code> selecciona un elemento que coincide con el fragmento de URL actual (la parte después del símbolo #). Es útil para resaltar o manipular secciones específicas de la página que son el objetivo de un enlace ancla.</p>
+    <pre class="prettyprint"><code>&lt;a href=&quot;#seccion1&quot;&gt;&lt;p&gt;Enlace a la secci&oacute;n 1&lt;/p&gt;&lt;/a&gt;
+&lt;a href=&quot;#seccion2&quot;&gt;&lt;p&gt;Enlace a la secci&oacute;n 2&lt;/p&gt;&lt;/a&gt;
+&lt;h4 id=&quot;seccion1&quot;&gt;Secci&oacute;n 1&lt;/h4&gt;
+&lt;p&gt;Esta es la secci&oacute;n 1&lt;/p&gt;
+&lt;h4 id=&quot;seccion2&quot;&gt;Secci&oacute;n 2&lt;/h4&gt;
+&lt;p&gt;Esta es la secci&oacute;n 2&lt;/p&gt;</code></pre>
+    <pre class="prettyprint"><code>h4:target {
+    background-color: rgb(122, 212, 122);
+    color: #333;
+    padding: 5px;
+}</code></pre>
     <div class="example ej6">
         <a href="#seccion1"><p>Enlace a la sección 1</p></a>
         <a href="#seccion2"><p>Enlace a la sección 2</p></a>
@@ -109,14 +162,26 @@
     </div>
 
     <h2>Pseudoclases de estructura</h2>
-    <p>TODO</p>
+    <p>Las pseudoclases de estructura permiten aplicar estilos según la posición de un elemento en la estructura del documento HTML. Facilitan el estilo de elementos en función de su ubicación en la jerarquía, como el primer hijo o el último elemento de un tipo.</p>
 
     <h3><code>:root</code></h3>
-    <p>TODO</p>
+    <p>La pseudoclase <code>:root</code> selecciona el elemento raíz del documento, que generalmente es el elemento <code>&lt;html&gt;</code>. Es útil para definir variables CSS globales que se aplicarán a toda la página.</p>
 
     <h3><code>:first-child</code> y <code>:last-child</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>Las pseudoclases <code>:first-child</code> y <code>:last-child</code> seleccionan el primer o el último hijo de un elemento padre. Estas pseudoclases son útiles para estilizar el primer o último elemento en una lista o en una estructura de elementos anidados.</p>
+    <pre class="prettyprint"><code>&lt;div class=&quot;contenedor&quot;&gt;
+    &lt;div class=&quot;lista&quot;&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Primera lista, primer elemento&lt;/div&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Primera lista, segundo elemento&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;lista&quot;&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Segunda lista, primer elemento&lt;/div&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Segunda lista, segundo elemento&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>.contenedor :first-child {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
     <div class="example ej7">
         <div class="contenedor">
             <div class="lista">
@@ -131,7 +196,37 @@
     </div>
 
     <h3><code>:nth-child()</code>, <code>:nth-last-child()</code> y <code>:nth-child(A of B)</code></h3>
-    <p>TODO</p>
+    <p>La pseudoclase <code>:nth-child()</code> permite seleccionar elementos en función de su posición dentro de su contenedor padre. La posición se puede especificar mediante una fórmula matemática, <code>an + b</code>, donde:
+        <ul>
+            <li><code>a</code>: es un multiplicador que define el intervalo de selección.</li>
+            <li><code>n</code>: representa un contador de incremento (por cada elemento en el contenedor).</li>
+            <li><code>b</code>: es un desplazamiento o punto de partida para la selección.</li>
+        </ul>
+        Ejemplos comunes de expresiones en <code>:nth-child()</code> son:
+        <ul>
+            <li><code>2n</code>: selecciona cada segundo elemento (pares: 2, 4, 6,...).</li>
+            <li><code>2n+1</code>: selecciona cada tercer elemento (impares: 1, 3, 5,...).</li>
+            <li><code>3n+1</code>: selecciona el primer elemento y luego cada tercer elemento (1, 4, 7,...).</li>
+            <li><code>odd</code> y <code>even</code>: se pueden utilizar como palabras clave, siendo equivalentes a <code>2n+1</code> (impar) y <code>2n</code> (par) respectivamente.</li>
+        </ul>
+    </p>
+    
+    <p>Además de estas selecciones en base a posición, CSS introduce el uso del patrón <code>:nth-child(A of B)</code>, donde:
+        <ul>
+            <li><code>A</code>: es la misma expresión matemática que define la frecuencia de selección.</li>
+            <li><code>B</code>: es un selector que define el tipo de elementos que se seleccionarán.</li>
+        </ul>
+        La expresión <code>A of B</code> permite mayor especificidad en la selección de elementos. En lugar de aplicar la fórmula a todos los hijos de un contenedor, esta pseudoclase selecciona únicamente aquellos que coinciden con el selector <code>B</code>, limitando así el ámbito de la selección solo a elementos de un tipo o clase específica.</p>
+    
+    <p>Ejemplos prácticos de <code>:nth-child(A of B)</code> incluyen:
+        <ul>
+            <li><code>:nth-child(2 of .itemB)</code>: selecciona cada segundo elemento con la clase <code>.itemB</code> en su contenedor.</li>
+            <li><code>:nth-child(3n of p)</code>: selecciona cada tercer párrafo (<code>&lt;p&gt;</code>) dentro del contenedor.</li>
+        </ul>
+    </p>
+    
+    <p>El uso de <code>:nth-child(A of B)</code> es especialmente útil cuando se desea aplicar estilos a elementos específicos en un conjunto de diferentes tipos, evitando que el estilo afecte a todos los hijos del contenedor.</p>
+    
     <pre class="prettyprint"><code>.grid-item<span id="nth-childMode"></span>(<span id="nth-childExample"></span>) {
     background-color: #4CAF50;
     color: white;
@@ -187,8 +282,63 @@
     </div>
     
     <h3><code>:first-of-type</code>, <code>:last-of-type</code>, <code>:nth-of-type()</code> y <code>:nth-last-of-type()</code></h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>Las pseudoclases <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:nth-of-type()</code>, y <code>:nth-last-of-type()</code> se utilizan para seleccionar elementos en función de su tipo dentro de un contenedor. A diferencia de <code>:nth-child()</code>, que selecciona elementos en función de su posición relativa independientemente de su tipo, estas pseudoclases permiten seleccionar elementos basándose en el tipo específico de cada uno. A continuación se explica cómo funciona cada una:</p>
+
+<ul>
+    <li><code>:first-of-type</code>: selecciona el primer elemento de un tipo específico dentro de su contenedor. Si, por ejemplo, se usa en un contenedor con varios tipos de elementos (como <code>&lt;p&gt;</code> y <code>&lt;div&gt;</code>), solo el primer elemento del tipo especificado será seleccionado.</li>
+    
+    <li><code>:last-of-type</code>: selecciona el último elemento de un tipo específico en el contenedor. Funciona de manera similar a <code>:first-of-type</code>, pero aplica la selección al último elemento de ese tipo en lugar del primero.</li>
+    
+    <li><code>:nth-of-type(n)</code>: selecciona el enésimo elemento de un tipo específico dentro de su contenedor, basado en una fórmula <code>an + b</code> o palabras clave como <code>odd</code> y <code>even</code>. Esta fórmula sigue el mismo formato que <code>:nth-child</code>, pero aplicada solo a elementos del tipo especificado. Por ejemplo:
+        <ul>
+            <li><code>:nth-of-type(2)</code>: selecciona el segundo elemento de un tipo específico.</li>
+            <li><code>:nth-of-type(2n)</code>: selecciona cada segundo elemento de un tipo específico (pares).</li>
+        </ul>
+    </li>
+
+    <li><code>:nth-last-of-type(n)</code>: funciona como <code>:nth-of-type(n)</code>, pero la cuenta empieza desde el final del conjunto en lugar del principio. Por ejemplo:
+        <ul>
+            <li><code>:nth-last-of-type(1)</code>: selecciona el último elemento de un tipo específico en el contenedor.</li>
+            <li><code>:nth-last-of-type(3n)</code>: selecciona cada tercer elemento desde el final.</li>
+        </ul>
+    </li>
+</ul>
+
+<p>Algunos ejemplos prácticos de estas pseudoclases son:</p>
+<ul>
+    <li><code>:first-of-type</code>: para estilizar el primer párrafo (<code>&lt;p&gt;</code>) dentro de un contenedor con varios tipos de elementos.</li>
+    <li><code>:last-of-type</code>: para dar formato al último elemento <code>&lt;div&gt;</code> en un contenedor.</li>
+    <li><code>:nth-of-type(odd)</code>: para seleccionar elementos de un tipo en posiciones impares.</li>
+    <li><code>:nth-last-of-type(2)</code>: para seleccionar el penúltimo elemento de un tipo específico.</li>
+</ul>
+
+<p>Estas pseudoclases son útiles cuando quieres aplicar estilos a elementos específicos de un tipo dentro de un contenedor, sin afectar a otros tipos de elementos en el mismo nivel.</p>
+
+    <pre class="prettyprint"><code>&lt;div class=&quot;contenedor&quot;&gt;
+    &lt;div class=&quot;lista&quot;&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Primer grupo, primer div&lt;/div&gt;
+        &lt;p class=&quot;elemento&quot;&gt;Primer grupo, primer p&aacute;rrafo&lt;/p&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Primer grupo, segundo div&lt;/div&gt;
+        &lt;p class=&quot;elemento&quot;&gt;Primer grupo, segundo p&aacute;rrafo&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;lista&quot;&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Segundo grupo, primer div&lt;/div&gt;
+        &lt;p class=&quot;elemento&quot;&gt;Segundo grupo, primer p&aacute;rrafo&lt;/p&gt;
+        &lt;div class=&quot;elemento&quot;&gt;Segundo grupo, segundo div&lt;/div&gt;
+        &lt;p class=&quot;elemento&quot;&gt;Segundo grupo, segundo p&aacute;rrafo&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>.contenedor>div:first-of-type {
+    background-color: rgb(122, 212, 122);
+}
+
+.lista p:last-of-type {
+    border: 3px solid rgb(17, 180, 17);
+}
+
+.lista div:nth-of-type(2) {
+    font-style: italic;
+}</code></pre>
     <div class="example ej9">
         <div class="contenedor">
             <div class="lista">
@@ -207,7 +357,105 @@
     </div>
 
     <h3><code>:empty</code></h3>
-    
+    <p>La pseudoclase <code>:empty</code> selecciona elementos que no tienen ningún contenido, ya sea texto, imágenes u otros elementos hijos. Es útil para aplicar estilos a contenedores vacíos y controlar su visualización.</p>
+    <pre class="prettyprint"><code>&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;Div con texto&lt;/div&gt;
+&lt;div&gt;&lt;!-- div con comentario --&gt;&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>div:empty {
+    background-color: rgb(122, 212, 122);
+}</code></pre>
+    <div class="example ej10">
+        <div></div>
+        <div>Div con texto</div>
+        <div><!-- div con comentario --></div>
+    </div>
+
+    <h2>Pseudoclases de formularios</h2>
+    <p>Las pseudoclases de formulario permiten aplicar estilos en función de los estados de los campos de entrada, como si están habilitados, deshabilitados o requieren validación. Estas pseudoclases mejoran la accesibilidad y la interacción del usuario en los formularios.</p>
+
+    <h3><code>:enabled</code> y <code>:disabled</code></h3>
+    <p>Las pseudoclases <code>:enabled</code> y <code>:disabled</code> se aplican a los elementos de formulario en función de su estado de activación. La pseudoclase <code>:enabled</code> selecciona elementos de formulario habilitados para la interacción, mientras que <code>:disabled</code> selecciona los que están deshabilitados y no admiten interacciones del usuario.</p>
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;label for=&quot;f1Nombre&quot;&gt;Nombre&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;f1Nombre&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;f1Apellido&quot;&gt;Apellido&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;f1Apellido&quot; disabled&gt;
+&lt;/form&gt;</code></pre>
+    <pre class="prettyprint"><code>input:enabled {
+    background-color: rgb(122, 212, 122);
+}
+
+input:disabled {
+    background-color: rgb(235, 129, 129);
+    cursor: not-allowed;
+}</code></pre>
+    <div class="example ej11">
+        <form method="get">
+            <label for="f1Nombre">Nombre</label>
+            <input type="text" id="f1Nombre"><br>
+            <label for="f1Apellido">Apellido</label>
+            <input type="text" id="f1Apellido" disabled>
+        </form>
+    </div>
+
+    <h3><code>:required</code></h3>
+    <p>La pseudoclase <code>:required</code> selecciona los campos de formulario que tienen el atributo <code>required</code>, indicando que deben ser llenados antes de enviar el formulario. Esta pseudoclase es útil para resaltar visualmente los campos que necesitan completarse.</p>
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;label for=&quot;f2Nombre&quot;&gt;Nombre&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;f2Nombre&quot; required&gt;&lt;br&gt;
+    &lt;label for=&quot;f2Apellido&quot;&gt;Apellido&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;f2Apellido&quot;&gt;
+&lt;/form&gt;</code></pre>
+    <pre class="prettyprint"><code>input:required {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}</code></pre>
+    <div class="example ej12">
+        <form method="get">
+            <label for="f2Nombre">Nombre</label>
+            <input type="text" id="f2Nombre" required><br>
+            <label for="f2Apellido">Apellido</label>
+            <input type="text" id="f2Apellido">
+        </form>
+    </div>
+
+    <h3><code>:valid</code>, <code>:invalid</code>, <code>user-valid</code> y <code>user-invalid</code></h3>
+    <p>Las pseudoclases <code>:valid</code> y <code>:invalid</code> se utilizan para aplicar estilos según la validez de los datos ingresados en campos de formulario, como aquellos con requisitos de formato específico. Además, las pseudoclases <code>:user-valid</code> y <code>:user-invalid</code> funcionan de manera similar, pero se activan solo después de la interacción del usuario con el campo.</p>
+    <pre class="prettyprint"><code>&lt;form method=&quot;get&quot;&gt;
+    &lt;label for=&quot;f3Nombre&quot;&gt;valid/invalid&lt;/label&gt;
+    &lt;input class=&quot;valid&quot; type=&quot;text&quot; id=&quot;f3Nombre&quot; required pattern=&quot;[A-Za-z]+&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;f3Apellido&quot;&gt;user-valid/invalid&lt;/label&gt;
+    &lt;input class=&quot;user-valid&quot; type=&quot;text&quot; id=&quot;f3Apellido&quot; required pattern=&quot;[A-Za-z]+&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+    <pre class="prettyprint"><code>.valid:valid {
+    background-color: rgb(122, 212, 122);
+    border: 2px solid rgb(49, 156, 45);
+}
+
+.valid:invalid {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}
+
+.user-valid:user-valid {
+    background-color: rgb(122, 212, 122);
+    border: 2px solid rgb(49, 156, 45);
+}
+
+.user-valid:user-invalid {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}</code></pre>
+    <div class="example ej13">
+        <form method="get">
+            <label for="f3Nombre">valid/invalid</label>
+            <input class="valid" type="text" id="f3Nombre" required pattern="[A-Za-z]+"><br>
+            <label for="f3Apellido">user-valid/invalid</label>
+            <input class="user-valid" type="text" id="f3Apellido" required pattern="[A-Za-z]+"><br>
+            <input type="submit" name="Enviar">
+        </form>
+    </div>
 
     <script type="text/javascript" src="../../js/nth-childGrid.js"></script>
 </body>

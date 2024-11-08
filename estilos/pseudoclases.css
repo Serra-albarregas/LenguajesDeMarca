@@ -131,3 +131,65 @@
 .ej9 .lista div:nth-of-type(2) {
     font-style: italic;
 }
+
+.ej10 {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 10px;
+}
+
+.ej10 div {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #333;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.ej10 div:empty {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej11 input:enabled {
+    background-color: rgb(122, 212, 122);
+}
+
+.ej11 input:disabled {
+    background-color: rgb(235, 129, 129);
+    cursor: not-allowed;
+}
+
+.ej12 input:required {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}
+
+.ej13 label {
+    width: 130px;
+    display: inline-block;
+}
+
+.ej13 .valid:valid {
+    background-color: rgb(122, 212, 122);
+    border: 2px solid rgb(49, 156, 45);
+}
+
+.ej13 .valid:invalid {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}
+
+.ej13 .user-valid:user-valid {
+    background-color: rgb(122, 212, 122);
+    border: 2px solid rgb(49, 156, 45);
+}
+
+.ej13 .user-valid:user-invalid {
+    background-color: rgb(235, 129, 129);
+    border: 2px solid rgb(156, 45, 45);
+}
