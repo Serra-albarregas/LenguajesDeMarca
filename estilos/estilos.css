@@ -172,6 +172,36 @@ a:hover {
   color: #1abc9c;
 }
 
+/* Estilos para el select */
+code select {
+  background-color: #333333; /* Fondo del select */
+  color: #79f6fa; /* Color del texto */
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px; /* Espacio interno */
+  border: 1px solid #555555; /* Borde del select */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  appearance: none; /* Oculta el triángulo por defecto en algunos navegadores */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Para mostrar el triángulo del select de forma personalizada */
+code select::after {
+  content: '▼';
+  position: absolute;
+  right: 15px;
+  pointer-events: none;
+}
+
+/* Efecto al hacer foco */
+code select:focus {
+  outline: none; /* Quita el borde de foco por defecto */
+  border-color: #ffffff; /* Cambia el color del borde */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6); /* Brillo en el foco */
+}
+
 /* Footer */
 footer {
   text-align: center;

@@ -13,7 +13,14 @@
     <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
     <h1>Maquetación</h1>
     <h2>Display</h2>
-    <p>TODO</p>
+    <p>La propiedad <code>display</code> es fundamental en CSS para determinar cómo se representará un elemento en la página y cómo interactuará con otros elementos. Define el modelo de caja y la disposición de los elementos. Algunos valores importantes son:</p>
+    <ul>
+        <li><code>inline</code>: el elemento se representa en línea con otros elementos, similar al comportamiento de un fragmento de texto. No respeta propiedades como <code>width</code> y <code>height</code>, y su tamaño se ajusta al contenido.</li>
+        <li><code>block</code>: el elemento se comporta como un contenedor de bloque, ocupando todo el ancho disponible en su contenedor padre. Comienza en una nueva línea y respeta propiedades como <code>width</code>, <code>height</code>, <code>margin</code> y <code>padding</code>.</li>
+        <li><code>inline-block</code>: combina características de los elementos <code>inline</code> y <code>block</code>. Se posiciona en línea con otros elementos, pero permite definir <code>width</code> y <code>height</code>, lo que brinda flexibilidad al diseño.</li>
+        <li><code>flex</code>: convierte el elemento en un contenedor flexible que permite distribuir y alinear elementos hijos de forma eficiente en un eje principal. Es ideal para crear diseños complejos con facilidad.</li>
+        <li><code>inline-flex</code>: funciona de forma similar a <code>flex</code>, pero el contenedor se comporta como un elemento en línea, manteniendo la alineación con otros elementos en la línea actual.</li>
+    </ul>
     <div class="resume">
         <table>
             <tr>
@@ -21,30 +28,31 @@
                 <th>Descripción</th>
             </tr>
             <tr>
-                <td>inline</td>
+                <td><code>inline</code></td>
                 <td>Los elementos se colocan en horizontal. Ignora width y height. Ocupa lo que ocupa su contenido.</td>
             </tr>
             <tr>
-                <td>block</td>
+                <td><code>block</code></td>
                 <td>Los elementos se colocan en vertical. Ocupa lo que ocupa su padre</td>
             </tr>
             <tr>
-                <td>inline-block</td>
+                <td><code>inline-block</code></td>
                 <td>Los elementos se colocan en horizontal. No ignora width y height.</td>
             </tr>
             <tr>
-                <td>flex</td>
+                <td><code>flex</code></td>
                 <td>Utiliza cajas flexibles.</td>
             </tr>
             <tr>
-                <td>inline-flex</td>
+                <td><code>inline-flex</code></td>
                 <td>Utiliza cajas flexibles. Ocupa lo que ocupa su contenido</td>
             </tr>
         </table>
     </div>
 
     <h2>Inline y block</h2>
-    <p>TODO - display de span y div</p>
+    <p>La diferencia principal entre los elementos con <code>display: inline</code> y <code>display: block</code> radica en cómo ocupan espacio y afectan el flujo del documento. Un elemento <code>inline</code> se coloca en la misma línea que el contenido adyacente y solo ocupa el espacio necesario para su contenido, sin permitir propiedades de ancho o alto. En cambio, un elemento con <code>display: block</code> se extiende por toda la anchura de su contenedor, comenzando en una nueva línea y empujando el contenido siguiente hacia abajo, permitiendo ajustar sus propiedades de tamaño (ancho y alto).</p>
+    <p>Los elementos <code>div</code> y <code>span</code> tienen un comportamiento distinto por defecto debido a sus tipos de <code>display</code>. Un <code>div</code> es un elemento de tipo <code>block</code>, lo que significa que ocupa toda la anchura disponible en su contenedor y provoca un salto de línea antes y después de él. Es ideal para agrupar elementos en secciones estructurales. En contraste, un <code>span</code> es un elemento <code>inline</code>, que ocupa solo el espacio de su contenido sin interrumpir el flujo del texto circundante. Esta característica lo hace útil para aplicar estilos a partes específicas de un texto sin cambiar la estructura de la página.</p>
 
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej1">
@@ -57,7 +65,7 @@
     </div>
 
     <h2>Inline-block</h2>
-    <p>TODO</p>
+    <p>El valor <code>inline-block</code> en CSS permite una combinación de características útiles de los valores <code>inline</code> y <code>block</code>. Un elemento con <code>display: inline-block</code> se comporta de manera similar a los elementos <code>inline</code> en el sentido de que se sitúa en la misma línea que otros elementos. Sin embargo, a diferencia de los elementos puramente <code>inline</code>, permite definir <code>width</code> y <code>height</code>, lo que ofrece un control más preciso sobre el tamaño de los elementos sin forzar un salto de línea.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej2">
         <div class="inline">Inline, intentando modificar su tamaño</div>
@@ -65,73 +73,74 @@
     </div>
 
     <h2>Centrar elementos</h2>
-    <p>TODO</p>
+    <p>Para centrar elementos es importante tener en cuenta el display del elemento que se desea centrar. Se necesita un display de tipo bloque para poder centrar los elementos. También será importante tener en cuenta si las propiedades se aplican sobre un contenedor o sobre el contenido.</p>
 
     <h3>Centrar horizontalmente</h3>
-    <p>TODO - display block con tamaño y margenes</p>
+    <p>Para centrar elementos de tipo bloque horizontalmente, una técnica común es definir un ancho específico para el elemento y aplicar <code>margin: auto</code>. Esto distribuye el espacio restante de manera uniforme a ambos lados del elemento, logrando así su alineación centrada dentro de su contenedor. Este enfoque es simple y efectivo, especialmente en elementos que tienen un <code>display: block</code> y están contenidos en un contenedor de ancho mayor.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej3">
         <div class="centrado">Boque centrado horizontalmente</div>
     </div>
 
     <h3>Centrando verticalmente</h3>
-    <p>TODO</p>
+    <p>Al aplicar <code>align-content: center</code> al contenedor, los elementos hijos se alinean verticalmente en el medio.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej4">
         <div class="centrado">Bloque centrado verticalmente</div>
     </div>
 
     <h3>Centrando texto</h3>
-    <p>TODO</p>
+    <p>El centrado de texto en CSS se logra con la propiedad <code>text-align: center</code>. Esta propiedad se aplica al contenedor que contiene el texto y alinea horizontalmente el contenido de texto y otros elementos en línea. Funciona bien en elementos como <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, y otros contenedores de texto, y es una forma rápida y sencilla de centrar títulos, párrafos y otros elementos textuales. Si se desea aplicar un centrado vertical sobre el texto se podría utilizar la propiedad <code>align-content: center</code>, también sobre el contenedor.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej5">
         <div class="centrado">Texto centrado</div>
     </div>
 
     <h2>Multicolumnas</h2>
-    <p>TODO</p>
+    <p>El diseño de múltiples columnas en CSS permite dividir el contenido en varias columnas, mejorando la legibilidad y la presentación visual de los textos largos. A continuación, se explican las propiedades clave que permiten configurar este tipo de maquetación:</p>
+    <p><strong>column-count:</strong> Esta propiedad define el número de columnas en las que se desea dividir el contenido de un elemento. Cuando se especifica un <code>column-count</code>, el navegador intenta ajustar el contenido distribuyéndolo equitativamente entre las columnas, adaptando el ancho de cada una en función del espacio disponible.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej6">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
-    <p>TODO</p>
+    <p><strong>column-width:</strong> Esta propiedad establece el ancho ideal de las columnas. A diferencia de <code>column-count</code>, que fija un número específico de columnas, <code>column-width</code> permite que el navegador ajuste automáticamente el número de columnas en función del ancho máximo especificado y el espacio disponible, creando un diseño más fluido.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej7">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
-    <p>TODO</p>
+    <p><strong>column-gap:</strong> Esta propiedad define la separación entre las columnas. El espacio proporcionado por <code>column-gap</code> ayuda a mejorar la legibilidad al dar espacio visual entre los bloques de texto, haciendo que el contenido no se vea demasiado comprimido.</p>
+    <p><strong>column-rule:</strong> Permite agregar una línea de separación entre las columnas para distinguirlas visualmente. Esta propiedad es un shorthand que combina la configuración de ancho, estilo y color de la línea, proporcionando un efecto de división más claro y organizado entre las columnas.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej8">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
-    <p>TODO</p>
+    <p><strong>column-fill: balance;</strong> La propiedad <code>column-fill</code> controla cómo se distribuye el contenido entre las columnas. Usar el valor <code>balance</code> asegura que el contenido se reparte de manera uniforme, de modo que todas las columnas tengan aproximadamente la misma cantidad de contenido, optimizando la presentación visual.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej9">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
-    <p>TODO</p>
+    <p><strong>column-fill: auto;</strong> Con el valor <code>auto</code> en la propiedad <code>column-fill</code>, el contenido se coloca en las columnas de manera secuencial, llenando primero una columna antes de pasar a la siguiente. Este método es útil cuando se desea que las columnas mantengan la secuencia de texto, pero puede generar columnas de diferente altura.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej10">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
     <h2>Flex</h2>
-    <p>TODO</p>
+    <p>Las cajas flexibles o <code>flex</code> son una herramienta poderosa en CSS que permite diseñar y distribuir el espacio de los elementos de manera eficiente.</p>
 
     <h3>Flex e inline-flex</h3>
-    <p>TODO</p>
-    <p>Introduce un valor para <code><select name="selectEj11" id="selectEj11">
-        <option value="flex">flex</option>
-        <option value="inline-flex">inline-flex</option>
-        </select></code></p>
+    <p>El valor <code>display: flex</code> convierte un contenedor en un contenedor flexible, mientras que <code>inline-flex</code> hace lo mismo pero mantiene el contenedor en línea con otros elementos en la misma línea. Esto permite un control total sobre la alineación, orden y distribución de los elementos hijos, facilitando la creación de diseños complejos y adaptativos sin necesidad de flotar elementos o usar técnicas más antiguas como <code>inline-block</code>.</p>
     <pre class="prettyprint"><code>.contenedor{
-        background-color: var(--dark-color);
-        display: <span class="selection" id="textEj11">flex</span>;
-    }</code></pre>
+    background-color: var(--dark-color);
+    padding: 5px;
+    display: <select name="selectEj11" id="selectEj11">
+        <option value="flex">flex</option>
+        <option value="inline-flex">inline-flex</option></select>;
+}</code></pre>
     <div class="example ej11">
         <div class="contenedor" id="contEj11">
             <div class="item">1</div>
@@ -141,10 +150,26 @@
     </div>
 
     <h3>Dirección de los ejes</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La propiedad <code>flex-direction</code> determina la dirección en la que se distribuyen los elementos hijos de un contenedor <code>flex</code>. Los valores incluyen:</p>
+    <ul>
+        <li><code>row</code>: disposición horizontal de izquierda a derecha (por defecto).</li>
+        <li><code>row-reverse</code>: disposición horizontal de derecha a izquierda.</li>
+        <li><code>column</code>: disposición vertical de arriba a abajo.</li>
+        <li><code>column-reverse</code>: disposición vertical de abajo a arriba.</li>
+    </ul>
+    <p>Esta propiedad es esencial para cambiar la orientación de los elementos en diseños flexibles y adaptativos.</p>
+
+    <pre class="prettyprint"><code>.contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: <select name="selectEj12" id="selectEj12">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column-reverse</option></select>;
+}</code></pre>
     <div class="example ej12">
-        <div class="contenedor">
+        <div class="contenedor" id="contEj12">
             <div class="item">1</div>
             <div class="item">2</div>
             <div class="item">3</div>
@@ -152,10 +177,31 @@
     </div>
 
     <h3>Flex multilinea</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La propiedad <code>flex-wrap</code> controla si los elementos hijos de un contenedor <code>flex</code> se ajustan al ancho del contenedor o se envuelven en una nueva línea. Los valores posibles son:</p>
+    <ul>
+        <li><code>nowrap</code>: los elementos permanecen en una línea única y no se envuelven (comportamiento predeterminado).</li>
+        <li><code>wrap</code>: los elementos se envuelven a una nueva línea cuando no caben en una sola línea.</li>
+        <li><code>wrap-reverse</code>: similar a <code>wrap</code>, pero la envoltura ocurre en dirección inversa.</li>
+    </ul>
+    <p>El uso de <code>flex-wrap</code> es útil para crear diseños que necesitan adaptarse y reorganizarse automáticamente en función del espacio disponible.</p>
+
+    <pre class="prettyprint"><code>.item {
+    height: 50px;
+    width: 50px;
+    ...
+}
+
+.contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    width: 250px;
+    flex-wrap: <select name="selectEj13" id="selectEj13">
+        <option value="nowrap">nowrap</option>
+        <option value="wrap">wrap</option>
+        <option value="wrap-reverse">wrap-reverse</option></select>;
+}</code></pre>
     <div class="example ej13">
-        <div class="contenedor">
+        <div class="contenedor" id="contEj13">
             <div class="item">1</div>
             <div class="item">2</div>
             <div class="item">3</div>
@@ -166,20 +212,16 @@
     </div>
 
     <h3>Gaps</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>En contenedores <code>flex</code>, las propiedades <code>column-gap</code> y <code>row-gap</code> permiten controlar la distancia entre las columnas y filas de los elementos. Estas propiedades ayudan a distribuir el espacio de manera uniforme, proporcionando una apariencia más limpia y estructurada al contenido. Son una mejora sobre el uso de márgenes individuales, ya que permiten separar los elementos de forma más controlada y consistente.</p>
+    <pre class="prettyprint"><code>.contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    width: 250px;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap:10px;
+}</code></pre>
     <div class="example ej14">
-        <div class="contenedor">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-        </div>
-    </div>
-
-    <h3>Alineación de contenido con flex</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
-    <div class="example ej15">
         <div class="contenedor">
             <div class="item">1</div>
             <div class="item">2</div>
@@ -187,13 +229,73 @@
             <div class="item">4</div>
             <div class="item">5</div>
             <div class="item">6</div>
+        </div>
+    </div>
+
+    <h3>Alineación de contenido con flex</h3>
+    <p>La alineación de contenido en un contenedor flex permite controlar la distribución de los elementos a lo largo de los ejes principales y secundarios. Con la ayuda de propiedades específicas, es posible ajustar la disposición y el espacio entre los elementos, así como su posición dentro del contenedor. Las propiedades más importantes para la alineación con flex son:</p>
+    <p><strong>align-items:</strong> Esta propiedad controla la alineación de los elementos a lo largo del eje transversal (perpendicular al eje principal). Los valores más comunes son:</p>
+<ul>
+    <li><code>start</code>: Alinea los elementos al inicio del eje transversal.</li>
+    <li><code>end</code>: Alinea los elementos al final del eje transversal.</li>
+    <li><code>center</code>: Centra los elementos en el eje transversal.</li>
+    <li><code>stretch</code>: Estira los elementos para que llenen el espacio disponible en el eje transversal.</li>
+    <li><code>baseline</code>: Alinea los elementos en la línea base de su contenido.</li>
+</ul>
+<p><strong>justify-content:</strong> Esta propiedad alinea los elementos a lo largo del eje principal (horizontal por defecto). Permite distribuir el espacio entre elementos de diferentes maneras. Los valores más comunes incluyen:</p>
+<ul>
+    <li><code>start</code>: Alinea los elementos al principio del contenedor.</li>
+    <li><code>end</code>: Alinea los elementos al final del contenedor.</li>
+    <li><code>center</code>: Centra los elementos en el contenedor.</li>
+    <li><code>space-between</code>: Distribuye los elementos con igual espacio entre ellos; el primer y último elemento se colocan al borde del contenedor.</li>
+    <li><code>space-around</code>: Distribuye los elementos con espacio igual a ambos lados de cada elemento.</li>
+    <li><code>space-evenly</code>: Distribuye los elementos de manera uniforme, incluyendo el espacio antes del primer y después del último elemento.</li>
+</ul>
+<p><strong>align-self:</strong> Esta propiedad permite alinear un elemento individualmente dentro de un contenedor flex, sobrescribiendo el valor de <code>align-items</code> para ese elemento específico. Sus valores son similares a los de <code>align-items</code>, permitiendo ajustes individuales para elementos particulares en el eje transversal.</p>
+
+    <pre class="prettyprint"><code>.contenedor {
+    background-color: var(--dark-color);
+    display: flex;
+    height: 200px;
+    align-items: <select name="alignItemsEj15" id="alignItemsEj15">
+        <option value="start">start</option>
+        <option value="end">end</option>
+        <option value="center">center</option>
+        <option value="stretch">stretch</option>
+        <option value="baseline">baseline</option></select>;
+    justify-content: <select name="justifyContentEj15" id="justifyContentEj15">
+        <option value="start">start</option>
+        <option value="end">end</option>
+        <option value="center">center</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+        <option value="space-evenly">space-evenly</option></select>;
+}
+
+.self {
+    align-self: <select name="alignSelfEj15" id="alignSelfEj15">
+        <option value="auto">auto</option>
+        <option value="start">start</option>
+        <option value="end">end</option>
+        <option value="center">center</option>
+        <option value="stretch">stretch</option>
+        <option value="baseline">baseline</option></select>;
+}</code></pre>
+    <div class="example ej15">
+        <div class="contenedor" id="contEj15">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
             <div class="item">7</div>
-            <div class="item self">SELF</div>
+            <div class="item self" id="selfEj15">SELF</div>
         </div>
     </div>
 
     <h3>Orden de los elementos con flex</h3>
-    <p>TODO</p>
+    <p>La propiedad <code>order</code> en un contenedor <code>flex</code> define la secuencia de los elementos hijos. Por defecto, todos los elementos tienen un valor de <code>order</code> igual a 0, pero se pueden asignar valores numéricos para reorganizar visualmente los elementos sin modificar la estructura del HTML. Un elemento con un valor de <code>order</code> más bajo se posicionará antes que otros con valores más altos, permitiendo reordenar los elementos de forma sencilla y efectiva para lograr diseños más dinámicos y adaptativos.</p>
     <pre class="prettyprint"><code></code></pre>
     <div class="example ej16">
         <div class="contenedor">
