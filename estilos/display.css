@@ -1,0 +1,214 @@
+:root {
+    --red-color: rgb(250, 74, 74);
+    --blue-color: rgb(59, 59, 255);
+    --dark-color: rgb(68, 68, 68);
+    --grey-color: rgb(119, 119, 119);
+    --light-color: rgb(221, 221, 221);
+}
+
+.selection {
+    color: rgb(128, 240, 255);
+    font-weight: bold;
+}
+
+.ej1 .inline {
+    display: inline;
+    background-color: var(--red-color);
+}
+
+.ej1 .block {
+    display: block;
+    background-color: var(--blue-color);
+}
+
+.ej2 .inline {
+    display: inline;
+    background-color: var(--red-color);
+    width: 500px;
+}
+
+.ej2 .inline-block {
+    display: inline-block;
+    background-color: var(--blue-color);
+    width: 500px;
+}
+
+.ej3 .centrado {
+    background-color: var(--red-color);
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+.ej4 {
+    background-color: var(--dark-color);
+    height: 200px;
+    align-content: center;
+}
+
+.ej4 .centrado {
+    background-color: var(--red-color);
+    display: block;
+    width: 60%;
+    height: 50%;
+}
+
+.ej5 .centrado {
+    background-color: var(--red-color);
+    text-align: center;
+    align-content: center;
+    width: 60%;
+    height: 80px;
+}
+
+.ej6 .multicolumnas {
+    column-count: 3;
+}
+
+.ej7 .multicolumnas {
+    column-width: 200px;
+}
+
+.ej8 .multicolumnas {
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+}
+
+.ej9 .multicolumnas {
+    column-fill: balance;
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+    height: 200px;
+}
+
+.ej10 .multicolumnas {
+    column-fill: auto;
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+    height: 200px;
+}
+
+.ej11 .contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+}
+
+.ej11 .item {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.ej12 .contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.ej12 .item {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.ej13 .contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    width: 300px;
+    flex-wrap: nowrap;
+}
+
+.ej13 .item {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.ej14 .contenedor{
+    background-color: var(--dark-color);
+    display: flex;
+    width: 300px;
+    flex-wrap: nowrap;
+    column-gap: 20px;
+}
+
+.ej14 .item {
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+.ej15 .contenedor {
+    background-color: var(--dark-color);
+    display: flex;
+    width: 400;
+    height: 200px;
+    column-gap: 20px;
+    align-items: start;
+    justify-content: start;
+}
+
+.ej15 .item {
+    background-color: var(--light-color);
+    border: 2px solid var(--grey-color);
+    height: 50px;
+    width: 50px;
+    font-size: 1.2em;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.ej15 .self {
+    align-self: auto;
+}
+
+.ej16 .contenedor {
+    background-color: var(--dark-color);
+    display: flex;
+    column-gap: 20px;
+    align-items: start;
+    justify-content: start;
+}
+
+.ej16 .item {
+    background-color: var(--light-color);
+    border: 2px solid var(--grey-color);
+    height: 50px;
+    width: 50px;
+    font-size: 1.2em;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.ej16 .item1 {
+    order: 2;
+}
+
+.ej16 .item2 {
+    order: 2;
+}
+
+.ej16 .item3 {
+    order: 0;
+}
+
+.ej16 .item4 {
+    order: 1;
+}
