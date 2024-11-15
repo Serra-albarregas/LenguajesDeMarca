@@ -109,7 +109,7 @@
 .ej12 .contenedor{
     background-color: var(--dark-color);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .ej13 .contenedor{
@@ -152,8 +152,6 @@
     align-items: start;
     justify-content: start;
 }
-
-.ej16 
 
 .ej16 .item1 {
     order: 2;

@@ -54,7 +54,21 @@
     <p>La diferencia principal entre los elementos con <code>display: inline</code> y <code>display: block</code> radica en cómo ocupan espacio y afectan el flujo del documento. Un elemento <code>inline</code> se coloca en la misma línea que el contenido adyacente y solo ocupa el espacio necesario para su contenido, sin permitir propiedades de ancho o alto. En cambio, un elemento con <code>display: block</code> se extiende por toda la anchura de su contenedor, comenzando en una nueva línea y empujando el contenido siguiente hacia abajo, permitiendo ajustar sus propiedades de tamaño (ancho y alto).</p>
     <p>Los elementos <code>div</code> y <code>span</code> tienen un comportamiento distinto por defecto debido a sus tipos de <code>display</code>. Un <code>div</code> es un elemento de tipo <code>block</code>, lo que significa que ocupa toda la anchura disponible en su contenedor y provoca un salto de línea antes y después de él. Es ideal para agrupar elementos en secciones estructurales. En contraste, un <code>span</code> es un elemento <code>inline</code>, que ocupa solo el espacio de su contenido sin interrumpir el flujo del texto circundante. Esta característica lo hace útil para aplicar estilos a partes específicas de un texto sin cambiar la estructura de la página.</p>
 
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class=&quot;inline&quot;&gt;Elemento en linea&lt;/div&gt;
+&lt;div class=&quot;inline&quot;&gt;Elemento en linea&lt;/div&gt;
+&lt;span&gt;Span&lt;/span&gt;
+&lt;div&gt;Div&lt;/div&gt;
+&lt;div class=&quot;block&quot;&gt;Elemento en bloque&lt;/div&gt;
+&lt;div class=&quot;block&quot;&gt;Elemento en bloque&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>.inline {
+    display: inline;
+    background-color: var(--red-color);
+}
+
+.block {
+    display: block;
+    background-color: var(--blue-color);
+}</code></pre>
     <div class="example ej1">
         <div class="inline">Elemento en linea</div>
         <div class="inline">Elemento en linea</div>
@@ -66,7 +80,19 @@
 
     <h2>Inline-block</h2>
     <p>El valor <code>inline-block</code> en CSS permite una combinación de características útiles de los valores <code>inline</code> y <code>block</code>. Un elemento con <code>display: inline-block</code> se comporta de manera similar a los elementos <code>inline</code> en el sentido de que se sitúa en la misma línea que otros elementos. Sin embargo, a diferencia de los elementos puramente <code>inline</code>, permite definir <code>width</code> y <code>height</code>, lo que ofrece un control más preciso sobre el tamaño de los elementos sin forzar un salto de línea.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class=&quot;inline&quot;&gt;Inline, intentando modificar su tama&ntilde;o&lt;/div&gt;
+&lt;div class=&quot;inline-block&quot;&gt;Inline-block, modificando su tama&ntilde;o&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>.inline {
+    display: inline;
+    background-color: var(--red-color);
+    width: 500px;
+}
+
+.inline-block {
+    display: inline-block;
+    background-color: var(--blue-color);
+    width: 500px;
+}</code></pre>
     <div class="example ej2">
         <div class="inline">Inline, intentando modificar su tamaño</div>
         <div class="inline-block">Inline-block, modificando su tamaño</div>
@@ -77,21 +103,42 @@
 
     <h3>Centrar horizontalmente</h3>
     <p>Para centrar elementos de tipo bloque horizontalmente, una técnica común es definir un ancho específico para el elemento y aplicar <code>margin: auto</code>. Esto distribuye el espacio restante de manera uniforme a ambos lados del elemento, logrando así su alineación centrada dentro de su contenedor. Este enfoque es simple y efectivo, especialmente en elementos que tienen un <code>display: block</code> y están contenidos en un contenedor de ancho mayor.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.centrado {
+    background-color: var(--red-color);
+    display: block;
+    width: 60%;
+    margin: auto;
+}</code></pre>
     <div class="example ej3">
         <div class="centrado">Boque centrado horizontalmente</div>
     </div>
 
     <h3>Centrando verticalmente</h3>
     <p>Al aplicar <code>align-content: center</code> al contenedor, los elementos hijos se alinean verticalmente en el medio.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.contenedor {
+    height: 200px;
+    align-content: center;
+}
+
+.centrado {
+    background-color: var(--red-color);
+    display: block;
+    width: 60%;
+    height: 50%;
+}</code></pre>
     <div class="example ej4">
         <div class="centrado">Bloque centrado verticalmente</div>
     </div>
 
     <h3>Centrando texto</h3>
     <p>El centrado de texto en CSS se logra con la propiedad <code>text-align: center</code>. Esta propiedad se aplica al contenedor que contiene el texto y alinea horizontalmente el contenido de texto y otros elementos en línea. Funciona bien en elementos como <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, y otros contenedores de texto, y es una forma rápida y sencilla de centrar títulos, párrafos y otros elementos textuales. Si se desea aplicar un centrado vertical sobre el texto se podría utilizar la propiedad <code>align-content: center</code>, también sobre el contenedor.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.centrado {
+    background-color: var(--red-color);
+    text-align: center;
+    align-content: center;
+    width: 60%;
+    height: 80px;
+}</code></pre>
     <div class="example ej5">
         <div class="centrado">Texto centrado</div>
     </div>
@@ -99,32 +146,55 @@
     <h2>Multicolumnas</h2>
     <p>El diseño de múltiples columnas en CSS permite dividir el contenido en varias columnas, mejorando la legibilidad y la presentación visual de los textos largos. A continuación, se explican las propiedades clave que permiten configurar este tipo de maquetación:</p>
     <p><strong>column-count:</strong> Esta propiedad define el número de columnas en las que se desea dividir el contenido de un elemento. Cuando se especifica un <code>column-count</code>, el navegador intenta ajustar el contenido distribuyéndolo equitativamente entre las columnas, adaptando el ancho de cada una en función del espacio disponible.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.multicolumnas {
+    column-count: 3;
+}</code></pre>
     <div class="example ej6">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
     <p><strong>column-width:</strong> Esta propiedad establece el ancho ideal de las columnas. A diferencia de <code>column-count</code>, que fija un número específico de columnas, <code>column-width</code> permite que el navegador ajuste automáticamente el número de columnas en función del ancho máximo especificado y el espacio disponible, creando un diseño más fluido.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.multicolumnas {
+    column-width: 200px;
+}</code></pre>
     <div class="example ej7">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
     <p><strong>column-gap:</strong> Esta propiedad define la separación entre las columnas. El espacio proporcionado por <code>column-gap</code> ayuda a mejorar la legibilidad al dar espacio visual entre los bloques de texto, haciendo que el contenido no se vea demasiado comprimido.</p>
     <p><strong>column-rule:</strong> Permite agregar una línea de separación entre las columnas para distinguirlas visualmente. Esta propiedad es un shorthand que combina la configuración de ancho, estilo y color de la línea, proporcionando un efecto de división más claro y organizado entre las columnas.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.multicolumnas {
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+}</code></pre>
     <div class="example ej8">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
     <p><strong>column-fill: balance;</strong> La propiedad <code>column-fill</code> controla cómo se distribuye el contenido entre las columnas. Usar el valor <code>balance</code> asegura que el contenido se reparte de manera uniforme, de modo que todas las columnas tengan aproximadamente la misma cantidad de contenido, optimizando la presentación visual.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.multicolumnas {
+    column-fill: balance;
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+    height: 200px;
+}</code></pre>
     <div class="example ej9">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
 
     <p><strong>column-fill: auto;</strong> Con el valor <code>auto</code> en la propiedad <code>column-fill</code>, el contenido se coloca en las columnas de manera secuencial, llenando primero una columna antes de pasar a la siguiente. Este método es útil cuando se desea que las columnas mantengan la secuencia de texto, pero puede generar columnas de diferente altura.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.multicolumnas {
+    column-fill: auto;
+    column-count: 3;
+    text-align: justify;
+    column-gap: 50px;
+    column-rule: 2px solid var(--dark-color);
+    height: 200px;
+}</code></pre>
     <div class="example ej10">
         <div class="multicolumnas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium harum nisi, eum placeat eaque ipsum quo. Voluptas vero id officia, voluptatem quam alias, eaque saepe neque facilis amet, accusantium sunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias asperiores nostrum cumque molestias nemo. Praesentium ab architecto reiciendis vitae autem illum libero placeat neque, odit, hic tenetur quae at accusantium!</div>
     </div>
@@ -296,7 +366,27 @@
 
     <h3>Orden de los elementos con flex</h3>
     <p>La propiedad <code>order</code> en un contenedor <code>flex</code> define la secuencia de los elementos hijos. Por defecto, todos los elementos tienen un valor de <code>order</code> igual a 0, pero se pueden asignar valores numéricos para reorganizar visualmente los elementos sin modificar la estructura del HTML. Un elemento con un valor de <code>order</code> más bajo se posicionará antes que otros con valores más altos, permitiendo reordenar los elementos de forma sencilla y efectiva para lograr diseños más dinámicos y adaptativos.</p>
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class=&quot;contenedor&quot;&gt;
+    &lt;div class=&quot;item item1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;item item2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;item item3&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;item item4&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="prettyprint"><code>.item1 {
+    order: 2;
+}
+
+.item2 {
+    order: 2;
+}
+
+.item3 {
+    order: 0;
+}
+
+.item4 {
+    order: 1;
+}</code></pre>
     <div class="example ej16">
         <div class="contenedor">
             <div class="item item1">1</div>
