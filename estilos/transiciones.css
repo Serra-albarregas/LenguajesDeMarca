@@ -1,0 +1,39 @@
+:root {
+    --red-color: rgb(253, 145, 145);
+    --blue-color: rgb(149, 149, 238);
+    --dark-color: rgb(68, 68, 68);
+    --grey-color: rgb(119, 119, 119);
+    --light-color: rgb(221, 221, 221);
+}
+
+.element {
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    align-content: center;
+    font-size: 1.2em;
+}
+
+.ej1 {
+    padding: 30px;
+    height: 230px;
+}
+
+.ej1 .element {
+    transform: translateX(120px) translateY(50px);
+}
+
+.ej2 .element {
+    transform: rotate(20deg);
+}
+
+.ej3 .element {
+    transform: scale(2, 0.5);
+}
+
+.ej4 .mirror {
+    transform: scale(-1, 1);
+}
