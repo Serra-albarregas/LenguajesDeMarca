@@ -14,43 +14,65 @@
     <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
 
     <h1>Transformaciones y transiciones</h1>
-    <p>TODO</p>
+    <p>Las transformaciones y transiciones son herramientas esenciales en CSS para mejorar la experiencia del usuario mediante efectos visuales. Las transformaciones permiten modificar la apariencia de los elementos mediante cambios como rotaciones, escalados y traslaciones. Por otro lado, las transiciones añaden suavidad a esos cambios, creando efectos animados al alterar las propiedades de los elementos. Estas herramientas son clave para lograr interfaces más atractivas e interactivas.</p>
 
     <h2>Transformaciones</h2>
-    <p>TODO</p>
+    <p>Las transformaciones en CSS se aplican utilizando la propiedad <code>transform</code>. Permiten alterar la apariencia y posición de un elemento en el espacio mediante operaciones como traslaciones, rotaciones, escalados o inclinaciones. Son muy útiles para crear efectos visuales avanzados y proporcionar dinamismo a los diseños.</p>
     <h3>Traslación</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La traslación en CSS permite mover un elemento desde su posición original a lo largo de los ejes X e Y del plano, utilizando la función <code>translate()</code>. Para influir en ambos ejes simultáneamente, puedes proporcionar dos valores separados por una coma dentro de <code>translate(x, y)</code>. Por ejemplo, el primer valor afecta al desplazamiento horizontal (eje X) y el segundo al desplazamiento vertical (eje Y). Si solo deseas influir en un eje específico, puedes utilizar las variantes <code>translateX()</code> o <code>translateY()</code>. La primera afecta únicamente al eje X, desplazando el elemento horizontalmente, mientras que la segunda modifica la posición en el eje Y, moviéndolo verticalmente.</p>
+    <pre class="prettyprint"><code>.element {
+    transform: translateX(120px) translateY(50px);
+}</code></pre>
     <div class="example ej1">
         <div class="element">Elemento transformado</div>
     </div>
 
     <h3>Rotación</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La rotación modifica la orientación de un elemento, girándolo en torno a un punto fijo (por defecto, su centro). La función <code>rotate()</code> permite definir el ángulo de rotación en grados, positivos para rotar en sentido horario y negativos para sentido antihorario.</p>
+    <pre class="prettyprint"><code>.element {
+    transform: rotate(20deg);
+}</code></pre>
     <div class="example ej2">
         <div class="element">Elemento transformado</div>
     </div>
 
     <h3>Escalado</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>El escalado en CSS, a través de la función <code>scale()</code>, permite cambiar el tamaño de un elemento en el plano sin modificar su posición. Puedes aplicar el escalado de manera proporcional en ambos ejes, X e Y, especificando un único valor como <code>scale(valor)</code>. Si necesitas escalarlos de manera independiente, puedes usar dos valores separados, como <code>scale(valorX, valorY)</code>, donde el primer valor afecta al eje X y el segundo al eje Y. Cuando se utilizan números menores que 1, el elemento se reduce proporcionalmente. Por ejemplo, un valor de <code>scale(0.5)</code> reduce el tamaño del elemento a la mitad. En contraste, los valores mayores que 1 amplían el tamaño del elemento. Si introduces valores negativos, el elemento no solo se escala, sino que también se invierte en el eje correspondiente. Por ejemplo, un valor de <code>scale(-1)</code> invierte el elemento horizontalmente en el eje X, mientras que <code>scale(1, -1)</code> lo voltea verticalmente en el eje Y. Esto puede ser útil para crear efectos visuales interesantes, como espejos o reflejos.</p>
+    <pre class="prettyprint"><code>.element {
+    transform: scale(2, 0.5);
+}</code></pre>
     <div class="example ej3">
         <div class="element">Elemento transformado</div>
     </div>
 
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>.mirror {
+    transform: scale(-1, 1);
+}</code></pre>
     <div class="example ej4">
         <div class="element">Elemento transformado</div>
         <div class="element mirror">Elemento transformado</div>
     </div>
 
     <h2>Transiciones</h2>
-    <p>TODO</p>
+    <p>Las transiciones en CSS permiten animar los cambios en las propiedades de un elemento cuando este pasa de un estado a otro. Por ejemplo, al cambiar su estado de reposo a uno interactivo, como al colocar el cursor encima, hacer clic o enfocar un elemento. Estas animaciones añaden dinamismo y suavidad, evitando saltos bruscos en los cambios visuales. Con las transiciones, puedes controlar el tiempo, la propiedad a modificar, la velocidad del cambio y si habrá algún retraso antes de iniciar el efecto. Esto las hace ideales para mejorar la experiencia del usuario al proporcionar retroalimentación visual fluida.</p>
 
     <h3>Desencadenante de las transiciones</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>Las transiciones se activan mediante eventos del usuario o cambios de estado, como al pasar el cursor por encima de un elemento (<code>:hover</code>), hacer clic (<code>:active</code>) o enfocar un campo (<code>:focus</code>). Estos desencadenantes determinan cuándo se inicia la animación especificada en la transición.</p>
+    <pre class="prettyprint"><code>.element{
+    transition: 1s;
+}
+
+.item1:hover {
+    background-color: var(--blue-color);
+}
+
+.item2:active {
+    background-color: var(--blue-color);
+}
+
+.item3:focus {
+    background-color: var(--blue-color);
+}</code></pre>
     <div class="example ej5">
         <div class="element item1">Hover</div>
         <div class="element item2">Active</div>
@@ -58,8 +80,28 @@
     </div>
 
     <h3>Cuando se aplica la transición</h3>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>Una transición se muestra en el momento en el que un elemento o un elemento en un estado concreto está presente en la página. Esto significa que aplicar las propiedades de las transiciones sobre un elemento significará que estará animado en cualquier cambio de estado. Sin embargo, al aplicar las propiedades de una transición sobre un elemento en un estado provocará que la animación solo ocurra cuando dicho estado esté activo.</p>
+    <pre class="prettyprint"><code>.item1 {
+    transition: 2s;
+}
+
+.item1:hover {
+    background-color: var(--blue-color);
+}
+
+.item2:hover {
+    background-color: var(--blue-color);
+    transition: 2s;
+}
+
+.item3 {
+    background-color: var(--blue-color);
+}
+
+.item3:not(:hover) {
+    background-color: var(--dark-color);
+    transition: 2s;
+}</code></pre>
     <div class="example ej6">
         <div class="element item1">Siempre</div>
         <div class="element item2">Entrada</div>
@@ -67,7 +109,7 @@
     </div>
 
     <h3>Propiedades de la transición</h3>
-    <p>TODO</p>
+    <p>Las propiedades de las transiciones definen el comportamiento de las animaciones en CSS. Estas incluyen la duración, la propiedad afectada, el tipo de aceleración y el retardo inicial. Usando estas configuraciones, puedes controlar cómo y cuándo los elementos cambian su apariencia.</p>
     <div class="resume">
         <table>
             <tr>
@@ -103,8 +145,22 @@
         </table>
     </div>
     <h4><code>transition-duration</code></h4>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p><code>transition-duration</code> define cuánto tiempo tarda en completarse la transición. Puedes especificarlo en segundos (<code>s</code>) o milisegundos (<code>ms</code>). Es crucial para ajustar la velocidad de la animación según el diseño deseado.</p>
+    <pre class="prettyprint"><code>.item1 {
+    transition-duration: 0.5s;
+}
+
+.item2 {
+    transition-duration: 1s;
+}
+
+.item3 {
+    transition-duration: 2s;
+}
+
+.element:hover {
+    background-color: var(--blue-color);
+}</code></pre>
     <div class="example ej7">
         <div class="element item1">0.5 seg</div>
         <div class="element item2">1 seg</div>
@@ -112,8 +168,44 @@
     </div>
 
     <h4><code>transition-property</code></h4>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p><code>transition-property</code> determina qué propiedades del elemento se verán afectadas por la transición. Puedes especificar propiedades individuales, como <code>background-color</code>, o usar el valor <code>all</code> para aplicar la transición a todas las propiedades animables.</p>
+    <pre class="prettyprint"><code>.element:hover {
+    background-color: var(--blue-color);
+    color: var(--dark-color);
+    font-size: 1.5em;
+    box-shadow: 0px 0px 5px 5px var(--dark-color);
+    transform: rotate(30deg) translateY(-50px) scale(1.2);
+}
+
+.item1 {
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.item2 {
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.item3 {
+    transition-property: font-size;
+    transition-duration: 1s;
+}
+
+.item4 {
+    transition-property: box-shadow;
+    transition-duration: 1s;
+}
+
+.item5 {
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.item6 {
+    transition-property: all;
+    transition-duration: 1s;
+}</code></pre>
     <div class="example ej8">
         <div class="element item1">fondo</div>
         <div class="element item2">color letras</div>
@@ -124,8 +216,42 @@
     </div>
 
     <h4><code>transition-timing-function</code></h4>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p>La propiedad <code>transition-timing-function</code> define cómo se desarrolla la transición a lo largo del tiempo, controlando la velocidad de la animación en cada punto. Esto se logra mediante funciones de tiempo predefinidas o personalizadas. A continuación, se detallan las opciones más comunes:</p>
+
+    <ul>
+        <li><code>linear</code>: La transición ocurre a una velocidad constante de principio a fin. Es ideal para movimientos uniformes.</li>
+        <li><code>ease</code>: Es la opción por defecto. Comienza lentamente, acelera en el centro y desacelera al final, ofreciendo un efecto más natural.</li>
+        <li><code>ease-in</code>: La transición comienza lentamente y acelera progresivamente hasta el final. Es útil para crear una sensación de aceleración.</li>
+        <li><code>ease-out</code>: Inicia rápidamente y desacelera hacia el final. Se usa para dar un efecto de suavidad al final de la animación.</li>
+        <li><code>ease-in-out</code>: Combina <code>ease-in</code> y <code>ease-out</code>, comenzando lentamente, acelerando en el medio y desacelerando hacia el final.</li>
+    </ul>
+    <pre class="prettyprint"><code>div {
+    transition: 2s;
+}
+
+.container:hover div {
+    width: 100%;
+}
+
+.item1 {
+    transition-timing-function: linear;
+}
+
+.item2 {
+    transition-timing-function: ease;
+}
+
+.item3 {
+    transition-timing-function: ease-in;
+}
+
+.item4 {
+    transition-timing-function: ease-out;
+}
+
+.item5 {
+    transition-timing-function: ease-in-out;
+}</code></pre>
     <div class="example ej9">
         <div class="item1">linear</div>
         <div class="item2">ease</div>
@@ -135,12 +261,44 @@
     </div>
 
     <h4><code>transition-delay</code></h4>
-    <p>TODO</p>
-    <pre class="prettyprint"><code></code></pre>
+    <p><code>transition-delay</code> introduce un retraso antes de que comience la transición. Se define en segundos o milisegundos, permitiendo un control adicional sobre el momento en que se inicia la animación tras el evento desencadenante.</p>
+    <pre class="prettyprint"><code>.item1 {
+    transition-delay: 0.5s;
+}
+
+.item2 {
+    transition-delay: 1s;
+}
+
+.item3 {
+    transition-delay: 2s;
+}
+
+.element {
+    transition-duration: 1s;
+}
+
+.element:hover {
+    background-color: var(--blue-color);
+}</code></pre>
     <div class="example ej10">
         <div class="element item1">0.5 seg</div>
         <div class="element item2">1 seg</div>
         <div class="element item3">2 seg</div>
+    </div>
+
+    <h4><code>transition</code></h4>
+    <p><code>transition</code> es una forma abreviada que combina todas las propiedades de transición en una sola declaración. Incluye la propiedad afectada, duración, función de tiempo y retardo, simplificando la escritura del código.</p>
+    <pre class="prettyprint"><code>.element {
+    transition: background-color 0.5s ease-in 0.2s;
+}
+
+.element:hover {
+    background-color: var(--blue-color);
+    transform: scale(1.2);
+}</code></pre>
+    <div class="example ej11">
+        <div class="element">transition</div>
     </div>
 </body>
 </html>
