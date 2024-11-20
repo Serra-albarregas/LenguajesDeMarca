@@ -9,6 +9,7 @@
 .element {
     height: 150px;
     width: 150px;
+    margin: 5px;
     display: inline-block;
     background-color: var(--dark-color);
     color: var(--light-color);
@@ -36,4 +37,151 @@
 
 .ej4 .mirror {
     transform: scale(-1, 1);
+}
+
+.ej5 .element{
+    transition: 1s;
+}
+
+.ej5 .item1:hover {
+    background-color: var(--blue-color);
+}
+
+.ej5 .item2:active {
+    background-color: var(--blue-color);
+}
+
+.ej5 .item3:focus {
+    background-color: var(--blue-color);
+}
+
+.ej6 .item1 {
+    transition: 2s;
+}
+
+.ej6 .item1:hover {
+    background-color: var(--blue-color);
+}
+
+.ej6 .item2:hover {
+    background-color: var(--blue-color);
+    transition: 2s;
+}
+
+.ej6 .item3 {
+    background-color: var(--blue-color);
+}
+
+.ej6 .item3:not(:hover) {
+    background-color: var(--dark-color);
+    transition: 2s;
+}
+
+.ej7 .item1 {
+    transition-duration: 0.5s;
+}
+
+.ej7 .item2 {
+    transition-duration: 1s;
+}
+
+.ej7 .item3 {
+    transition-duration: 2s;
+}
+
+.ej7 .element:hover {
+    background-color: var(--blue-color);
+}
+
+.ej8 .element:hover {
+    background-color: var(--blue-color);
+    color: var(--dark-color);
+    font-size: 1.5em;
+    box-shadow: 0px 0px 5px 5px var(--dark-color);
+    transform: rotate(30deg) translateY(-50px) scale(1.2);
+}
+
+.ej8 .item1 {
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.ej8 .item2 {
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.ej8 .item3 {
+    transition-property: font-size;
+    transition-duration: 1s;
+}
+
+.ej8 .item4 {
+    transition-property: box-shadow;
+    transition-duration: 1s;
+}
+
+.ej8 .item5 {
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.ej8 .item6 {
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.ej9 div {
+    display: block;
+    background-color: var(--red-color);
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    align-content: center;
+    transition: 2s;
+}
+
+.ej9:hover div {
+    width: 100%;
+}
+
+.ej9 .item1 {
+    transition-timing-function: linear;
+}
+
+.ej9 .item2 {
+    transition-timing-function: ease;
+}
+
+.ej9 .item3 {
+    transition-timing-function: ease-in;
+}
+
+.ej9 .item4 {
+    transition-timing-function: ease-out;
+}
+
+.ej9 .item5 {
+    transition-timing-function: ease-in-out;
+}
+
+.ej10 .item1 {
+    transition-delay: 0.5s;
+}
+
+.ej10 .item2 {
+    transition-delay: 1s;
+}
+
+.ej10 .item3 {
+    transition-delay: 2s;
+}
+
+.ej10 .element {
+    transition-duration: 1s;
+}
+
+.ej10 .element:hover {
+    background-color: var(--blue-color);
 }
