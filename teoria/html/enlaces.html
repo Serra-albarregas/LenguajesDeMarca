@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Enlaces</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css" />
+    <link rel="stylesheet" href="../../estilos/enlaces.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
+</head>
+
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
+
+<div class="main">
+    <h1>Enlaces</h1>
+    <p>En HTML, los enlaces permiten conectar diferentes recursos o secciones dentro y fuera de una página web. Utilizando la etiqueta &lt;a&gt;, es posible navegar a otras páginas, descargar archivos, o interactuar con servicios como el envío de correos electrónicos. La flexibilidad de esta etiqueta hacen que sea una de las herramientas más importantes para crear sitios web dinámicos e interactivos.</p>
+
+    <h2>Estructura de <code>a</code></h2>
+    <p>La etiqueta <code>&lt;a&gt;</code> es fundamental para crear enlaces en HTML. Esta etiqueta, junto con el atributo <code>href</code>, permite especificar la dirección del destino del enlace, que puede ser otra página, un archivo o incluso una sección dentro del mismo documento. Su estructura básica incluye un texto visible o un contenido interactivo que se convierte en clicable, proporcionando una navegación clara e intuitiva para el usuario.</p>
+
+    </div>
+
+    <h2><code>href</code></h2>
+    <p>El atributo <code>href</code> define el destino del enlace. Puede apuntar a páginas web, archivos, direcciones de correo o ubicaciones dentro del mismo documento. Este atributo es obligatorio para que un enlace sea funcional, y puede aceptar rutas absolutas (que incluyen el dominio completo) o relativas (basadas en la ubicación del documento actual).</p>
+    <pre class="prettyprint"><code>&lt;a href=&quot;enlaces/destino.html&quot;&gt;Ejemplo de enlace&lt;/a&gt;</code></pre>
+    <div class="example">
+        <a href="enlaces/destino.html">Ejemplo de enlace</a>
+    </div>
+
+    <h2>Enlaces internos y externos</h2>
+    <p>Un enlace interno es aquel que apunta a recursos dentro del mismo sitio web, como páginas adicionales o secciones específicas del documento actual. Estos enlaces utilizan rutas relativas para mantener la referencia dentro de la estructura del proyecto, facilitando la navegación entre páginas relacionadas.</p>
+    <p>Por otro lado, un enlace externo dirige al usuario a un recurso que se encuentra fuera del sitio web actual, generalmente en otro dominio. Estos enlaces requieren rutas absolutas que incluyan el protocolo (<code>http://</code> o <code>https://</code>) y el nombre completo del dominio de destino.</p>
+    <pre class="prettyprint"><code>&lt;p&gt;&lt;a href=&quot;enlaces/destino.html&quot;&gt;Enlace interno&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.example.com/&quot;&gt;Enlace externo&lt;/a&gt;&lt;/p&gt;</code></pre>
+    <div class="example">
+        <p><a href="enlaces/destino.html">Enlace interno</a></p>
+        <p><a href="https://www.example.com/">Enlace externo</a></p>
+    </div>
+
+    <h2>Enlaces a secciones</h2>
+
+    html
+    Copiar código
+    <p>Los enlaces a secciones dentro de una misma página permiten a los usuarios navegar directamente a partes específicas del documento. Para crear este tipo de enlaces, se deben seguir estos pasos:</p>
+    <ul>
+        <li>Asegúrate de que las secciones del documento tengan identificadores únicos. Esto se hace añadiendo el atributo <code>id</code> a los elementos que deseas enlazar. Por ejemplo, un encabezado podría tener <code>id="seccion1"</code>.</li>
+        <li>Crea un enlace que apunte al identificador correspondiente usando el símbolo <code>#</code> seguido del nombre del <code>id</code>. Por ejemplo, <code>&lt;a href="#seccion1"&gt;Ir a la sección 1&lt;/a&gt;</code>.</li>
+        <li>Cuando el usuario hace clic en el enlace, el navegador desplazará automáticamente la vista hasta la sección indicada, mejorando la experiencia de navegación en documentos largos.</li>
+    </ul>
+    <pre class="prettyprint"><code>&lt;p&gt;&lt;a href=&quot;#seccion1&quot;&gt;Enlace a la secci&oacute;n 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#seccion2&quot;&gt;Enlace a la secci&oacute;n 2&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;seccion1&quot;&gt;Secci&oacute;n 1&lt;/h3&gt;
+&lt;p&gt;Esto es la secci&oacute;n 1&lt;/p&gt;
+&lt;h3 id=&quot;seccion2&quot;&gt;Secci&oacute;n 2&lt;/h3&gt;
+&lt;p&gt;Esto es la secci&oacute;n 2&lt;/p&gt;</code></pre>
+    <div class="example">
+        <p><a href="#seccion1">Enlace a la sección 1</a></p>
+        <p><a href="#seccion2">Enlace a la sección 2</a></p>
+        <h3 id="seccion1">Sección 1</h3>
+        <p>Esto es la sección 1</p>
+        <h3 id="seccion2">Sección 2</h3>
+        <p>Esto es la sección 2</p>
+    </div>
+
+    <h2>Rutas relativas y absolutas</h2>
+    <p>Las rutas en los enlaces pueden ser absolutas o relativas.</p>
+    <ul>
+        <li>
+            <strong>Rutas absolutas:</strong> Estas rutas comienzan desde la raíz del sitio web e incluyen el camino completo al recurso. Por ejemplo, 
+            <code>/index.html</code> apunta al archivo <code>index.html</code>, comenzando desde la raíz del sitio.
+        </li>
+        <li>
+            <strong>Rutas relativas:</strong> Estas rutas son relativas a la ubicación del archivo actual y no necesitan comenzar desde la raíz. Existen varias formas de definirlas:
+            <ul>
+                <li><strong>Relativa explícita:</strong> Incluye <code>./</code> para referirse al directorio actual. Por ejemplo, <code>./enlaces/destino.html</code>.</li>
+                <li><strong>Relativa implícita:</strong> Omite <code>./</code> y apunta directamente al archivo o carpeta en el directorio actual. Es equivalente al anterior. Por ejemplo, <code>enlaces/destino.html</code>.</li>
+                <li><strong>Subir niveles:</strong> Usa <code>../</code> para subir uno o más niveles en la jerarquía de carpetas. Por ejemplo, <code>../../index.html</code> sube dos niveles antes de buscar el archivo.</li>
+            </ul>
+        </li>
+    </ul>
+
+<p>La elección entre rutas absolutas y relativas depende del contexto y de cómo se organiza el sitio web. Generalmente, las rutas relativas son preferibles en entornos donde la estructura de carpetas es estable, ya que hacen que los archivos sean más portables.</p>
+
+    <pre class="prettyprint"><code>&lt;p&gt;&lt;a href=&quot;/index.html&quot;&gt;Enlace absoluto&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;./enlaces/destino.html&quot;&gt;Enlace relativo explícito&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;enlaces/destino.html&quot;&gt;Enlace relativo implícito&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../index.html&quot;&gt;Enlace a 2 carpetas anteriores&lt;/a&gt;&lt;/p&gt;</code></pre>
+    <div class="example">
+        <p><a href="/teoriaHTML/index.html">Enlace absoluto</a></p>
+        <p><a href="./enlaces/destino.html">Enlace relativo explícito</a></p>
+        <p><a href="enlaces/destino.html">Enlace relativo implícito</a></p>
+        <p><a href="../../index.html">Enlace a 2 carpetas anteriores</a></p>
+    </div>
+
+    <h2>Enlaces a recursos y <code>download</code></h2>
+    <p>Los enlaces también pueden apuntar a recursos como imágenes, documentos o archivos multimedia. Al agregar el atributo <code>download</code> a un enlace, se permite a los usuarios descargar directamente el recurso en lugar de abrirlo en el navegador, lo que es útil para proporcionar contenido descargable como PDFs o imágenes.</p>
+    <pre class="prettyprint"><code>&lt;p&gt;&lt;a href=&quot;../../recursos/paisaje.jpg&quot;&gt;Enlace a una imagen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../recursos/paisaje.jpg&quot; download&gt;Enlace a una imagen con descarga&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../recursos/paisaje.jpg&quot; download=&quot;imagen-paisaje.jpg&quot;&gt;Enlace a una imagen con descarga con nombre editado&lt;/a&gt;&lt;/p&gt;</code></pre>
+    <div class="example">
+        <p><a href="../../recursos/paisaje.jpg">Enlace a una imagen</a></p>
+        <p><a href="../../recursos/paisaje.jpg" download>Enlace a una imagen con descarga</a></p>
+        <p><a href="../../recursos/paisaje.jpg" download="imagen-paisaje.jpg">Enlace a una imagen con descarga con nombre editado</a></p>
+    </div>
+
+    <h2><code>target</code></h2>
+    <p>El atributo <code>target</code> especifica cómo se abrirá el destino de un enlace. Los valores comunes incluyen:</p>
+    <ul>
+        <li><code>_self</code>: Abre el enlace en la misma pestaña o ventana (comportamiento predeterminado).</li>
+        <li><code>_blank</code>: Abre el enlace en una nueva pestaña o ventana.</li>
+    </ul>
+    <pre class="prettyprint"><code>&lt;p&gt;&lt;a href=&quot;./enlaces/destino.html&quot; target=&quot;_self&quot;&gt;Abierto en la misma pesta&ntilde;a&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;./enlaces/destino.html&quot; target=&quot;_blank&quot;&gt;Abierto en una pesta&ntilde;a nueva&lt;/a&gt;&lt;/p&gt;</code></pre>
+    <div class="example">
+        <p><a href="./enlaces/destino.html" target="_self">Abierto en la misma pestaña</a></p>
+        <p><a href="./enlaces/destino.html" target="_blank">Abierto en una pestaña nueva</a></p>
+    </div>
+
+    <h2>Enlace a un correo electrónico</h2>
+    <p>El protocolo <code>mailto:</code> permite crear enlaces que abren directamente el cliente de correo del usuario para enviar un mensaje a una dirección específica. Este tipo de enlaces puede incluir opciones adicionales, como un asunto predeterminado o texto en el cuerpo del correo, utilizando parámetros en la URL del enlace.</p>
+    <pre class="prettyprint"><code>&lt;a href=&quot;mailto:correo@ejemplo.com&quot;&gt;Enviar correo&lt;/a&gt;</code></pre>
+    <div class="example">
+        <a href="mailto:correo@ejemplo.com">Enviar correo</a>
+    </div>
+</div>
+</body>
