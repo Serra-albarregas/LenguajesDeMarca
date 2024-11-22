@@ -185,3 +185,12 @@
 .ej10 .element:hover {
     background-color: var(--blue-color);
 }
+
+.ej11 .element {
+    transition: background-color 0.5s ease-in 0.2s;
+}
+
+.ej11 .element:hover {
+    background-color: var(--blue-color);
+    transform: scale(1.2);
+}
