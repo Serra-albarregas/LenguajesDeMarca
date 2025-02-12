@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>JavaScript</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <link rel="stylesheet" href="../../estilos/pdf.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+</head>
+
+<body>
+    <div id="menu"></div>   
+    
+    <div class="content">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Secciones</button>
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleSidebar()">✖ Cerrar</button>
+    </div>
+    <div class="pdf-container" id="pdf-container">
+        <canvas id="pdf-render"></canvas>
+    </div>
+    <div id="page-indicator">Página 1</div>
+    <div class="controls">
+        <button onclick="prevPage()">Anterior</button>
+        <button onclick="nextPage()">Siguiente</button>
+        <div class="jump">
+            <input type="number" id="page-number" min="1" placeholder="Ir a página" oninput="goToPage()" onkeydown="if(event.key==='Enter') goToPage()">
+        </div>
+        <button onclick="toggleFullScreen()">Pantalla Completa</button>
+    </div>
+</div>
+    
+    <script src="../../js/pdfviewer.js"></script>
+    <script src="../../js/menu.js"></script>
+</body>
+</html>
