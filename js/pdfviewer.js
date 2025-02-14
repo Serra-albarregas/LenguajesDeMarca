@@ -21,7 +21,14 @@ const secciones = [
     { nombre: "Objetos", pagina: 89 },
     { nombre: "Importación de archivos", pagina: 104 },
     { nombre: "Arrays", pagina: 118 },
-    { nombre: "DOM", pagina: 138 }
+    { nombre: "DOM", pagina: 138 },
+    { nombre: "DOM-Búsqueda", pagina: 146 },
+    { nombre: "DOM-Contenido", pagina: 150 },
+    { nombre: "DOM-Atributos", pagina: 156 },
+    { nombre: "DOM-Estilos", pagina: 160 },
+    { nombre: "Eventos", pagina: 169 },
+    { nombre: "LocalStorage", pagina: 178 },
+    { nombre: "Debugging", pagina: 185 },
 ]
 
 function renderPage(num) {
