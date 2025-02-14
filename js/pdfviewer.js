@@ -3,18 +3,33 @@ let pdfDoc = null, pageNum = 1;
 let scale = 1.5;
 const canvas = document.getElementById('pdf-render');
 const ctx = canvas.getContext('2d');
-const pageIndicator = document.getElementById('page-indicator');
-const pageNumberInput = document.getElementById('page-number');
-const pdfContainer = document.getElementById('pdf-container');
+const pageIndicator = document.querySelector('#page-indicator');
+const pageNumberInput = document.querySelector('#page-number');
+const pdfContainer = document.querySelector('#pdf-container');
+const menu = document.querySelector("#menu");
+const secciones = [
+    { nombre: "Inicio", pagina: 1 },
+    { nombre: "La consola", pagina: 6 },
+    { nombre: "Organización", pagina: 15 },
+    { nombre: "Variables", pagina: 20 },
+    { nombre: "Strings", pagina: 37 },
+    { nombre: "Operadores", pagina: 43 },
+    { nombre: "Estructuras de control", pagina: 59 },
+    { nombre: "Ámbito", pagina: 68 },
+    { nombre: "Funciones", pagina: 73 },
+    { nombre: "Objetos", pagina: 89 },
+    { nombre: "Importación de archivos", pagina: 104 },
+    { nombre: "Arrays", pagina: 118 },
+    { nombre: "DOM", pagina: 138 }
+]
 
 function renderPage(num) {
     pdfDoc.getPage(num).then(page => {
         const viewport = page.getViewport({ scale });
         canvas.width = viewport.width * window.devicePixelRatio;
-        canvas.height = viewport.height * window.devicePixelRatio;
-        canvas.style.width = `${viewport.width}px`;
-        canvas.style.height = `${viewport.height}px`;
-
+        canvas.height = canvas.width/1.776223;
+        canvas.style.width = `${viewport.width * window.devicePixelRatio}px`;
+        canvas.style.height = `${canvas.style.width/1.776223}px`;
         const ctx = canvas.getContext('2d');
         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
         page.render({ canvasContext: ctx, viewport: viewport });
@@ -54,24 +69,43 @@ function toggleFullScreen() {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
         document.body.classList.add("fullscreen");
+        menu.toggleAttribute("hidden", true);
         scale = 2.5;
     } else {
         document.exitFullscreen();
         document.body.classList.remove("fullscreen");
+        menu.toggleAttribute("hidden", false);
         scale = 1.5;
     }
     setTimeout(() => renderPage(pageNum), 100);
 }
 
 document.addEventListener("keydown", function (event) {
-    if (document.fullscreenElement) {
-        if (event.key === "ArrowRight") nextPage();
-        if (event.key === "ArrowLeft") prevPage();
-        if (event.key === "Escape") toggleFullScreen();
+    if (event.key === "ArrowRight") nextPage();
+    if (event.key === "ArrowLeft") prevPage();
+});
+
+document.addEventListener("fullscreenchange", function() {
+    if (!document.fullscreenElement) {
+        document.body.classList.remove("fullscreen");
+        menu.toggleAttribute("hidden", false);
+        scale = 1.5;
+        setTimeout(() => renderPage(pageNum), 100);
     }
 });
 
 pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
     pdfDoc = pdfDoc_;
     renderPage(pageNum);
+    let sidebar = document.getElementById("sidebar");
+    
+    secciones.forEach(item => {
+        let button = document.createElement("button");
+        button.innerText = item.nombre;
+        button.addEventListener("click", () => {
+            pageNum = item.pagina;
+            renderPage(pageNum);
+        });
+        sidebar.appendChild(button);
+    });
 });
