@@ -1,6 +1,7 @@
 const url = '../../recursos/Javascript.pdf';
 let pdfDoc = null, pageNum = 1;
 let scale = 1.5;
+let pageRendering = false;
 const canvas = document.getElementById('pdf-render');
 const ctx = canvas.getContext('2d');
 const pageIndicator = document.querySelector('#page-indicator');
@@ -24,7 +25,9 @@ const secciones = [
 ]
 
 function renderPage(num) {
+    if (!pageRendering){
     pdfDoc.getPage(num).then(page => {
+        pageRendering=true;
         const viewport = page.getViewport({ scale });
         canvas.width = viewport.width * window.devicePixelRatio;
         canvas.height = canvas.width/1.776223;
@@ -35,7 +38,9 @@ function renderPage(num) {
         page.render({ canvasContext: ctx, viewport: viewport });
         pageIndicator.textContent = `Página ${num} de ${pdfDoc.numPages}`;
         pageNumberInput.value = num;
+        pageRendering=false;
     });
+}
 }
 
 function toggleSidebar() {
