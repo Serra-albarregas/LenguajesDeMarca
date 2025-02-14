@@ -80,6 +80,11 @@ button {
     border-radius: 5px;
 }
 
+a, a:visited, a:hover {
+    color: white;
+    font-weight: normal;
+}
+
 #page-number {
     width: 35px;
     height: 18px;
