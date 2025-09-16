@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Intoducción</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
+</head>
+
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
+    <div id="menu"></div>
+
+    <div class="main">
+        <header>
+            <h1>Introducción a los lenguajes de marcas</h1>
+            <p class="lead">Conceptos básicos, por qué importan y qué construiremos a partir de ellos.</p>
+        </header>
+
+
+        <section>
+            <h2>¿Qué es un <em>lenguaje de marcas</em>?</h2>
+            <p>Un <strong>lenguaje de marcas</strong> es un conjunto de reglas y etiquetas que se usan para describir la
+                estructura y el significado de un documento. A diferencia de los lenguajes de programación, su objetivo
+                principal es <em>marcar</em> la información (por ejemplo: títulos, párrafos, listas, enlaces) para que
+                otros sistemas —navegadores, procesadores, transformadores— puedan interpretarla y mostrarla
+                correctamente.</p>
+
+
+            <h3>Ejemplo de HTML</h3>
+            <pre class="prettyprint"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Mi página&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hola mundo&lt;/h1&gt;
+&lt;p&gt;Esto es contenido marcado.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+
+        <section>
+            <h2>¿Por qué son importantes?</h2>
+            <ul>
+                <li><strong>Interoperabilidad:</strong> Permiten que diferentes programas entiendan y procesen los
+                    mismos datos.</li>
+                <li><strong>Accesibilidad:</strong> Estructurar bien el contenido ayuda a tecnologías de asistencia
+                    (lectores de pantalla, buscadores).</li>
+                <li><strong>Separación de contenido y presentación:</strong> El marcado describe <em>qué</em> es cada
+                    cosa; los estilos y scripts controlan <em>cómo</em> se ve o se comporta.</li>
+                <li><strong>Reutilización y transformación:</strong> El mismo documento marcado puede convertirse en
+                    PDF, página web, datos para una API o ser transformado con XSL/plantillas.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Durante el curso...</h2>
+            <p>Aprenderemos a utilizar HTML y CSS para construir páginas web estáticas como base fundamental para estructurar y presentar la información en la web. Nuestro objetivo será comprender cómo organizar un documento correctamente y cómo darle estilo</p>
+            <p>Aprenderemos a utilizar JavaScript para construir páginas web dinámicas, con funcionalidad. Nos iniciaremos en el mundo de la programación web</p>
+            <p>Aprenderemos a utilizar XML para organizar información y lo trasladaremos a la web. Podremos realizar búsquedas, transformaciones y comprobaciones.</p>
+        </section>
+
+
+        <section>
+            <h2>Materiales y herramienta mínima</h2>
+            <div class="resume">
+                <table>
+                    <caption>Herramientas de trabajo</caption>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Herramienta</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="https://code.visualstudio.com/"><strong>Visual Studio Code (VSC)</strong></a></td>
+                            <td>Editor de código recomendado: ligero, extensible y muy usado en el desarrollo web.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Extensión: Live Server</strong></td>
+                            <td>Permite lanzar un servidor local y recargar automáticamente la página cuando guardes
+                                cambios —ideal para ver resultados instantáneos.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Extensiones opcionales</strong></td>
+                            <td>
+                                <ul>
+                                    <li><strong>Prettier</strong> — formateo automático de código.</li>
+                                    <li><strong>Bracket Pair Colorizer</strong> — colores para pares de etiquetas y
+                                        paréntesis.</li>
+                                    <li><strong>Auto Rename Tag</strong> — renombra la etiqueta de cierre junto con la de apertura</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <img class="example" width="100%" src="../../recursos/extensiones.png" alt="extensión live server">
+        </section>
+    </div>
+
+<script src="../../js/menu.js"></script>
+</body>
+</html>

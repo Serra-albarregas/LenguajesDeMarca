@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Estructura básica</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../estilos/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/prettify-small/google-code-prettify/skins/desert.css">
+</head>
+
+<body onload="PR.prettyPrint()">
+    <script type="text/javascript" src="../../js/prettify-small/google-code-prettify/prettify.js"></script>
+    <div id="menu"></div>
+
+    <div class="main">
+        <header>
+            <h1>Estructura básica de un documento HTML</h1>
+            <p>Cómo se organiza un documento HTML y cuáles son sus principales etiquetas de estructura.</p>
+        </header>
+
+        <section>
+            <h2>La plantilla mínima de un documento HTML</h2>
+            <p>Todo documento HTML debe seguir una estructura básica que indica al navegador cómo interpretar el
+                contenido. La plantilla mínima es la siguiente:</p>
+
+            <pre class="prettyprint"><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Encabezado principal&lt;/h1&gt;
+    &lt;p&gt;Aquí va el contenido de la página.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;!doctype html&gt;</code></h2>
+            <p>Indica al navegador que el documento sigue el estándar <strong>HTML5</strong>.</p>
+            <pre class="prettyprint"><code>&lt;!doctype html&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;html&gt;</code></h2>
+            <p>Elemento raíz que contiene todo el documento. El atributo <code>lang</code> indica el idioma.</p>
+            <pre class="prettyprint"><code>&lt;html lang="es"&gt;
+  &lt;!-- Aquí van &lt;head&gt; y &lt;body&gt; --&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;head&gt;</code></h2>
+            <p>Contiene los <strong>metadatos</strong> y enlaces a recursos externos.</p>
+            <pre class="prettyprint"><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;body&gt;</code></h2>
+            <p>Contiene el contenido visible de la página.</p>
+            <pre class="prettyprint"><code>&lt;body&gt;
+  &lt;h1&gt;Bienvenido&lt;/h1&gt;
+  &lt;p&gt;Este es el contenido visible de la página.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>Encabezados <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></h2>
+            <p>Organizan el contenido en títulos y subtítulos con jerarquía.</p>
+            <pre class="prettyprint"><code>&lt;h1&gt;Manual de HTML&lt;/h1&gt;
+&lt;h2&gt;Capítulo 1: Introducción&lt;/h2&gt;
+&lt;h3&gt;Sección 1.1: Historia&lt;/h3&gt;
+&lt;h4&gt;Subsección 1.1.1: Primeros navegadores&lt;/h4&gt;</code></pre>
+                <div class="example">
+                    <h1>Manual de HTML</h1>
+                    <h2>Capítulo 1: Introducción</h2>
+                    <h3>Sección 1.1: Historia</h3>
+                    <h4>Subsección 1.1.1: Primeros navegadores</h4>
+                </div>
+        </section>
+
+        <section>
+            <h2><code>&lt;p&gt;</code> (Párrafos)</h2>
+            <p>Define bloques de texto corrido.</p>
+            <pre class="prettyprint"><code>&lt;p&gt;HTML es el lenguaje estándar para crear páginas web.&lt;/p&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code></h2>
+            <p>Etiquetas semánticas que estructuran la página en zonas.</p>
+            <pre class="prettyprint"><code>&lt;header&gt;
+  &lt;h1&gt;Blog de programación&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
+    &lt;a href="articulos.html"&gt;Artículos&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Bienvenidos&lt;/h2&gt;
+    &lt;p&gt;Este es el contenido principal.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code></h2>
+            <p>Dividen el contenido en partes temáticas o complementarias.</p>
+            <pre class="prettyprint"><code>&lt;section&gt;
+  &lt;h2&gt;Capítulo 1&lt;/h2&gt;
+  &lt;p&gt;Introducción a HTML.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;article&gt;
+  &lt;h2&gt;Cómo usar etiquetas semánticas&lt;/h2&gt;
+  &lt;p&gt;Ayudan a que los buscadores comprendan el contenido.&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;aside&gt;
+  &lt;h3&gt;Recursos&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Guía oficial&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Curso CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2><code>&lt;footer&gt;</code></h2>
+            <p>Contiene el pie de página, normalmente con derechos de autor o enlaces secundarios.</p>
+            <pre class="prettyprint"><code>&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2025 Mi página web&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>Ejemplo completo</h2>
+            <pre class="prettyprint"><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Ejemplo completo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi sitio web&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="#"&gt;Inicio&lt;/a&gt;
+      &lt;a href="#"&gt;Servicios&lt;/a&gt;
+      &lt;a href="#"&gt;Contacto&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Bienvenidos&lt;/h2&gt;
+      &lt;p&gt;Este es el contenido principal.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;article&gt;
+      &lt;h2&gt;Última noticia&lt;/h2&gt;
+      &lt;p&gt;Hoy hemos aprendido la estructura de HTML.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Recursos recomendados&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Guía oficial de HTML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Curso gratuito de CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2025 - Todos los derechos reservados&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <div class="example">
+                    <header>
+                        <h1>Mi sitio web</h1>
+                        <nav>
+                        <a href="#">Inicio</a>
+                        <a href="#">Servicios</a>
+                        <a href="#">Contacto</a>
+                        </nav>
+                    </header>
+
+                    <main>
+                        <section>
+                        <h2>Bienvenidos</h2>
+                        <p>Este es el contenido principal.</p>
+                        </section>
+
+                        <article>
+                        <h2>Última noticia</h2>
+                        <p>Hoy hemos aprendido la estructura de HTML.</p>
+                        </article>
+                    </main>
+
+                    <aside>
+                        <h3>Recursos recomendados</h3>
+                        <ul>
+                        <li><a href="#">Guía oficial de HTML</a></li>
+                        <li><a href="#">Curso gratuito de CSS</a></li>
+                        </ul>
+                    </aside>
+
+                    <footer>
+                        <p>&copy; 2025 - Todos los derechos reservados</p>
+                    </footer>
+                </div>
+        </section>
+    </div>
+
+<script src="../../js/menu.js"></script>
+</body>
+
+</html>
