@@ -75,6 +75,58 @@
         </form>
     </div>
 
+    <h2>Ordenar los elementos del formulario y usar etiquetas &lt;label&gt;</h2>
+    <p>
+        Para mejorar la accesibilidad, 
+        se recomienda usar la etiqueta <code>&lt;label&gt;</code>, 
+        que asocia un texto descriptivo con su campo correspondiente 
+        mediante el atributo <code>for</code> (que debe coincidir con 
+        el <code>id</code> del campo).
+    </p>
+
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;
+        &lt;label for=&quot;nombre&quot;&gt;Nombre:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; placeholder=&quot;Escribe tu nombre&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for=&quot;apellidos&quot;&gt;Apellidos:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;apellidos&quot; name=&quot;apellidos&quot; placeholder=&quot;Escribe tus apellidos&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for=&quot;contrasena&quot;&gt;Contrase&ntilde;a:&lt;/label&gt;
+        &lt;input type=&quot;password&quot; id=&quot;contrasena&quot; name=&quot;contrasena&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for=&quot;comentarios&quot;&gt;Comentarios:&lt;/label&gt;
+        &lt;textarea id=&quot;comentarios&quot; name=&quot;text&quot; cols=&quot;32&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" />
+            </p>
+            <p>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" />
+            </p>
+            <p>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" />
+            </p>
+            <p>
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="text" cols="32" rows="10"></textarea>
+            </p>
+            <p><input type="submit" value="Enviar" /></p>
+        </form>
+    </div>
+
+
     <h2>Checkbox</h2>
     <p>
         Los campos de tipo <code>checkbox</code> permiten a los usuarios
