@@ -182,7 +182,47 @@
         </form>
     </div>
 
-    <h2>Selector desplegable</h2>
+    <h2>Selector desplegable con <code>&lt;select&gt;</code></h2>
+    <p>
+        El selector desplegable se implementa usando la etiqueta 
+        <code>&lt;select&gt;</code>, junto con varias etiquetas 
+        <code>&lt;option&gt;</code> que representan las diferentes opciones 
+        disponibles. El usuario puede elegir solo una (o varias, si se usa 
+        el atributo <code>multiple</code>). 
+    </p>
+
+    <pre class="prettyprint"><code>&lt;form action=&quot;recibir.php&quot; method=&quot;get&quot;&gt;
+    &lt;p&gt;
+        Elige tu navegador favorito:
+        &lt;select name=&quot;navegador&quot;&gt;
+            &lt;option value=&quot;Edge&quot;&gt;Edge&lt;/option&gt;
+            &lt;option value=&quot;Firefox&quot;&gt;Firefox&lt;/option&gt;
+            &lt;option value=&quot;Chrome&quot;&gt;Chrome&lt;/option&gt;
+            &lt;option value=&quot;Opera&quot;&gt;Opera&lt;/option&gt;
+            &lt;option value=&quot;Safari&quot;&gt;Safari&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+    <div class="example">
+        <form action="recibir.php" method="get">
+            <p>
+                Elige tu navegador favorito:
+                <select name="navegador">
+                    <option value="Edge">Edge</option>
+                    <option value="Firefox">Firefox</option>
+                    <option value="Chrome">Chrome</option>
+                    <option value="Opera">Opera</option>
+                    <option value="Safari">Safari</option>
+                </select>
+            </p>
+            <p><input type="submit" value="Enviar" /></p>
+        </form>
+    </div>
+
+
+    <h2>Selector desplegable <code>&lt;list&gt;</code></h2>
     <p>
         El selector desplegable se implementa usando la etiqueta
         <code>&lt;input&gt;</code> con el atributo <code>list</code>, que se
