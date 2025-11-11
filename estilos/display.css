@@ -36,6 +36,7 @@
 }
 
 .ej4 {
+    background-color: var(--blue-color);
     height: 200px;
     align-content: center;
 }
